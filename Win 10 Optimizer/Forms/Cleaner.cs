@@ -73,12 +73,16 @@ namespace Win_10_Optimizer.Forms
                             System.IO.DirectoryInfo myDirInfo = new DirectoryInfo(md);
                             foreach (FileInfo file in myDirInfo.GetFiles())
                             {
-                                try { file.Delete(); }
+                                try { 
+                                    file.Delete(); 
+                                }
                                 catch (Exception ex) { }
                             }
                             foreach (DirectoryInfo dir in myDirInfo.GetDirectories())
                             {
-                                try { dir.Delete(true); }
+                                try { 
+                                    dir.Delete(true); 
+                                }
                                 catch (Exception ex) { }
                             }
                         }
@@ -88,12 +92,16 @@ namespace Win_10_Optimizer.Forms
                             System.IO.DirectoryInfo myDirInfo = new DirectoryInfo(md2);
                             foreach (FileInfo file in myDirInfo.GetFiles())
                             {
-                                try { file.Delete(); }
+                                try { 
+                                    file.Delete(); 
+                                }
                                 catch (Exception ex) { }
                             }
                             foreach (DirectoryInfo dir in myDirInfo.GetDirectories())
                             {
-                                try { dir.Delete(true); }
+                                try { 
+                                    dir.Delete(true); 
+                                }
                                 catch (Exception ex) { }
                             }
                         }
@@ -103,12 +111,16 @@ namespace Win_10_Optimizer.Forms
                             System.IO.DirectoryInfo myDirInfo = new DirectoryInfo(md3);
                             foreach (FileInfo file in myDirInfo.GetFiles())
                             {
-                                try { file.Delete(); }
+                                try { 
+                                    file.Delete(); 
+                                }
                                 catch (Exception ex) { }
                             }
                             foreach (DirectoryInfo dir in myDirInfo.GetDirectories())
                             {
-                                try { dir.Delete(true); }
+                                try { 
+                                    dir.Delete(true);
+                                }
                                 catch (Exception ex) { }
                             }
                         }
@@ -118,12 +130,16 @@ namespace Win_10_Optimizer.Forms
                             System.IO.DirectoryInfo myDirInfo = new DirectoryInfo(md4);
                             foreach (FileInfo file in myDirInfo.GetFiles())
                             {
-                                try { file.Delete(); }
+                                try { 
+                                    file.Delete(); 
+                                }
                                 catch (Exception ex) { }
                             }
                             foreach (DirectoryInfo dir in myDirInfo.GetDirectories())
                             {
-                                try { dir.Delete(true); }
+                                try { 
+                                    dir.Delete(true); 
+                                }
                                 catch (Exception ex) { }
                             }
                         }
@@ -143,7 +159,9 @@ namespace Win_10_Optimizer.Forms
                             System.IO.DirectoryInfo myDirInfo = new DirectoryInfo(md);
                             foreach (FileInfo file in myDirInfo.GetFiles())
                             {
-                                try { file.Delete(); }
+                                try { 
+                                    file.Delete(); 
+                                }
                                 catch (Exception ex) { }
                             }
                         }
@@ -163,12 +181,16 @@ namespace Win_10_Optimizer.Forms
                             System.IO.DirectoryInfo myDirInfo = new DirectoryInfo(md);
                             foreach (FileInfo file in myDirInfo.GetFiles())
                             {
-                                try { file.Delete(); }
+                                try { 
+                                    file.Delete(); 
+                                }
                                 catch (Exception ex) { }
                             }
                             foreach (DirectoryInfo dir in myDirInfo.GetDirectories())
                             {
-                                try { dir.Delete(true); }
+                                try { 
+                                    dir.Delete(true); 
+                                }
                                 catch (Exception ex) { }
                             }
                         }
@@ -178,12 +200,16 @@ namespace Win_10_Optimizer.Forms
                             System.IO.DirectoryInfo myDirInfo = new DirectoryInfo(md2);
                             foreach (FileInfo file in myDirInfo.GetFiles())
                             {
-                                try { file.Delete(); }
+                                try { 
+                                    file.Delete(); 
+                                }
                                 catch (Exception ex) { }
                             }
                             foreach (DirectoryInfo dir in myDirInfo.GetDirectories())
                             {
-                                try { dir.Delete(true); }
+                                try { 
+                                    dir.Delete(true); 
+                                }
                                 catch (Exception ex) { }
                             }
                         }
@@ -204,7 +230,9 @@ namespace Win_10_Optimizer.Forms
                             var result = Directory.EnumerateFiles(@"C:\ProgramData\NVIDIA\", "*.log");
                             foreach (var m in result)
                             {
-                                try { File.Delete(m); }
+                                try { 
+                                    File.Delete(m); 
+                                }
                                 catch { }
                             }
                         }
@@ -214,7 +242,9 @@ namespace Win_10_Optimizer.Forms
                             var result = Directory.EnumerateFiles(@"C:\ProgramData\NVIDIA Corporation", "*.log");
                             foreach (var m in result)
                             {
-                                try { File.Delete(m); }
+                                try {
+                                    File.Delete(m);
+                                }
                                 catch { }
                             }
                         }
@@ -224,7 +254,9 @@ namespace Win_10_Optimizer.Forms
                             var result = Directory.EnumerateFiles(@"C:\ProgramData\NVIDIA Corporation\nvstapisvr\", "*.log");
                             foreach (var m in result)
                             {
-                                try { File.Delete(m); }
+                                try {
+                                    File.Delete(m);
+                                }
                                 catch { }
                             }
                         }
@@ -235,7 +267,9 @@ namespace Win_10_Optimizer.Forms
                             var result = Directory.EnumerateFiles(@"C:\ProgramData\Razer\Services\Logs\", "*.log");
                             foreach (var m in result)
                             {
-                                try { File.Delete(m); }
+                                try {
+                                    File.Delete(m);
+                                }
                                 catch { }
                             }
                         }
@@ -245,7 +279,9 @@ namespace Win_10_Optimizer.Forms
                             var result = Directory.EnumerateFiles(@"C:\ProgramData\Razer\RazerCortexManifestRepair\Logs\", "*.log");
                             foreach (var m in result)
                             {
-                                try { File.Delete(m); }
+                                try { 
+                                    File.Delete(m);
+                                }
                                 catch { }
                             }
                         }
@@ -255,7 +291,9 @@ namespace Win_10_Optimizer.Forms
                             var result = Directory.EnumerateFiles(@"C:\ProgramData\Razer\BigDataSDK\Logs\", "*.log");
                             foreach (var m in result)
                             {
-                                try { File.Delete(m); }
+                                try { 
+                                    File.Delete(m);
+                                }
                                 catch { }
                             }
                         }
@@ -266,7 +304,9 @@ namespace Win_10_Optimizer.Forms
                             var result = Directory.EnumerateFiles(@"C:\ProgramData\Progress\Installer\Logs\", "*.log");
                             foreach (var m in result)
                             {
-                                try { File.Delete(m); }
+                                try {
+                                    File.Delete(m);
+                                }
                                 catch { }
                             }
                         }
@@ -289,7 +329,9 @@ namespace Win_10_Optimizer.Forms
                             var result = Directory.EnumerateFiles(strSteamInstallPath + "\\steamapps\\common\\GarrysMod", "*.log");
                             foreach (var m in result)
                             {
-                                try { File.Delete(m); }
+                                try { 
+                                    File.Delete(m); 
+                                }
                                 catch { }
                             }
                             var result2 = Directory.EnumerateFiles(strSteamInstallPath + "\\steamapps\\common\\GarrysMod", "*.mdmp");
@@ -300,7 +342,9 @@ namespace Win_10_Optimizer.Forms
                             }
                             if (Directory.Exists(strSteamInstallPath + "\\steamapps\\common\\GarrysMod\\crashes"))
                             {
-                                try { Directory.Delete(strSteamInstallPath + "\\steamapps\\common\\GarrysMod\\crashes", true); }
+                                try { 
+                                    Directory.Delete(strSteamInstallPath + "\\steamapps\\common\\GarrysMod\\crashes", true);
+                                }
                                 catch { }
                             }
                         }
@@ -309,7 +353,9 @@ namespace Win_10_Optimizer.Forms
                             var result = Directory.EnumerateFiles(strSteamInstallPath + "\\steamapps\\common\\Counter-Strike Global Offensive", "*.mdmp");
                             foreach (var m in result)
                             {
-                                try { File.Delete(m); }
+                                try { 
+                                    File.Delete(m);
+                                }
                                 catch { }
                             }
                         }
@@ -318,7 +364,9 @@ namespace Win_10_Optimizer.Forms
                             var result = Directory.EnumerateFiles(strSteamInstallPath + "\\steamapps\\common\\Warface\\0_1177\\LogBackups", "*.log");
                             foreach (var m in result)
                             {
-                                try { File.Delete(m); }
+                                try { 
+                                    File.Delete(m); 
+                                }
                                 catch { }
                             }
                         }
@@ -327,7 +375,9 @@ namespace Win_10_Optimizer.Forms
                             var result = Directory.EnumerateFiles(strSteamInstallPath + "\\steamapps\\common\\Warface\\GameCenter", "*.log");
                             foreach (var m in result)
                             {
-                                try { File.Delete(m); }
+                                try { 
+                                    File.Delete(m);
+                                }
                                 catch { }
                             }
                         }
@@ -336,7 +386,9 @@ namespace Win_10_Optimizer.Forms
                             var result = Directory.EnumerateFiles(strSteamInstallPath + "\\steamapps\\common\\Among Us", "*.log");
                             foreach (var m in result)
                             {
-                                try { File.Delete(m); }
+                                try { 
+                                    File.Delete(m);
+                                }
                                 catch { }
                             }
                         }
@@ -345,7 +397,9 @@ namespace Win_10_Optimizer.Forms
                             var result = Directory.EnumerateFiles(strSteamInstallPath + "\\steamapps\\common\\Unturned\\Logs", "*.log");
                             foreach (var m in result)
                             {
-                                try { File.Delete(m); }
+                                try { 
+                                    File.Delete(m);
+                                }
                                 catch { }
                             }
                         }
@@ -354,7 +408,9 @@ namespace Win_10_Optimizer.Forms
                             var result = Directory.EnumerateFiles(strSteamInstallPath + "\\steamapps\\common\\Half-Life 2", "*.log");
                             foreach (var m in result)
                             {
-                                try { File.Delete(m); }
+                                try {
+                                    File.Delete(m);
+                                }
                                 catch { }
                             }
                         }
@@ -363,16 +419,14 @@ namespace Win_10_Optimizer.Forms
                             System.IO.DirectoryInfo myDirInfo = new DirectoryInfo(strSteamInstallPath + "\\Logs");
                             foreach (FileInfo file in myDirInfo.GetFiles())
                             {
-                                try
-                                {
+                                try {
                                     file.Delete();
                                 }
                                 catch (Exception ex) { }
                             }
                             foreach (DirectoryInfo dir in myDirInfo.GetDirectories())
                             {
-                                try
-                                {
+                                try {
                                     dir.Delete(true);
                                 }
                                 catch (Exception ex) { }

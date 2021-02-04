@@ -20,6 +20,9 @@ namespace Win_10_Optimizer
             panelMenu.Controls.Add(leftBorderBtn);
             this.FormBorderStyle = FormBorderStyle.None;
             this.Opacity = 100;
+
+            string os = WinUtils.CWin.FriendlyName();
+            Console.WriteLine(os);
         }
         private BunifuFlatButton currentBtn;
         public void ActivateButton(object senderBtn, Color color)
@@ -116,6 +119,11 @@ namespace Win_10_Optimizer
         private void bunifuFlatButton4_Click(object sender, EventArgs e)
         {
             Application.Exit();
+        }
+
+        private void panel1_Paint(object sender, PaintEventArgs e)
+        {
+
         }
     }
 }

@@ -29,7 +29,6 @@ namespace Win_10_Optimizer.Forms
         /// </summary>
         private void InitializeComponent()
         {
-            this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(EnergyOptimize));
             this.label1 = new System.Windows.Forms.Label();
             this.bunifuGradientPanel1 = new Bunifu.Framework.UI.BunifuGradientPanel();
@@ -37,7 +36,6 @@ namespace Win_10_Optimizer.Forms
             this.bunifuGradientPanel2 = new Bunifu.Framework.UI.BunifuGradientPanel();
             this.bunifuCheckbox2 = new Bunifu.Framework.UI.BunifuCheckbox();
             this.label2 = new System.Windows.Forms.Label();
-            this.timer1 = new System.Windows.Forms.Timer(this.components);
             this.bunifuCircleProgressbar1 = new Bunifu.Framework.UI.BunifuCircleProgressbar();
             this.label3 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
@@ -129,12 +127,6 @@ namespace Win_10_Optimizer.Forms
             this.label2.TabIndex = 2;
             this.label2.Text = "Отключить гибернацию\r\n(Умный спящий режим)";
             this.label2.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            // 
-            // timer1
-            // 
-            this.timer1.Enabled = true;
-            this.timer1.Interval = 1000;
-            this.timer1.Tick += new System.EventHandler(this.timer1_Tick);
             // 
             // bunifuCircleProgressbar1
             // 
@@ -233,7 +225,6 @@ namespace Win_10_Optimizer.Forms
         private Bunifu.Framework.UI.BunifuGradientPanel bunifuGradientPanel2;
         private Bunifu.Framework.UI.BunifuCheckbox bunifuCheckbox2;
         private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.Timer timer1;
         private Bunifu.Framework.UI.BunifuCircleProgressbar bunifuCircleProgressbar1;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label4;

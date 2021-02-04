@@ -21,6 +21,50 @@ namespace Win_10_Optimizer.Forms
         public EnergyOptimize()
         {
             InitializeComponent();
+            new Thread(() =>
+            {
+                while (true)
+                {
+                    if (true == true)
+                    {
+                        int cpu = (int)(process_cpu.NextValue());
+                        if (cpu != 0 && cpu != cpuold)
+                        {
+                            if (cpu == 100)
+                                cpu = 99;
+                            cpuold = cpu;
+                            try
+                            {
+                                bunifuCircleProgressbar1.Invoke(new MethodInvoker(() =>
+                                {
+                                    bunifuCircleProgressbar1.Value = cpu;
+                                }));
+                            } catch { }
+                            Thread.Sleep(1);
+                        }
+                    }
+                    if (true == true)
+                    {
+                        ManagementObjectSearcher ramMonitor =    //запрос к WMI для получения памяти ПК
+                    new ManagementObjectSearcher("SELECT TotalVisibleMemorySize,FreePhysicalMemory FROM Win32_OperatingSystem");
+
+                        foreach (ManagementObject objram in ramMonitor.Get())
+                        {
+                            ulong totalRam = Convert.ToUInt64(objram["TotalVisibleMemorySize"]);    //общая память ОЗУ
+                            ulong busyRam = totalRam - Convert.ToUInt64(objram["FreePhysicalMemory"]);         //занятная память = (total-free)
+                            try
+                            {
+                                bunifuCircleProgressbar2.Invoke(new MethodInvoker(() =>
+                                {
+                                    bunifuCircleProgressbar2.Value = (int)((busyRam * 100) / totalRam);
+                                }));
+                            } catch { }
+                            //Console.WriteLine(((busyRam * 100) / totalRam));       //вычисляем проценты занятой памяти
+                        }
+                    }
+                    Thread.Sleep(1000);
+                }
+            }).Start();
         }
 
         private void EnergyOptimize_Load_1(object sender, EventArgs e)
@@ -95,40 +139,6 @@ namespace Win_10_Optimizer.Forms
                                    "% загруженности процессора",
                                    "_Total"
                                         );
-        private void timer1_Tick(object sender, EventArgs e)
-        {
-            if (true == true)
-            {
-                int cpu = (int)(process_cpu.NextValue());
-                if (cpu != 0 && cpu != cpuold)
-                {
-                    if (cpu == 100)
-                        cpu = 99;
-                    cpuold = cpu;
-                    bunifuCircleProgressbar1.Invoke(new MethodInvoker(() =>
-                    {
-                        bunifuCircleProgressbar1.Value = cpu;
-                    }));
-                    Thread.Sleep(1);
-                }
-            }
-            if (true == true)
-            {
-                ManagementObjectSearcher ramMonitor =    //запрос к WMI для получения памяти ПК
-            new ManagementObjectSearcher("SELECT TotalVisibleMemorySize,FreePhysicalMemory FROM Win32_OperatingSystem");
-
-                foreach (ManagementObject objram in ramMonitor.Get())
-                {
-                    ulong totalRam = Convert.ToUInt64(objram["TotalVisibleMemorySize"]);    //общая память ОЗУ
-                    ulong busyRam = totalRam - Convert.ToUInt64(objram["FreePhysicalMemory"]);         //занятная память = (total-free)
-                    bunifuCircleProgressbar2.Invoke(new MethodInvoker(() =>
-                    {
-                        bunifuCircleProgressbar2.Value = (int)((busyRam * 100) / totalRam);
-                    }));
-                    //Console.WriteLine(((busyRam * 100) / totalRam));       //вычисляем проценты занятой памяти
-                }
-            }
-        }
     }
 }
 public class Gybernate
