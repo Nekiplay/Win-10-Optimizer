@@ -10,7 +10,7 @@ namespace Win_10_Optimizer
 {
     public class WinAPI
     {
-        public class Programm
+        public static class Programm
         {
             [DllImport("user32.DLL", EntryPoint = "ReleaseCapture")]
             private extern static void ReleaseCapture();
