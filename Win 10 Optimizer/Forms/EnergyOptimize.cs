@@ -96,7 +96,6 @@ public class Gybernate
         proc.Start();
 
         string line;
-        var list = new List<Tuple<string, string, bool>>();
         using (StreamReader sr = proc.StandardOutput)
         {
             while (!sr.EndOfStream)
@@ -161,9 +160,13 @@ public class Energy
                         string type = Regex.Match(line, "&(.*)&").Groups[1].Value;
                         string id = Regex.Match(line, "GUID схемы питания: (.*) &").Groups[1].Value;
                         if (line.Contains("*"))
+                        {
                             list.Add(new Tuple<string, string, bool>(id, type, true));
+                        }
                         else
+                        {
                             list.Add(new Tuple<string, string, bool>(id, type, false));
+                        }
                     }
                 }
             }
@@ -186,7 +189,6 @@ public class Energy
         proc.Start();
 
         string line;
-        var list = new List<Tuple<string, string>>();
         using (StreamReader sr = proc.StandardOutput)
         {
             while (!sr.EndOfStream)
@@ -276,7 +278,9 @@ public class Energy
                 if (s.Item2 == "Максимальная производительность")
                 {
                     if (!string.IsNullOrEmpty(standart))
+                    {
                         SetActiv(standart);
+                    }
                     Delete(s.Item1);
                 }
             }
