@@ -8,7 +8,7 @@ using System.Windows.Forms;
 
 namespace Win_10_Optimizer
 {
-    public class WinAPI
+    public static class WinAPI
     {
         public static class Programm
         {

@@ -231,7 +231,7 @@ namespace Win_10_Optimizer.Forms
                             {
                                 file.Delete();
                             }
-                            catch (Exception ex) { }
+                            catch { }
                         }
                         foreach (DirectoryInfo dir in myDirInfo.GetDirectories())
                         {
@@ -239,7 +239,7 @@ namespace Win_10_Optimizer.Forms
                             {
                                 dir.Delete(true);
                             }
-                            catch (Exception ex) { }
+                            catch { }
                         }
                     }
                     GameTrashFilesCheckBox.Invoke(new MethodInvoker(() =>
