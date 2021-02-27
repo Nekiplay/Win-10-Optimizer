@@ -120,7 +120,9 @@ namespace Win_10_Optimizer.Forms
                 {
                     string strSteamInstallPath = (string)Registry.GetValue(@"HKEY_LOCAL_MACHINE\SOFTWARE\Valve\Steam", "InstallPath", "Nothing");
                     if (!string.IsNullOrEmpty(strSteamInstallPath) || strSteamInstallPath == "Nothing")
+                    {
                         strSteamInstallPath = (string)Registry.GetValue(@"HKEY_LOCAL_MACHINE\SOFTWARE\WOW6432Node\Valve\Steam", "InstallPath", "Nothing");
+                    }
 
                     if (Directory.Exists(strSteamInstallPath + "\\steamapps\\common\\GarrysMod"))
                     {
