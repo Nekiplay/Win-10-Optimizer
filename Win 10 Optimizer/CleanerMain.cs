@@ -114,8 +114,8 @@ namespace Win_10_Optimizer
                     else
                     {
                         System.IO.DirectoryInfo myDirInfo = new DirectoryInfo(custompath);
-                        foreach (FileInfo file in myDirInfo.GetFiles()) { try { file.Delete(); } catch (Exception ex) { } }
-                        foreach (DirectoryInfo dir in myDirInfo.GetDirectories()) { try { dir.Delete(true); } catch (Exception ex) { } }
+                        foreach (FileInfo file in myDirInfo.GetFiles()) { try { file.Delete(); } catch { } }
+                        foreach (DirectoryInfo dir in myDirInfo.GetDirectories()) { try { dir.Delete(true); } catch { } }
                         try { Directory.Delete(dir, true); } catch { }
                     }
                 }
