@@ -60,95 +60,23 @@ namespace Win_10_Optimizer.Forms
         private void bunifuFlatButton1_Click(object sender, EventArgs e)
         {
             bunifuFlatButton1.Enabled = false;
+            CleanerMain cleanermethod = new CleanerMain();
             if (bunifuCheckbox1.Checked)
             {
                 Task.Factory.StartNew(() =>
                 {
+                    /* Settings and Worker */
                     SHEmptyRecycleBin(IntPtr.Zero, null, RecycleFlags.SHERB_NOSOUND | RecycleFlags.SHERB_NOCONFIRMATION | RecycleFlags.SHERB_NOPROGRESSUI);
-                    string md = Environment.GetFolderPath(Environment.SpecialFolder.InternetCache);
-                    if (Directory.Exists(md))
+
+                    foreach (CleanerMain.ClearFiles clear in cleanermethod.windowsfiles)
                     {
-                        System.IO.DirectoryInfo myDirInfo = new DirectoryInfo(md);
-                        foreach (FileInfo file in myDirInfo.GetFiles())
+                        Console.WriteLine(clear.Exist);
+                        if (clear.Exist)
                         {
-                            try
-                            {
-                                file.Delete();
-                            }
-                            catch (Exception ex) { }
-                        }
-                        foreach (DirectoryInfo dir in myDirInfo.GetDirectories())
-                        {
-                            try
-                            {
-                                dir.Delete(true);
-                            }
-                            catch (Exception ex) { }
+                            clear.Delete();
                         }
                     }
-                    string md2 = Environment.GetFolderPath(Environment.SpecialFolder.UserProfile) + @"\AppData\Roaming\Microsoft\Windows\Recent";
-                    if (Directory.Exists(md2))
-                    {
-                        System.IO.DirectoryInfo myDirInfo = new DirectoryInfo(md2);
-                        foreach (FileInfo file in myDirInfo.GetFiles())
-                        {
-                            try
-                            {
-                                file.Delete();
-                            }
-                            catch (Exception ex) { }
-                        }
-                        foreach (DirectoryInfo dir in myDirInfo.GetDirectories())
-                        {
-                            try
-                            {
-                                dir.Delete(true);
-                            }
-                            catch (Exception ex) { }
-                        }
-                    }
-                    string md3 = Environment.GetFolderPath(Environment.SpecialFolder.Windows) + @"\Temp";
-                    if (Directory.Exists(md3))
-                    {
-                        System.IO.DirectoryInfo myDirInfo = new DirectoryInfo(md3);
-                        foreach (FileInfo file in myDirInfo.GetFiles())
-                        {
-                            try
-                            {
-                                file.Delete();
-                            }
-                            catch (Exception ex) { }
-                        }
-                        foreach (DirectoryInfo dir in myDirInfo.GetDirectories())
-                        {
-                            try
-                            {
-                                dir.Delete(true);
-                            }
-                            catch (Exception ex) { }
-                        }
-                    }
-                    string md4 = Environment.GetFolderPath(Environment.SpecialFolder.UserProfile) + "\\AppData\\Local\\Temp";
-                    if (Directory.Exists(md4))
-                    {
-                        System.IO.DirectoryInfo myDirInfo = new DirectoryInfo(md4);
-                        foreach (FileInfo file in myDirInfo.GetFiles())
-                        {
-                            try
-                            {
-                                file.Delete();
-                            }
-                            catch (Exception ex) { }
-                        }
-                        foreach (DirectoryInfo dir in myDirInfo.GetDirectories())
-                        {
-                            try
-                            {
-                                dir.Delete(true);
-                            }
-                            catch (Exception ex) { }
-                        }
-                    }
+
                     bunifuCheckbox1.Invoke(new MethodInvoker(() =>
                     {
                         bunifuCheckbox1.Checked = false;
@@ -159,19 +87,15 @@ namespace Win_10_Optimizer.Forms
             {
                 Task.Factory.StartNew(() =>
                 {
-                    string md = Environment.GetFolderPath(Environment.SpecialFolder.MyDocuments) + "\\Bandicam";//путь к Документам
-                        if (Directory.Exists(md))
+                    foreach (CleanerMain.ClearFiles clear in cleanermethod.videofiles)
                     {
-                        System.IO.DirectoryInfo myDirInfo = new DirectoryInfo(md);
-                        foreach (FileInfo file in myDirInfo.GetFiles())
+                        Console.WriteLine(clear.Exist);
+                        if (clear.Exist)
                         {
-                            try
-                            {
-                                file.Delete();
-                            }
-                            catch (Exception ex) { }
+                            clear.Delete();
                         }
                     }
+
                     bunifuCheckbox5.Invoke(new MethodInvoker(() =>
                     {
                         bunifuCheckbox5.Checked = false;
@@ -182,63 +106,15 @@ namespace Win_10_Optimizer.Forms
             {
                 Task.Factory.StartNew(() =>
                 {
-                    string md = Environment.GetFolderPath(Environment.SpecialFolder.MyDocuments) + "\\ShareX\\Screenshots";//путь к Документам
-                    if (Directory.Exists(md))
+                    foreach (CleanerMain.ClearFiles clear in cleanermethod.screenshotfiles)
                     {
-                        System.IO.DirectoryInfo myDirInfo = new DirectoryInfo(md);
-                        foreach (FileInfo file in myDirInfo.GetFiles())
+                        Console.WriteLine(clear.Exist);
+                        if (clear.Exist)
                         {
-                            try { file.Delete(); }
-                            catch (Exception ex) { }
-                        }
-                        foreach (DirectoryInfo dir in myDirInfo.GetDirectories())
-                        {
-                            try { dir.Delete(true); }
-                            catch (Exception ex) { }
+                            clear.Delete();
                         }
                     }
-                    string md2 = Environment.GetFolderPath(Environment.SpecialFolder.ApplicationData) + "\\.minecraft\\screenshots\\";//путь к Документам
-                    if (Directory.Exists(md2))
-                    {
-                        System.IO.DirectoryInfo myDirInfo = new DirectoryInfo(md2);
-                        foreach (FileInfo file in myDirInfo.GetFiles())
-                        {
-                            try
-                            {
-                                file.Delete();
-                            }
-                            catch (Exception ex) { }
-                        }
-                        foreach (DirectoryInfo dir in myDirInfo.GetDirectories())
-                        {
-                            try
-                            {
-                                dir.Delete(true);
-                            }
-                            catch (Exception ex) { }
-                        }
-                    }
-                    string md3 = Environment.GetFolderPath(Environment.SpecialFolder.MyDocuments) + "\\Lightshot";//путь к Документам
-                    if (Directory.Exists(md3))
-                    {
-                        System.IO.DirectoryInfo myDirInfo = new DirectoryInfo(md3);
-                        foreach (FileInfo file in myDirInfo.GetFiles())
-                        {
-                            try
-                            {
-                                file.Delete();
-                            }
-                            catch (Exception ex) { }
-                        }
-                        foreach (DirectoryInfo dir in myDirInfo.GetDirectories())
-                        {
-                            try
-                            {
-                                dir.Delete(true);
-                            }
-                            catch (Exception ex) { }
-                        }
-                    }
+
                     bunifuCheckbox4.Invoke(new MethodInvoker(() =>
                     {
                         bunifuCheckbox4.Checked = false;
@@ -249,100 +125,14 @@ namespace Win_10_Optimizer.Forms
             {
                 Task.Factory.StartNew(() =>
                 {
-                        /* NVIDIA */
-                    string md2 = @"C:\ProgramData\NVIDIA\";
-                    if (Directory.Exists(md2))
+                    foreach (CleanerMain.ClearFiles clear in cleanermethod.logsfiles)
                     {
-                        var result = Directory.EnumerateFiles(@"C:\ProgramData\NVIDIA\", "*.log");
-                        foreach (var m in result)
+                        if (clear.Exist)
                         {
-                            try
-                            {
-                                File.Delete(m);
-                            }
-                            catch { }
+                            clear.Delete();
                         }
                     }
-                    string md3 = @"C:\ProgramData\NVIDIA Corporation\";
-                    if (Directory.Exists(md3))
-                    {
-                        var result = Directory.EnumerateFiles(@"C:\ProgramData\NVIDIA Corporation", "*.log");
-                        foreach (var m in result)
-                        {
-                            try
-                            {
-                                File.Delete(m);
-                            }
-                            catch { }
-                        }
-                    }
-                    string md4 = @"C:\ProgramData\NVIDIA Corporation\nvstapisvr\";
-                    if (Directory.Exists(md4))
-                    {
-                        var result = Directory.EnumerateFiles(@"C:\ProgramData\NVIDIA Corporation\nvstapisvr\", "*.log");
-                        foreach (var m in result)
-                        {
-                            try
-                            {
-                                File.Delete(m);
-                            }
-                            catch { }
-                        }
-                    }
-                        /* Razer */
-                    string md5 = @"C:\ProgramData\Razer\Services\Logs\";
-                    if (Directory.Exists(md5))
-                    {
-                        var result = Directory.EnumerateFiles(@"C:\ProgramData\Razer\Services\Logs\", "*.log");
-                        foreach (var m in result)
-                        {
-                            try
-                            {
-                                File.Delete(m);
-                            }
-                            catch { }
-                        }
-                    }
-                    string md6 = @"C:\ProgramData\Razer\RazerCortexManifestRepair\Logs\";
-                    if (Directory.Exists(md6))
-                    {
-                        var result = Directory.EnumerateFiles(@"C:\ProgramData\Razer\RazerCortexManifestRepair\Logs\", "*.log");
-                        foreach (var m in result)
-                        {
-                            try
-                            {
-                                File.Delete(m);
-                            }
-                            catch { }
-                        }
-                    }
-                    string md7 = @"C:\ProgramData\Razer\BigDataSDK\Logs\";
-                    if (Directory.Exists(md7))
-                    {
-                        var result = Directory.EnumerateFiles(@"C:\ProgramData\Razer\BigDataSDK\Logs\", "*.log");
-                        foreach (var m in result)
-                        {
-                            try
-                            {
-                                File.Delete(m);
-                            }
-                            catch { }
-                        }
-                    }
-                        /* Windows */
-                    string md8 = @"C:\ProgramData\Progress\Installer\Logs\";
-                    if (Directory.Exists(md8))
-                    {
-                        var result = Directory.EnumerateFiles(@"C:\ProgramData\Progress\Installer\Logs\", "*.log");
-                        foreach (var m in result)
-                        {
-                            try
-                            {
-                                File.Delete(m);
-                            }
-                            catch { }
-                        }
-                    }
+
                     bunifuCheckbox6.Invoke(new MethodInvoker(() =>
                     {
                         bunifuCheckbox6.Checked = false;
