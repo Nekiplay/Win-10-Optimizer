@@ -70,11 +70,7 @@ namespace Win_10_Optimizer.Forms
 
                     foreach (CleanerMain.ClearFiles clear in cleanermethod.windowsfiles)
                     {
-                        Console.WriteLine(clear.Exist);
-                        if (clear.Exist)
-                        {
-                            clear.Delete();
-                        }
+                        clear.Delete();
                     }
 
                     bunifuCheckbox1.Invoke(new MethodInvoker(() =>
@@ -89,11 +85,7 @@ namespace Win_10_Optimizer.Forms
                 {
                     foreach (CleanerMain.ClearFiles clear in cleanermethod.videofiles)
                     {
-                        Console.WriteLine(clear.Exist);
-                        if (clear.Exist)
-                        {
-                            clear.Delete();
-                        }
+                        clear.Delete();
                     }
 
                     bunifuCheckbox5.Invoke(new MethodInvoker(() =>
@@ -108,11 +100,7 @@ namespace Win_10_Optimizer.Forms
                 {
                     foreach (CleanerMain.ClearFiles clear in cleanermethod.screenshotfiles)
                     {
-                        Console.WriteLine(clear.Exist);
-                        if (clear.Exist)
-                        {
-                            clear.Delete();
-                        }
+                        clear.Delete();
                     }
 
                     bunifuCheckbox4.Invoke(new MethodInvoker(() =>
@@ -127,10 +115,7 @@ namespace Win_10_Optimizer.Forms
                 {
                     foreach (CleanerMain.ClearFiles clear in cleanermethod.logsfiles)
                     {
-                        if (clear.Exist)
-                        {
-                            clear.Delete();
-                        }
+                        clear.Delete();
                     }
 
                     bunifuCheckbox6.Invoke(new MethodInvoker(() =>
