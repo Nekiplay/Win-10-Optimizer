@@ -32,6 +32,7 @@ namespace Win_10_Optimizer
         public List<ClearFiles> videofiles = new List<ClearFiles> {
             /* Программы */
             new ClearFiles(Environment.GetFolderPath(Environment.SpecialFolder.MyDocuments) + "\\Bandicam", "*.*", true),
+            new ClearFiles("{drive}:\\Fraps\\Movies", "*.*", true),
         };
         public List<ClearFiles> windowsfiles = new List<ClearFiles> {
             new ClearFiles(Environment.GetFolderPath(Environment.SpecialFolder.InternetCache), "*.*", true),
