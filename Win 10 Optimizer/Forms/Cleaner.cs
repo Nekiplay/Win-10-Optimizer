@@ -59,387 +59,429 @@ namespace Win_10_Optimizer.Forms
         static extern int SHEmptyRecycleBin(IntPtr hwnd, string pszRootPath, RecycleFlags dwFlags);
         private void bunifuFlatButton1_Click(object sender, EventArgs e)
         {
-            Task.Factory.StartNew(() =>
+            bunifuFlatButton1.Enabled = false;
+            if (bunifuCheckbox1.Checked)
             {
-                bunifuFlatButton1.Enabled = false;
-                if (bunifuCheckbox1.Checked)
+                Task.Factory.StartNew(() =>
                 {
-                    Task.Factory.StartNew(() =>
+                    SHEmptyRecycleBin(IntPtr.Zero, null, RecycleFlags.SHERB_NOSOUND | RecycleFlags.SHERB_NOCONFIRMATION | RecycleFlags.SHERB_NOPROGRESSUI);
+                    string md = Environment.GetFolderPath(Environment.SpecialFolder.InternetCache);
+                    if (Directory.Exists(md))
                     {
-                        SHEmptyRecycleBin(IntPtr.Zero, null, RecycleFlags.SHERB_NOSOUND | RecycleFlags.SHERB_NOCONFIRMATION | RecycleFlags.SHERB_NOPROGRESSUI);
-                        string md = Environment.GetFolderPath(Environment.SpecialFolder.InternetCache);
+                        System.IO.DirectoryInfo myDirInfo = new DirectoryInfo(md);
+                        foreach (FileInfo file in myDirInfo.GetFiles())
+                        {
+                            try
+                            {
+                                file.Delete();
+                            }
+                            catch (Exception ex) { }
+                        }
+                        foreach (DirectoryInfo dir in myDirInfo.GetDirectories())
+                        {
+                            try
+                            {
+                                dir.Delete(true);
+                            }
+                            catch (Exception ex) { }
+                        }
+                    }
+                    string md2 = Environment.GetFolderPath(Environment.SpecialFolder.UserProfile) + @"\AppData\Roaming\Microsoft\Windows\Recent";
+                    if (Directory.Exists(md2))
+                    {
+                        System.IO.DirectoryInfo myDirInfo = new DirectoryInfo(md2);
+                        foreach (FileInfo file in myDirInfo.GetFiles())
+                        {
+                            try
+                            {
+                                file.Delete();
+                            }
+                            catch (Exception ex) { }
+                        }
+                        foreach (DirectoryInfo dir in myDirInfo.GetDirectories())
+                        {
+                            try
+                            {
+                                dir.Delete(true);
+                            }
+                            catch (Exception ex) { }
+                        }
+                    }
+                    string md3 = Environment.GetFolderPath(Environment.SpecialFolder.Windows) + @"\Temp";
+                    if (Directory.Exists(md3))
+                    {
+                        System.IO.DirectoryInfo myDirInfo = new DirectoryInfo(md3);
+                        foreach (FileInfo file in myDirInfo.GetFiles())
+                        {
+                            try
+                            {
+                                file.Delete();
+                            }
+                            catch (Exception ex) { }
+                        }
+                        foreach (DirectoryInfo dir in myDirInfo.GetDirectories())
+                        {
+                            try
+                            {
+                                dir.Delete(true);
+                            }
+                            catch (Exception ex) { }
+                        }
+                    }
+                    string md4 = Environment.GetFolderPath(Environment.SpecialFolder.UserProfile) + "\\AppData\\Local\\Temp";
+                    if (Directory.Exists(md4))
+                    {
+                        System.IO.DirectoryInfo myDirInfo = new DirectoryInfo(md4);
+                        foreach (FileInfo file in myDirInfo.GetFiles())
+                        {
+                            try
+                            {
+                                file.Delete();
+                            }
+                            catch (Exception ex) { }
+                        }
+                        foreach (DirectoryInfo dir in myDirInfo.GetDirectories())
+                        {
+                            try
+                            {
+                                dir.Delete(true);
+                            }
+                            catch (Exception ex) { }
+                        }
+                    }
+                    bunifuCheckbox1.Invoke(new MethodInvoker(() =>
+                    {
+                        bunifuCheckbox1.Checked = false;
+                    }));
+                });
+            }
+            if (bunifuCheckbox5.Checked)
+            {
+                Task.Factory.StartNew(() =>
+                {
+                    string md = Environment.GetFolderPath(Environment.SpecialFolder.MyDocuments) + "\\Bandicam";//путь к Документам
                         if (Directory.Exists(md))
-                        {
-                            System.IO.DirectoryInfo myDirInfo = new DirectoryInfo(md);
-                            foreach (FileInfo file in myDirInfo.GetFiles())
-                            {
-                                try { 
-                                    file.Delete(); 
-                                }
-                                catch (Exception ex) { }
-                            }
-                            foreach (DirectoryInfo dir in myDirInfo.GetDirectories())
-                            {
-                                try { 
-                                    dir.Delete(true); 
-                                }
-                                catch (Exception ex) { }
-                            }
-                        }
-                        string md2 = Environment.GetFolderPath(Environment.SpecialFolder.UserProfile) + @"\AppData\Roaming\Microsoft\Windows\Recent";
-                        if (Directory.Exists(md2))
-                        {
-                            System.IO.DirectoryInfo myDirInfo = new DirectoryInfo(md2);
-                            foreach (FileInfo file in myDirInfo.GetFiles())
-                            {
-                                try { 
-                                    file.Delete(); 
-                                }
-                                catch (Exception ex) { }
-                            }
-                            foreach (DirectoryInfo dir in myDirInfo.GetDirectories())
-                            {
-                                try { 
-                                    dir.Delete(true); 
-                                }
-                                catch (Exception ex) { }
-                            }
-                        }
-                        string md3 = Environment.GetFolderPath(Environment.SpecialFolder.Windows) + @"\Temp";
-                        if (Directory.Exists(md3))
-                        {
-                            System.IO.DirectoryInfo myDirInfo = new DirectoryInfo(md3);
-                            foreach (FileInfo file in myDirInfo.GetFiles())
-                            {
-                                try { 
-                                    file.Delete(); 
-                                }
-                                catch (Exception ex) { }
-                            }
-                            foreach (DirectoryInfo dir in myDirInfo.GetDirectories())
-                            {
-                                try { 
-                                    dir.Delete(true);
-                                }
-                                catch (Exception ex) { }
-                            }
-                        }
-                        string md4 = Environment.GetFolderPath(Environment.SpecialFolder.UserProfile) + "\\AppData\\Local\\Temp";
-                        if (Directory.Exists(md4))
-                        {
-                            System.IO.DirectoryInfo myDirInfo = new DirectoryInfo(md4);
-                            foreach (FileInfo file in myDirInfo.GetFiles())
-                            {
-                                try { 
-                                    file.Delete(); 
-                                }
-                                catch (Exception ex) { }
-                            }
-                            foreach (DirectoryInfo dir in myDirInfo.GetDirectories())
-                            {
-                                try { 
-                                    dir.Delete(true); 
-                                }
-                                catch (Exception ex) { }
-                            }
-                        }
-                        bunifuCheckbox1.Invoke(new MethodInvoker(() =>
-                        {
-                            bunifuCheckbox1.Checked = false;
-                        }));
-                    });
-                }
-                if (bunifuCheckbox5.Checked)
-                {
-                    Task.Factory.StartNew(() =>
                     {
-                        string md = Environment.GetFolderPath(Environment.SpecialFolder.MyDocuments) + "\\Bandicam";//путь к Документам
-                        if (Directory.Exists(md))
+                        System.IO.DirectoryInfo myDirInfo = new DirectoryInfo(md);
+                        foreach (FileInfo file in myDirInfo.GetFiles())
                         {
-                            System.IO.DirectoryInfo myDirInfo = new DirectoryInfo(md);
-                            foreach (FileInfo file in myDirInfo.GetFiles())
+                            try
                             {
-                                try { 
-                                    file.Delete(); 
-                                }
-                                catch (Exception ex) { }
+                                file.Delete();
                             }
+                            catch (Exception ex) { }
                         }
-                        bunifuCheckbox5.Invoke(new MethodInvoker(() =>
-                        {
-                            bunifuCheckbox5.Checked = false;
-                        }));
-                    });
-                }
-                if (bunifuCheckbox4.Checked)
-                {
-                    Task.Factory.StartNew(() =>
+                    }
+                    bunifuCheckbox5.Invoke(new MethodInvoker(() =>
                     {
-                        string md = Environment.GetFolderPath(Environment.SpecialFolder.MyDocuments) + "\\ShareX";//путь к Документам
-                        if (Directory.Exists(md))
-                        {
-                            System.IO.DirectoryInfo myDirInfo = new DirectoryInfo(md);
-                            foreach (FileInfo file in myDirInfo.GetFiles())
-                            {
-                                try { 
-                                    file.Delete(); 
-                                }
-                                catch (Exception ex) { }
-                            }
-                            foreach (DirectoryInfo dir in myDirInfo.GetDirectories())
-                            {
-                                try { 
-                                    dir.Delete(true); 
-                                }
-                                catch (Exception ex) { }
-                            }
-                        }
-                        string md2 = Environment.GetFolderPath(Environment.SpecialFolder.ApplicationData) + "\\.minecraft\\screenshots\\";//путь к Документам
-                        if (Directory.Exists(md2))
-                        {
-                            System.IO.DirectoryInfo myDirInfo = new DirectoryInfo(md2);
-                            foreach (FileInfo file in myDirInfo.GetFiles())
-                            {
-                                try { 
-                                    file.Delete(); 
-                                }
-                                catch (Exception ex) { }
-                            }
-                            foreach (DirectoryInfo dir in myDirInfo.GetDirectories())
-                            {
-                                try { 
-                                    dir.Delete(true); 
-                                }
-                                catch (Exception ex) { }
-                            }
-                        }
-                        bunifuCheckbox4.Invoke(new MethodInvoker(() =>
-                        {
-                            bunifuCheckbox4.Checked = false;
-                        }));
-                    });
-                }
-                if (bunifuCheckbox6.Checked)
+                        bunifuCheckbox5.Checked = false;
+                    }));
+                });
+            }
+            if (bunifuCheckbox4.Checked)
+            {
+                Task.Factory.StartNew(() =>
                 {
-                    Task.Factory.StartNew(() =>
+                    string md = Environment.GetFolderPath(Environment.SpecialFolder.MyDocuments) + "\\ShareX\\Screenshots";//путь к Документам
+                    if (Directory.Exists(md))
                     {
+                        System.IO.DirectoryInfo myDirInfo = new DirectoryInfo(md);
+                        foreach (FileInfo file in myDirInfo.GetFiles())
+                        {
+                            try { file.Delete(); }
+                            catch (Exception ex) { }
+                        }
+                        foreach (DirectoryInfo dir in myDirInfo.GetDirectories())
+                        {
+                            try { dir.Delete(true); }
+                            catch (Exception ex) { }
+                        }
+                    }
+                    string md2 = Environment.GetFolderPath(Environment.SpecialFolder.ApplicationData) + "\\.minecraft\\screenshots\\";//путь к Документам
+                    if (Directory.Exists(md2))
+                    {
+                        System.IO.DirectoryInfo myDirInfo = new DirectoryInfo(md2);
+                        foreach (FileInfo file in myDirInfo.GetFiles())
+                        {
+                            try
+                            {
+                                file.Delete();
+                            }
+                            catch (Exception ex) { }
+                        }
+                        foreach (DirectoryInfo dir in myDirInfo.GetDirectories())
+                        {
+                            try
+                            {
+                                dir.Delete(true);
+                            }
+                            catch (Exception ex) { }
+                        }
+                    }
+                    string md3 = Environment.GetFolderPath(Environment.SpecialFolder.MyDocuments) + "\\Lightshot";//путь к Документам
+                    if (Directory.Exists(md3))
+                    {
+                        System.IO.DirectoryInfo myDirInfo = new DirectoryInfo(md3);
+                        foreach (FileInfo file in myDirInfo.GetFiles())
+                        {
+                            try
+                            {
+                                file.Delete();
+                            }
+                            catch (Exception ex) { }
+                        }
+                        foreach (DirectoryInfo dir in myDirInfo.GetDirectories())
+                        {
+                            try
+                            {
+                                dir.Delete(true);
+                            }
+                            catch (Exception ex) { }
+                        }
+                    }
+                    bunifuCheckbox4.Invoke(new MethodInvoker(() =>
+                    {
+                        bunifuCheckbox4.Checked = false;
+                    }));
+                });
+            }
+            if (bunifuCheckbox6.Checked)
+            {
+                Task.Factory.StartNew(() =>
+                {
                         /* NVIDIA */
-                        string md2 = @"C:\ProgramData\NVIDIA\";
-                        if (Directory.Exists(md2))
-                        {
-                            var result = Directory.EnumerateFiles(@"C:\ProgramData\NVIDIA\", "*.log");
-                            foreach (var m in result)
-                            {
-                                try { 
-                                    File.Delete(m); 
-                                }
-                                catch { }
-                            }
-                        }
-                        string md3 = @"C:\ProgramData\NVIDIA Corporation\";
-                        if (Directory.Exists(md3))
-                        {
-                            var result = Directory.EnumerateFiles(@"C:\ProgramData\NVIDIA Corporation", "*.log");
-                            foreach (var m in result)
-                            {
-                                try {
-                                    File.Delete(m);
-                                }
-                                catch { }
-                            }
-                        }
-                        string md4 = @"C:\ProgramData\NVIDIA Corporation\nvstapisvr\";
-                        if (Directory.Exists(md4))
-                        {
-                            var result = Directory.EnumerateFiles(@"C:\ProgramData\NVIDIA Corporation\nvstapisvr\", "*.log");
-                            foreach (var m in result)
-                            {
-                                try {
-                                    File.Delete(m);
-                                }
-                                catch { }
-                            }
-                        }
-                        /* Razer */
-                        string md5 = @"C:\ProgramData\Razer\Services\Logs\";
-                        if (Directory.Exists(md5))
-                        {
-                            var result = Directory.EnumerateFiles(@"C:\ProgramData\Razer\Services\Logs\", "*.log");
-                            foreach (var m in result)
-                            {
-                                try {
-                                    File.Delete(m);
-                                }
-                                catch { }
-                            }
-                        }
-                        string md6 = @"C:\ProgramData\Razer\RazerCortexManifestRepair\Logs\";
-                        if (Directory.Exists(md6))
-                        {
-                            var result = Directory.EnumerateFiles(@"C:\ProgramData\Razer\RazerCortexManifestRepair\Logs\", "*.log");
-                            foreach (var m in result)
-                            {
-                                try { 
-                                    File.Delete(m);
-                                }
-                                catch { }
-                            }
-                        }
-                        string md7 = @"C:\ProgramData\Razer\BigDataSDK\Logs\";
-                        if (Directory.Exists(md7))
-                        {
-                            var result = Directory.EnumerateFiles(@"C:\ProgramData\Razer\BigDataSDK\Logs\", "*.log");
-                            foreach (var m in result)
-                            {
-                                try { 
-                                    File.Delete(m);
-                                }
-                                catch { }
-                            }
-                        }
-                        /* Windows */
-                        string md8 = @"C:\ProgramData\Progress\Installer\Logs\";
-                        if (Directory.Exists(md8))
-                        {
-                            var result = Directory.EnumerateFiles(@"C:\ProgramData\Progress\Installer\Logs\", "*.log");
-                            foreach (var m in result)
-                            {
-                                try {
-                                    File.Delete(m);
-                                }
-                                catch { }
-                            }
-                        }
-                        bunifuCheckbox6.Invoke(new MethodInvoker(() =>
-                        {
-                            bunifuCheckbox6.Checked = false;
-                        }));
-                    });
-                }
-                if (bunifuCheckbox2.Checked)
-                {
-                    Task.Factory.StartNew(() =>
+                    string md2 = @"C:\ProgramData\NVIDIA\";
+                    if (Directory.Exists(md2))
                     {
-                        string strSteamInstallPath = (string)Registry.GetValue(@"HKEY_LOCAL_MACHINE\SOFTWARE\Valve\Steam", "InstallPath", "Nothing");
-                        if (!string.IsNullOrEmpty(strSteamInstallPath) || strSteamInstallPath == "Nothing")
-                            strSteamInstallPath = (string)Registry.GetValue(@"HKEY_LOCAL_MACHINE\SOFTWARE\WOW6432Node\Valve\Steam", "InstallPath", "Nothing");
+                        var result = Directory.EnumerateFiles(@"C:\ProgramData\NVIDIA\", "*.log");
+                        foreach (var m in result)
+                        {
+                            try
+                            {
+                                File.Delete(m);
+                            }
+                            catch { }
+                        }
+                    }
+                    string md3 = @"C:\ProgramData\NVIDIA Corporation\";
+                    if (Directory.Exists(md3))
+                    {
+                        var result = Directory.EnumerateFiles(@"C:\ProgramData\NVIDIA Corporation", "*.log");
+                        foreach (var m in result)
+                        {
+                            try
+                            {
+                                File.Delete(m);
+                            }
+                            catch { }
+                        }
+                    }
+                    string md4 = @"C:\ProgramData\NVIDIA Corporation\nvstapisvr\";
+                    if (Directory.Exists(md4))
+                    {
+                        var result = Directory.EnumerateFiles(@"C:\ProgramData\NVIDIA Corporation\nvstapisvr\", "*.log");
+                        foreach (var m in result)
+                        {
+                            try
+                            {
+                                File.Delete(m);
+                            }
+                            catch { }
+                        }
+                    }
+                        /* Razer */
+                    string md5 = @"C:\ProgramData\Razer\Services\Logs\";
+                    if (Directory.Exists(md5))
+                    {
+                        var result = Directory.EnumerateFiles(@"C:\ProgramData\Razer\Services\Logs\", "*.log");
+                        foreach (var m in result)
+                        {
+                            try
+                            {
+                                File.Delete(m);
+                            }
+                            catch { }
+                        }
+                    }
+                    string md6 = @"C:\ProgramData\Razer\RazerCortexManifestRepair\Logs\";
+                    if (Directory.Exists(md6))
+                    {
+                        var result = Directory.EnumerateFiles(@"C:\ProgramData\Razer\RazerCortexManifestRepair\Logs\", "*.log");
+                        foreach (var m in result)
+                        {
+                            try
+                            {
+                                File.Delete(m);
+                            }
+                            catch { }
+                        }
+                    }
+                    string md7 = @"C:\ProgramData\Razer\BigDataSDK\Logs\";
+                    if (Directory.Exists(md7))
+                    {
+                        var result = Directory.EnumerateFiles(@"C:\ProgramData\Razer\BigDataSDK\Logs\", "*.log");
+                        foreach (var m in result)
+                        {
+                            try
+                            {
+                                File.Delete(m);
+                            }
+                            catch { }
+                        }
+                    }
+                        /* Windows */
+                    string md8 = @"C:\ProgramData\Progress\Installer\Logs\";
+                    if (Directory.Exists(md8))
+                    {
+                        var result = Directory.EnumerateFiles(@"C:\ProgramData\Progress\Installer\Logs\", "*.log");
+                        foreach (var m in result)
+                        {
+                            try
+                            {
+                                File.Delete(m);
+                            }
+                            catch { }
+                        }
+                    }
+                    bunifuCheckbox6.Invoke(new MethodInvoker(() =>
+                    {
+                        bunifuCheckbox6.Checked = false;
+                    }));
+                });
+            }
+            if (bunifuCheckbox2.Checked)
+            {
+                Task.Factory.StartNew(() =>
+                {
+                    string strSteamInstallPath = (string)Registry.GetValue(@"HKEY_LOCAL_MACHINE\SOFTWARE\Valve\Steam", "InstallPath", "Nothing");
+                    if (!string.IsNullOrEmpty(strSteamInstallPath) || strSteamInstallPath == "Nothing")
+                        strSteamInstallPath = (string)Registry.GetValue(@"HKEY_LOCAL_MACHINE\SOFTWARE\WOW6432Node\Valve\Steam", "InstallPath", "Nothing");
 
-                        if (Directory.Exists(strSteamInstallPath + "\\steamapps\\common\\GarrysMod"))
+                    if (Directory.Exists(strSteamInstallPath + "\\steamapps\\common\\GarrysMod"))
+                    {
+                        var result = Directory.EnumerateFiles(strSteamInstallPath + "\\steamapps\\common\\GarrysMod", "*.log");
+                        foreach (var m in result)
                         {
-                            var result = Directory.EnumerateFiles(strSteamInstallPath + "\\steamapps\\common\\GarrysMod", "*.log");
-                            foreach (var m in result)
+                            try
                             {
-                                try { 
-                                    File.Delete(m); 
-                                }
-                                catch { }
+                                File.Delete(m);
                             }
-                            var result2 = Directory.EnumerateFiles(strSteamInstallPath + "\\steamapps\\common\\GarrysMod", "*.mdmp");
-                            foreach (var m in result2)
-                            {
-                                try { File.Delete(m); }
-                                catch { }
-                            }
-                            if (Directory.Exists(strSteamInstallPath + "\\steamapps\\common\\GarrysMod\\crashes"))
-                            {
-                                try { 
-                                    Directory.Delete(strSteamInstallPath + "\\steamapps\\common\\GarrysMod\\crashes", true);
-                                }
-                                catch { }
-                            }
+                            catch { }
                         }
-                        if (Directory.Exists(strSteamInstallPath + "\\steamapps\\common\\Counter-Strike Global Offensive"))
+                        var result2 = Directory.EnumerateFiles(strSteamInstallPath + "\\steamapps\\common\\GarrysMod", "*.mdmp");
+                        foreach (var m in result2)
                         {
-                            var result = Directory.EnumerateFiles(strSteamInstallPath + "\\steamapps\\common\\Counter-Strike Global Offensive", "*.mdmp");
-                            foreach (var m in result)
-                            {
-                                try { 
-                                    File.Delete(m);
-                                }
-                                catch { }
-                            }
+                            try { File.Delete(m); }
+                            catch { }
                         }
-                        if (Directory.Exists(strSteamInstallPath + "\\steamapps\\common\\Warface\\0_1177\\LogBackups"))
+                        if (Directory.Exists(strSteamInstallPath + "\\steamapps\\common\\GarrysMod\\crashes"))
                         {
-                            var result = Directory.EnumerateFiles(strSteamInstallPath + "\\steamapps\\common\\Warface\\0_1177\\LogBackups", "*.log");
-                            foreach (var m in result)
+                            try
                             {
-                                try { 
-                                    File.Delete(m); 
-                                }
-                                catch { }
+                                Directory.Delete(strSteamInstallPath + "\\steamapps\\common\\GarrysMod\\crashes", true);
                             }
+                            catch { }
                         }
-                        if (Directory.Exists(strSteamInstallPath + "\\steamapps\\common\\Warface\\GameCenter"))
+                    }
+                    if (Directory.Exists(strSteamInstallPath + "\\steamapps\\common\\Counter-Strike Global Offensive"))
+                    {
+                        var result = Directory.EnumerateFiles(strSteamInstallPath + "\\steamapps\\common\\Counter-Strike Global Offensive", "*.mdmp");
+                        foreach (var m in result)
                         {
-                            var result = Directory.EnumerateFiles(strSteamInstallPath + "\\steamapps\\common\\Warface\\GameCenter", "*.log");
-                            foreach (var m in result)
+                            try
                             {
-                                try { 
-                                    File.Delete(m);
-                                }
-                                catch { }
+                                File.Delete(m);
                             }
+                            catch { }
                         }
-                        if (Directory.Exists(strSteamInstallPath + "\\steamapps\\common\\Among Us"))
+                    }
+                    if (Directory.Exists(strSteamInstallPath + "\\steamapps\\common\\Warface\\0_1177\\LogBackups"))
+                    {
+                        var result = Directory.EnumerateFiles(strSteamInstallPath + "\\steamapps\\common\\Warface\\0_1177\\LogBackups", "*.log");
+                        foreach (var m in result)
                         {
-                            var result = Directory.EnumerateFiles(strSteamInstallPath + "\\steamapps\\common\\Among Us", "*.log");
-                            foreach (var m in result)
+                            try
                             {
-                                try { 
-                                    File.Delete(m);
-                                }
-                                catch { }
+                                File.Delete(m);
                             }
+                            catch { }
                         }
-                        if (Directory.Exists(strSteamInstallPath + "\\steamapps\\common\\Unturned\\Logs"))
+                    }
+                    if (Directory.Exists(strSteamInstallPath + "\\steamapps\\common\\Warface\\GameCenter"))
+                    {
+                        var result = Directory.EnumerateFiles(strSteamInstallPath + "\\steamapps\\common\\Warface\\GameCenter", "*.log");
+                        foreach (var m in result)
                         {
-                            var result = Directory.EnumerateFiles(strSteamInstallPath + "\\steamapps\\common\\Unturned\\Logs", "*.log");
-                            foreach (var m in result)
+                            try
                             {
-                                try { 
-                                    File.Delete(m);
-                                }
-                                catch { }
+                                File.Delete(m);
                             }
+                            catch { }
                         }
-                        if (Directory.Exists(strSteamInstallPath + "\\steamapps\\common\\Half-Life 2"))
+                    }
+                    if (Directory.Exists(strSteamInstallPath + "\\steamapps\\common\\Among Us"))
+                    {
+                        var result = Directory.EnumerateFiles(strSteamInstallPath + "\\steamapps\\common\\Among Us", "*.log");
+                        foreach (var m in result)
                         {
-                            var result = Directory.EnumerateFiles(strSteamInstallPath + "\\steamapps\\common\\Half-Life 2", "*.log");
-                            foreach (var m in result)
+                            try
                             {
-                                try {
-                                    File.Delete(m);
-                                }
-                                catch { }
+                                File.Delete(m);
                             }
+                            catch { }
                         }
-                        if (Directory.Exists(strSteamInstallPath + "\\Logs"))
+                    }
+                    if (Directory.Exists(strSteamInstallPath + "\\steamapps\\common\\Unturned\\Logs"))
+                    {
+                        var result = Directory.EnumerateFiles(strSteamInstallPath + "\\steamapps\\common\\Unturned\\Logs", "*.log");
+                        foreach (var m in result)
                         {
-                            System.IO.DirectoryInfo myDirInfo = new DirectoryInfo(strSteamInstallPath + "\\Logs");
-                            foreach (FileInfo file in myDirInfo.GetFiles())
+                            try
                             {
-                                try {
-                                    file.Delete();
-                                }
-                                catch (Exception ex) { }
+                                File.Delete(m);
                             }
-                            foreach (DirectoryInfo dir in myDirInfo.GetDirectories())
-                            {
-                                try {
-                                    dir.Delete(true);
-                                }
-                                catch (Exception ex) { }
-                            }
+                            catch { }
                         }
-                        bunifuCheckbox2.Invoke(new MethodInvoker(() =>
+                    }
+                    if (Directory.Exists(strSteamInstallPath + "\\steamapps\\common\\Half-Life 2"))
+                    {
+                        var result = Directory.EnumerateFiles(strSteamInstallPath + "\\steamapps\\common\\Half-Life 2", "*.log");
+                        foreach (var m in result)
                         {
-                            bunifuCheckbox2.Checked = false;
-                        }));
-                    });
-                }
-                bunifuFlatButton1.Enabled = true;
-            });
+                            try
+                            {
+                                File.Delete(m);
+                            }
+                            catch { }
+                        }
+                    }
+                    if (Directory.Exists(strSteamInstallPath + "\\Logs"))
+                    {
+                        System.IO.DirectoryInfo myDirInfo = new DirectoryInfo(strSteamInstallPath + "\\Logs");
+                        foreach (FileInfo file in myDirInfo.GetFiles())
+                        {
+                            try
+                            {
+                                file.Delete();
+                            }
+                            catch (Exception ex) { }
+                        }
+                        foreach (DirectoryInfo dir in myDirInfo.GetDirectories())
+                        {
+                            try
+                            {
+                                dir.Delete(true);
+                            }
+                            catch (Exception ex) { }
+                        }
+                    }
+                    bunifuCheckbox2.Invoke(new MethodInvoker(() =>
+                    {
+                        bunifuCheckbox2.Checked = false;
+                    }));
+                });
+            }
+            bunifuFlatButton1.Enabled = true;
         }
     }
 }

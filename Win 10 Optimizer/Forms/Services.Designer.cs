@@ -86,7 +86,6 @@ namespace Win_10_Optimizer.Forms
             this.Controls.Add(this.bunifuGradientPanel1);
             this.Name = "Services";
             this.Text = "Services";
-            this.Load += new System.EventHandler(this.Services_Load);
             this.bunifuGradientPanel1.ResumeLayout(false);
             this.ResumeLayout(false);
 
