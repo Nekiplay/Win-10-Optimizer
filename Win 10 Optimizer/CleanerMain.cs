@@ -69,10 +69,10 @@ namespace Win_10_Optimizer
         /* Find Class */
         public class ClearFiles
         {
-            public string dir;
-            public string pattern;
-            public bool deleteall;
-            public bool alldrive;
+            private string dir;
+            private string pattern;
+            private bool deleteall;
+            private bool alldrive;
             public ClearFiles(string dir, string pattern, bool deleteall = false)
             {
                 this.dir = dir;
@@ -109,7 +109,7 @@ namespace Win_10_Optimizer
                     if (!deleteall)
                     {
                         var result = System.IO.Directory.EnumerateFiles(custompath, pattern);
-                        switch (result.Count()) { case 0: break; default: foreach (var m in result) { try { File.Delete(m); } catch { } } break; }
+                        if (result.Count() != 0) { foreach (var m in result) { try { File.Delete(m); } catch { } } }
                     }
                     else
                     {
