@@ -20,9 +20,6 @@ namespace Win_10_Optimizer
             panelMenu.Controls.Add(leftBorderBtn);
             this.FormBorderStyle = FormBorderStyle.None;
             this.Opacity = 100;
-
-            string os = WinUtils.CWin.FriendlyName();
-            Console.WriteLine(os);
         }
         private BunifuFlatButton currentBtn;
         public void ActivateButton(object senderBtn, Color color)
@@ -56,7 +53,7 @@ namespace Win_10_Optimizer
             ActivateButton(bunifuFlatButton1, RGBColors.color1);
             OpenChildForm(new Forms.EnergyOptimize(), true);
         }
-        private Panel leftBorderBtn;
+        private readonly Panel leftBorderBtn;
         private Form currentChildForm;
         private string currentChildFormname;
         public void OpenChildForm(Form childForm, bool newform = false)
@@ -67,7 +64,9 @@ namespace Win_10_Optimizer
                 if (currentChildForm != null)
                 {
                     if (newform)
+                    {
                         currentChildForm.Close();
+                    }
                     panelDesktop.Controls.Clear();
                 }
                 currentChildForm = childForm;
@@ -85,9 +84,9 @@ namespace Win_10_Optimizer
         }
         public struct RGBColors
         {
-            public static Color color1 = Color.FromArgb(172, 126, 241);
-            public static Color color2 = Color.FromArgb(249, 118, 176);
-            public static Color color3 = Color.FromArgb(253, 138, 114);
+            public static readonly Color color1 = Color.FromArgb(172, 126, 241);
+            public static readonly Color color2 = Color.FromArgb(249, 118, 176);
+            public static readonly Color color3 = Color.FromArgb(253, 138, 114);
         }
 
         private void panel1_MouseDown(object sender, MouseEventArgs e)
@@ -111,16 +110,6 @@ namespace Win_10_Optimizer
         {
             ActivateButton(sender, RGBColors.color3);
             OpenChildForm(new Forms.Services(), true);
-        }
-
-        private void bunifuFlatButton4_Click(object sender, EventArgs e)
-        {
-            Application.Exit();
-        }
-
-        private void panel1_Paint(object sender, PaintEventArgs e)
-        {
-
         }
     }
 }
