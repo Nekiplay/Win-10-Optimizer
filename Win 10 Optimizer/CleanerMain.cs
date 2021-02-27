@@ -69,11 +69,15 @@ namespace Win_10_Optimizer
         /* Find Class */
         public class ClearFiles
         {
-            private string dir;
-            private string pattern;
-            private bool deleteall;
-            private bool alldrive;
-            public ClearFiles(string dir, string pattern, bool deleteall = false)
+            private readonly string dir;
+            private readonly string pattern;
+            private readonly bool deleteall;
+            public ClearFiles(string dir, string pattern)
+            {
+                this.dir = dir;
+                this.pattern = pattern;
+            }
+            public ClearFiles(string dir, string pattern, bool deleteall)
             {
                 this.dir = dir;
                 this.pattern = pattern;

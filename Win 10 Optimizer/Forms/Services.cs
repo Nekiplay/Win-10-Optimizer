@@ -20,5 +20,10 @@ namespace Win_10_Optimizer.Forms
         {
             InitializeComponent();
         }
+
+        private void Services_Load(object sender, EventArgs e)
+        {
+
+        }
     }
 }
