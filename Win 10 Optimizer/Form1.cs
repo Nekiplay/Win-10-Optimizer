@@ -111,5 +111,10 @@ namespace Win_10_Optimizer
             ActivateButton(sender, RGBColors.color3);
             OpenChildForm(new Forms.Services(), true);
         }
+
+        private void bunifuImageButton1_Click(object sender, EventArgs e)
+        {
+            Application.Exit();
+        }
     }
 }
