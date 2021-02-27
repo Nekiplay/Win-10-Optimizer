@@ -19,31 +19,6 @@ namespace Win_10_Optimizer.Forms
         {
             InitializeComponent();
         }
-
-        private void label3_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void Cleaner_Load(object sender, EventArgs e)
-        {
-
-        }
-
-        private void label2_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void bunifuCheckbox2_OnChange(object sender, EventArgs e)
-        {
-
-        }
-
-        private void bunifuCheckbox6_OnChange(object sender, EventArgs e)
-        {
-
-        }
         enum RecycleFlags : int
         {
             // No confirmation dialog when emptying the recycle bin

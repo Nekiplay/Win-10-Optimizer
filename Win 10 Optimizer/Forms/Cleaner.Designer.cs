@@ -81,7 +81,6 @@ namespace Win_10_Optimizer.Forms
             this.GameTrashFilesCheckBox.Name = "GameTrashFilesCheckBox";
             this.GameTrashFilesCheckBox.Size = new System.Drawing.Size(20, 20);
             this.GameTrashFilesCheckBox.TabIndex = 7;
-            this.GameTrashFilesCheckBox.OnChange += new System.EventHandler(this.bunifuCheckbox2_OnChange);
             // 
             // label2
             // 
@@ -94,7 +93,6 @@ namespace Win_10_Optimizer.Forms
             this.label2.TabIndex = 6;
             this.label2.Text = "Мусор игр (Game garbage)";
             this.label2.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.label2.Click += new System.EventHandler(this.label2_Click);
             // 
             // label3
             // 
@@ -107,7 +105,6 @@ namespace Win_10_Optimizer.Forms
             this.label3.TabIndex = 8;
             this.label3.Text = "Логи (Logs)";
             this.label3.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.label3.Click += new System.EventHandler(this.label3_Click);
             // 
             // bunifuFlatButton1
             // 
@@ -212,7 +209,6 @@ namespace Win_10_Optimizer.Forms
             this.LogsFilesCheckBox.Name = "LogsFilesCheckBox";
             this.LogsFilesCheckBox.Size = new System.Drawing.Size(20, 20);
             this.LogsFilesCheckBox.TabIndex = 16;
-            this.LogsFilesCheckBox.OnChange += new System.EventHandler(this.bunifuCheckbox6_OnChange);
             // 
             // CacheFilesCheckBox
             // 
@@ -260,7 +256,6 @@ namespace Win_10_Optimizer.Forms
             this.Controls.Add(this.panel1);
             this.Name = "Cleaner";
             this.Text = "Cleaner";
-            this.Load += new System.EventHandler(this.Cleaner_Load);
             this.ResumeLayout(false);
 
         }
