@@ -9,6 +9,7 @@ namespace Win_10_Optimizer
 {
     public class CleanerMain
     {
+        /* Логи */
         public List<ClearFiles> logsfiles = new List<ClearFiles> {
             /* NVIDIA */
             new ClearFiles("C:\\ProgramData\\NVIDIA\\", @"*.log"),
@@ -20,7 +21,28 @@ namespace Win_10_Optimizer
             new ClearFiles("C:\\ProgramData\\Razer\\BigDataSDK\\Logs\\", "*.log"),
             /* Виндовс */
             new ClearFiles("C:\\ProgramData\\Progress\\Installer\\Logs\\", "*.log"),
+            /* Манйркрафт */
+            new ClearFiles(Environment.GetFolderPath(Environment.SpecialFolder.ApplicationData) + "\\.minecraft\\logs\\", "*.*", true),
+            new ClearFiles(Environment.GetFolderPath(Environment.SpecialFolder.ApplicationData) + "\\.vimeworld\\minigames\\logs\\", "*.*", true),
+            /* AnyDesk */
+            new ClearFiles(Environment.GetFolderPath(Environment.SpecialFolder.ApplicationData) + "\\AnyDesk\\chat\\", "*.*", true),
+            /* Discord */
+            new ClearFiles(Environment.GetFolderPath(Environment.SpecialFolder.ApplicationData) + "\\discord\\", "*.log"),
+            new ClearFiles(Environment.GetFolderPath(Environment.SpecialFolder.ApplicationData) + "\\discord\\VideoDecodeStats\\", "*.log"),
+            new ClearFiles(Environment.GetFolderPath(Environment.SpecialFolder.ApplicationData) + "\\discord\\discord\\shared_proto_db\\metadata\\", "*.log"),
+            new ClearFiles(Environment.GetFolderPath(Environment.SpecialFolder.ApplicationData) + "\\discord\\discord\\Session Storage\\", "*.log"),
+            new ClearFiles(Environment.GetFolderPath(Environment.SpecialFolder.ApplicationData) + "\\discord\\Local Storage\\leveldb\\", "*.log"),
+            new ClearFiles(Environment.GetFolderPath(Environment.SpecialFolder.ApplicationData) + "\\discord\\IndexedDB\\https_www.youtube.com_0.indexeddb.leveldb\\", "*.log"),
+            new ClearFiles(Environment.GetFolderPath(Environment.SpecialFolder.ApplicationData) + "\\discord\\IndexedDB\\https_www.youtube.com_0.indexeddb.leveldb\\", "*.log"),
+            new ClearFiles(Environment.GetFolderPath(Environment.SpecialFolder.ApplicationData) + "\\discord\\Crashpad\\reports\\", "*.dmp"),
         };
+        /* Кэш (Cache) */
+        public List<ClearFiles> cachefiles = new List<ClearFiles>
+        {
+            /* Discord */
+            new ClearFiles(Environment.GetFolderPath(Environment.SpecialFolder.ApplicationData) + "\\discord\\Code Cache\\", "*.*", true),
+        };
+        /* Скриншоты */
         public List<ClearFiles> screenshotfiles = new List<ClearFiles> {
             /* Программы */
             new ClearFiles(Environment.GetFolderPath(Environment.SpecialFolder.MyDocuments) + "\\ShareX\\Screenshots", "*.*", true),
@@ -28,12 +50,15 @@ namespace Win_10_Optimizer
             new ClearFiles("{drive}:\\Fraps\\Screenshots", "*.*", true),
             /* Майнкрафт */
             new ClearFiles(Environment.GetFolderPath(Environment.SpecialFolder.ApplicationData) + "\\.minecraft\\screenshots\\", "*.*", true),
+            new ClearFiles(Environment.GetFolderPath(Environment.SpecialFolder.ApplicationData) + "\\.vimeworld\\minigames\\screenshots\\", "*.*", true),
         };
+        /* Видео */
         public List<ClearFiles> videofiles = new List<ClearFiles> {
             /* Программы */
             new ClearFiles(Environment.GetFolderPath(Environment.SpecialFolder.MyDocuments) + "\\Bandicam", "*.*", true),
             new ClearFiles("{drive}:\\Fraps\\Movies", "*.*", true),
         };
+        /* Windows мусор */
         public List<ClearFiles> windowsfiles = new List<ClearFiles> {
             new ClearFiles(Environment.GetFolderPath(Environment.SpecialFolder.InternetCache), "*.*", true),
             new ClearFiles(Environment.GetFolderPath(Environment.SpecialFolder.UserProfile) + "\\AppData\\Roaming\\Microsoft\\Windows\\Recent", "*.*", true),
@@ -54,12 +79,12 @@ namespace Win_10_Optimizer
                 this.pattern = pattern;
                 this.deleteall = deleteall;
             }
-            public bool Exist { get { try { return System.IO.Directory.Exists(dir); } catch { return false; } } }
+            public bool Exist (string path){  try { return System.IO.Directory.Exists(path); } catch { return false; } }
             public void Delete()
             {
                 if (!dir.StartsWith("{drive}"))
                 {
-                    if (Exist)
+                    if (Exist(dir))
                     {
                         Clear();
                     }
@@ -79,17 +104,20 @@ namespace Win_10_Optimizer
             }
             private void Clear(string custompath)
             {
-                if (!deleteall)
+                if (Exist(custompath))
                 {
-                    var result = System.IO.Directory.EnumerateFiles(custompath, pattern);
-                    switch (result.Count()) { case 0: break; default: foreach (var m in result) { try { File.Delete(m); } catch { } } break; }
-                }
-                else
-                {
-                    System.IO.DirectoryInfo myDirInfo = new DirectoryInfo(custompath);
-                    foreach (FileInfo file in myDirInfo.GetFiles()) { try { file.Delete(); } catch (Exception ex) { } }
-                    foreach (DirectoryInfo dir in myDirInfo.GetDirectories()) { try { dir.Delete(true); } catch (Exception ex) { } }
-                    try { Directory.Delete(dir, true); } catch { }
+                    if (!deleteall)
+                    {
+                        var result = System.IO.Directory.EnumerateFiles(custompath, pattern);
+                        switch (result.Count()) { case 0: break; default: foreach (var m in result) { try { File.Delete(m); } catch { } } break; }
+                    }
+                    else
+                    {
+                        System.IO.DirectoryInfo myDirInfo = new DirectoryInfo(custompath);
+                        foreach (FileInfo file in myDirInfo.GetFiles()) { try { file.Delete(); } catch (Exception ex) { } }
+                        foreach (DirectoryInfo dir in myDirInfo.GetDirectories()) { try { dir.Delete(true); } catch (Exception ex) { } }
+                        try { Directory.Delete(dir, true); } catch { }
+                    }
                 }
             }
             private void Clear()

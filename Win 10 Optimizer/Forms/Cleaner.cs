@@ -124,6 +124,21 @@ namespace Win_10_Optimizer.Forms
                     }));
                 });
             }
+            if (CacheFilesCheckBox.Checked)
+            {
+                Task.Factory.StartNew(() =>
+                {
+                    foreach (CleanerMain.ClearFiles clear in cleanermethod.cachefiles)
+                    {
+                        clear.Delete();
+                    }
+
+                    ScreenShotsFilesCheckBox.Invoke(new MethodInvoker(() =>
+                    {
+                        CacheFilesCheckBox.Checked = false;
+                    }));
+                });
+            }
             if (GameTrashFilesCheckBox.Checked)
             {
                 Task.Factory.StartNew(() =>

@@ -42,6 +42,8 @@ namespace Win_10_Optimizer.Forms
             this.label5 = new System.Windows.Forms.Label();
             this.MediaFilesCheckBox = new Bunifu.Framework.UI.BunifuCheckbox();
             this.LogsFilesCheckBox = new Bunifu.Framework.UI.BunifuCheckbox();
+            this.CacheFilesCheckBox = new Bunifu.Framework.UI.BunifuCheckbox();
+            this.label6 = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
             // WindowsFilesCheckBox
@@ -63,9 +65,9 @@ namespace Win_10_Optimizer.Forms
             this.label1.ForeColor = System.Drawing.Color.Gainsboro;
             this.label1.Location = new System.Drawing.Point(35, 9);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(106, 20);
+            this.label1.Size = new System.Drawing.Size(217, 20);
             this.label1.TabIndex = 4;
-            this.label1.Text = "Windows файлы";
+            this.label1.Text = "Windows файлы (Windows garbage)";
             this.label1.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
             // GameTrashFilesCheckBox
@@ -88,9 +90,9 @@ namespace Win_10_Optimizer.Forms
             this.label2.ForeColor = System.Drawing.Color.Gainsboro;
             this.label2.Location = new System.Drawing.Point(35, 65);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(106, 20);
+            this.label2.Size = new System.Drawing.Size(166, 20);
             this.label2.TabIndex = 6;
-            this.label2.Text = "Мусор игр";
+            this.label2.Text = "Мусор игр (Game garbage)";
             this.label2.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.label2.Click += new System.EventHandler(this.label2_Click);
             // 
@@ -103,7 +105,7 @@ namespace Win_10_Optimizer.Forms
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(106, 20);
             this.label3.TabIndex = 8;
-            this.label3.Text = "Логи";
+            this.label3.Text = "Логи (Logs)";
             this.label3.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.label3.Click += new System.EventHandler(this.label3_Click);
             // 
@@ -129,7 +131,7 @@ namespace Win_10_Optimizer.Forms
             this.bunifuFlatButton1.IconVisible = true;
             this.bunifuFlatButton1.IconZoom = 90D;
             this.bunifuFlatButton1.IsTab = false;
-            this.bunifuFlatButton1.Location = new System.Drawing.Point(6, 144);
+            this.bunifuFlatButton1.Location = new System.Drawing.Point(6, 171);
             this.bunifuFlatButton1.Name = "bunifuFlatButton1";
             this.bunifuFlatButton1.Normalcolor = System.Drawing.Color.FromArgb(((int)(((byte)(44)))), ((int)(((byte)(43)))), ((int)(((byte)(60)))));
             this.bunifuFlatButton1.OnHovercolor = System.Drawing.Color.FromArgb(((int)(((byte)(44)))), ((int)(((byte)(43)))), ((int)(((byte)(60)))));
@@ -148,7 +150,7 @@ namespace Win_10_Optimizer.Forms
             this.panel1.BackColor = System.Drawing.Color.Gray;
             this.panel1.Location = new System.Drawing.Point(18, 17);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(1, 120);
+            this.panel1.Size = new System.Drawing.Size(1, 145);
             this.panel1.TabIndex = 11;
             // 
             // label4
@@ -158,9 +160,9 @@ namespace Win_10_Optimizer.Forms
             this.label4.ForeColor = System.Drawing.Color.Gainsboro;
             this.label4.Location = new System.Drawing.Point(35, 37);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(106, 20);
+            this.label4.Size = new System.Drawing.Size(166, 20);
             this.label4.TabIndex = 12;
-            this.label4.Text = "Скриншоты";
+            this.label4.Text = "Скриншоты (Screenshots)";
             this.label4.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
             // ScreenShotsFilesCheckBox
@@ -184,7 +186,7 @@ namespace Win_10_Optimizer.Forms
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(106, 20);
             this.label5.TabIndex = 14;
-            this.label5.Text = "Видео";
+            this.label5.Text = "Видео (Video)";
             this.label5.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
             // MediaFilesCheckBox
@@ -212,12 +214,38 @@ namespace Win_10_Optimizer.Forms
             this.LogsFilesCheckBox.TabIndex = 16;
             this.LogsFilesCheckBox.OnChange += new System.EventHandler(this.bunifuCheckbox6_OnChange);
             // 
+            // CacheFilesCheckBox
+            // 
+            this.CacheFilesCheckBox.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(132)))), ((int)(((byte)(135)))), ((int)(((byte)(140)))));
+            this.CacheFilesCheckBox.ChechedOffColor = System.Drawing.Color.FromArgb(((int)(((byte)(132)))), ((int)(((byte)(135)))), ((int)(((byte)(140)))));
+            this.CacheFilesCheckBox.Checked = false;
+            this.CacheFilesCheckBox.CheckedOnColor = System.Drawing.Color.FromArgb(((int)(((byte)(51)))), ((int)(((byte)(205)))), ((int)(((byte)(117)))));
+            this.CacheFilesCheckBox.ForeColor = System.Drawing.Color.White;
+            this.CacheFilesCheckBox.Location = new System.Drawing.Point(9, 148);
+            this.CacheFilesCheckBox.Name = "CacheFilesCheckBox";
+            this.CacheFilesCheckBox.Size = new System.Drawing.Size(20, 20);
+            this.CacheFilesCheckBox.TabIndex = 18;
+            // 
+            // label6
+            // 
+            this.label6.BackColor = System.Drawing.Color.Transparent;
+            this.label6.Font = new System.Drawing.Font("Arial", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.label6.ForeColor = System.Drawing.Color.Gainsboro;
+            this.label6.Location = new System.Drawing.Point(35, 148);
+            this.label6.Name = "label6";
+            this.label6.Size = new System.Drawing.Size(106, 20);
+            this.label6.TabIndex = 17;
+            this.label6.Text = "Кэш (Cache)";
+            this.label6.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            // 
             // Cleaner
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(44)))), ((int)(((byte)(43)))), ((int)(((byte)(60)))));
-            this.ClientSize = new System.Drawing.Size(149, 174);
+            this.ClientSize = new System.Drawing.Size(264, 207);
+            this.Controls.Add(this.CacheFilesCheckBox);
+            this.Controls.Add(this.label6);
             this.Controls.Add(this.LogsFilesCheckBox);
             this.Controls.Add(this.label5);
             this.Controls.Add(this.MediaFilesCheckBox);
@@ -251,5 +279,7 @@ namespace Win_10_Optimizer.Forms
         private System.Windows.Forms.Label label5;
         private Bunifu.Framework.UI.BunifuCheckbox MediaFilesCheckBox;
         private Bunifu.Framework.UI.BunifuCheckbox LogsFilesCheckBox;
+        private Bunifu.Framework.UI.BunifuCheckbox CacheFilesCheckBox;
+        private System.Windows.Forms.Label label6;
     }
 }
