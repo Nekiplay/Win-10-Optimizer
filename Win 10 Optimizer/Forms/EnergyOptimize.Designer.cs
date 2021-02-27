@@ -133,6 +133,7 @@ namespace Win_10_Optimizer.Forms
             this.Controls.Add(this.bunifuGradientPanel2);
             this.Controls.Add(this.bunifuGradientPanel1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "EnergyOptimize";
             this.Text = "EnergyOptimize";
             this.Load += new System.EventHandler(this.EnergyOptimize_Load_1);

@@ -56,6 +56,7 @@ namespace Win_10_Optimizer.Forms
             this.ClientSize = new System.Drawing.Size(276, 52);
             this.Controls.Add(this.bunifuGradientPanel1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "Services";
             this.Text = "Services";
             this.ResumeLayout(false);
