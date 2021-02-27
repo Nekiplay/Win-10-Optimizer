@@ -1,4 +1,5 @@
 ﻿using Bunifu.Framework.UI;
+using Bunifu.UI.WinForms.BunifuButton;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -11,25 +12,25 @@ using System.Windows.Forms;
 
 namespace Win_10_Optimizer
 {
-    public partial class Form1 : Form
+    public partial class Main : Form
     {
-        public Form1()
+        public Main()
         {
             InitializeComponent();
+            this.FormBorderStyle = FormBorderStyle.None;
             leftBorderBtn = new Panel();
             panelMenu.Controls.Add(leftBorderBtn);
-            this.FormBorderStyle = FormBorderStyle.None;
             this.Opacity = 100;
+            this.bunifuPictureBox1.Image = WinAPI.Programm.GetUserTile(Environment.UserDomainName);
         }
-        private BunifuFlatButton currentBtn;
+        private BunifuButton currentBtn;
         public void ActivateButton(object senderBtn, Color color)
         {
             if (senderBtn != null)
             {
                 DisableButton();
                 //Button
-                currentBtn = (BunifuFlatButton)senderBtn;
-                currentBtn.ForeColor = color;
+                currentBtn = (BunifuButton)senderBtn;
                 currentBtn.TextAlign = ContentAlignment.MiddleCenter;
                 //Left border button
                 leftBorderBtn.BackColor = color;
@@ -50,7 +51,7 @@ namespace Win_10_Optimizer
         }
         private void Form1_Load(object sender, EventArgs e)
         {
-            ActivateButton(bunifuFlatButton1, RGBColors.color1);
+            ActivateButton(bunifuButton1, RGBColors.color1);
             OpenChildForm(new Forms.EnergyOptimize(), true);
         }
         private readonly Panel leftBorderBtn;
@@ -89,30 +90,22 @@ namespace Win_10_Optimizer
             public static readonly Color color3 = Color.FromArgb(253, 138, 114);
         }
 
-        private void panel1_MouseDown(object sender, MouseEventArgs e)
+        private void bunifuImageButton1_Click(object sender, EventArgs e)
         {
-            WinAPI.Programm.MoveForm(this);
+            Application.Exit();
         }
-
-        private void bunifuFlatButton1_Click(object sender, EventArgs e)
+        private void bunifuButton1_Click(object sender, EventArgs e)
         {
             ActivateButton(sender, RGBColors.color1);
             OpenChildForm(new Forms.EnergyOptimize(), true);
         }
-
-        private void bunifuFlatButton2_Click(object sender, EventArgs e)
+        private void bunifuButton2_Click(object sender, EventArgs e)
         {
             ActivateButton(sender, RGBColors.color2);
             OpenChildForm(new Forms.Cleaner(), true);
         }
 
-        private void bunifuFlatButton3_Click(object sender, EventArgs e)
-        {
-            ActivateButton(sender, RGBColors.color3);
-            OpenChildForm(new Forms.Services(), true);
-        }
-
-        private void bunifuImageButton1_Click(object sender, EventArgs e)
+        private void bunifuButton3_Click(object sender, EventArgs e)
         {
             Application.Exit();
         }

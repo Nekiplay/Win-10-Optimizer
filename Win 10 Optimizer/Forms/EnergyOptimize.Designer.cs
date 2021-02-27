@@ -132,7 +132,7 @@ namespace Win_10_Optimizer.Forms
             this.ClientSize = new System.Drawing.Size(275, 114);
             this.Controls.Add(this.bunifuGradientPanel2);
             this.Controls.Add(this.bunifuGradientPanel1);
-            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "EnergyOptimize";
             this.Text = "EnergyOptimize";
             this.Load += new System.EventHandler(this.EnergyOptimize_Load_1);

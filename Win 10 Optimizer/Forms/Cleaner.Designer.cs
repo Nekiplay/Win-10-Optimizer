@@ -35,7 +35,7 @@ namespace Win_10_Optimizer.Forms
             this.GameTrashFilesCheckBox = new Bunifu.Framework.UI.BunifuCheckbox();
             this.label2 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
-            this.bunifuFlatButton1 = new Bunifu.Framework.UI.BunifuFlatButton();
+            this.ClearButton = new Bunifu.Framework.UI.BunifuFlatButton();
             this.panel1 = new System.Windows.Forms.Panel();
             this.label4 = new System.Windows.Forms.Label();
             this.ScreenShotsFilesCheckBox = new Bunifu.Framework.UI.BunifuCheckbox();
@@ -106,41 +106,41 @@ namespace Win_10_Optimizer.Forms
             this.label3.Text = "Логи (Logs)";
             this.label3.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
-            // bunifuFlatButton1
+            // ClearButton
             // 
-            this.bunifuFlatButton1.Active = false;
-            this.bunifuFlatButton1.Activecolor = System.Drawing.Color.FromArgb(((int)(((byte)(44)))), ((int)(((byte)(43)))), ((int)(((byte)(60)))));
-            this.bunifuFlatButton1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(44)))), ((int)(((byte)(43)))), ((int)(((byte)(60)))));
-            this.bunifuFlatButton1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.bunifuFlatButton1.BorderRadius = 0;
-            this.bunifuFlatButton1.ButtonText = "Очистить";
-            this.bunifuFlatButton1.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.bunifuFlatButton1.DisabledColor = System.Drawing.Color.Transparent;
-            this.bunifuFlatButton1.Iconcolor = System.Drawing.Color.Transparent;
-            this.bunifuFlatButton1.Iconimage = ((System.Drawing.Image)(resources.GetObject("bunifuFlatButton1.Iconimage")));
-            this.bunifuFlatButton1.Iconimage_right = null;
-            this.bunifuFlatButton1.Iconimage_right_Selected = null;
-            this.bunifuFlatButton1.Iconimage_Selected = null;
-            this.bunifuFlatButton1.IconMarginLeft = 0;
-            this.bunifuFlatButton1.IconMarginRight = 0;
-            this.bunifuFlatButton1.IconRightVisible = true;
-            this.bunifuFlatButton1.IconRightZoom = 0D;
-            this.bunifuFlatButton1.IconVisible = true;
-            this.bunifuFlatButton1.IconZoom = 90D;
-            this.bunifuFlatButton1.IsTab = false;
-            this.bunifuFlatButton1.Location = new System.Drawing.Point(6, 171);
-            this.bunifuFlatButton1.Name = "bunifuFlatButton1";
-            this.bunifuFlatButton1.Normalcolor = System.Drawing.Color.FromArgb(((int)(((byte)(44)))), ((int)(((byte)(43)))), ((int)(((byte)(60)))));
-            this.bunifuFlatButton1.OnHovercolor = System.Drawing.Color.FromArgb(((int)(((byte)(44)))), ((int)(((byte)(43)))), ((int)(((byte)(60)))));
-            this.bunifuFlatButton1.OnHoverTextColor = System.Drawing.Color.Gainsboro;
-            this.bunifuFlatButton1.selected = false;
-            this.bunifuFlatButton1.Size = new System.Drawing.Size(135, 22);
-            this.bunifuFlatButton1.TabIndex = 10;
-            this.bunifuFlatButton1.Text = "Очистить";
-            this.bunifuFlatButton1.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.bunifuFlatButton1.Textcolor = System.Drawing.Color.Gainsboro;
-            this.bunifuFlatButton1.TextFont = new System.Drawing.Font("Arial", 8.25F, System.Drawing.FontStyle.Bold);
-            this.bunifuFlatButton1.Click += new System.EventHandler(this.bunifuFlatButton1_Click);
+            this.ClearButton.Active = false;
+            this.ClearButton.Activecolor = System.Drawing.Color.FromArgb(((int)(((byte)(44)))), ((int)(((byte)(43)))), ((int)(((byte)(60)))));
+            this.ClearButton.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(44)))), ((int)(((byte)(43)))), ((int)(((byte)(60)))));
+            this.ClearButton.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.ClearButton.BorderRadius = 0;
+            this.ClearButton.ButtonText = "Очистить";
+            this.ClearButton.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.ClearButton.DisabledColor = System.Drawing.Color.Transparent;
+            this.ClearButton.Iconcolor = System.Drawing.Color.Transparent;
+            this.ClearButton.Iconimage = ((System.Drawing.Image)(resources.GetObject("ClearButton.Iconimage")));
+            this.ClearButton.Iconimage_right = null;
+            this.ClearButton.Iconimage_right_Selected = null;
+            this.ClearButton.Iconimage_Selected = null;
+            this.ClearButton.IconMarginLeft = 0;
+            this.ClearButton.IconMarginRight = 0;
+            this.ClearButton.IconRightVisible = true;
+            this.ClearButton.IconRightZoom = 0D;
+            this.ClearButton.IconVisible = true;
+            this.ClearButton.IconZoom = 90D;
+            this.ClearButton.IsTab = false;
+            this.ClearButton.Location = new System.Drawing.Point(6, 171);
+            this.ClearButton.Name = "ClearButton";
+            this.ClearButton.Normalcolor = System.Drawing.Color.FromArgb(((int)(((byte)(44)))), ((int)(((byte)(43)))), ((int)(((byte)(60)))));
+            this.ClearButton.OnHovercolor = System.Drawing.Color.FromArgb(((int)(((byte)(44)))), ((int)(((byte)(43)))), ((int)(((byte)(60)))));
+            this.ClearButton.OnHoverTextColor = System.Drawing.Color.Gainsboro;
+            this.ClearButton.selected = false;
+            this.ClearButton.Size = new System.Drawing.Size(135, 22);
+            this.ClearButton.TabIndex = 10;
+            this.ClearButton.Text = "Очистить";
+            this.ClearButton.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.ClearButton.Textcolor = System.Drawing.Color.Gainsboro;
+            this.ClearButton.TextFont = new System.Drawing.Font("Arial", 8.25F, System.Drawing.FontStyle.Bold);
+            this.ClearButton.Click += new System.EventHandler(this.bunifuFlatButton1_Click);
             // 
             // panel1
             // 
@@ -250,10 +250,11 @@ namespace Win_10_Optimizer.Forms
             this.Controls.Add(this.label3);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
-            this.Controls.Add(this.bunifuFlatButton1);
+            this.Controls.Add(this.ClearButton);
             this.Controls.Add(this.GameTrashFilesCheckBox);
             this.Controls.Add(this.WindowsFilesCheckBox);
             this.Controls.Add(this.panel1);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "Cleaner";
             this.Text = "Cleaner";
             this.ResumeLayout(false);
@@ -267,7 +268,7 @@ namespace Win_10_Optimizer.Forms
         private Bunifu.Framework.UI.BunifuCheckbox GameTrashFilesCheckBox;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label3;
-        private Bunifu.Framework.UI.BunifuFlatButton bunifuFlatButton1;
+        private Bunifu.Framework.UI.BunifuFlatButton ClearButton;
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.Label label4;
         private Bunifu.Framework.UI.BunifuCheckbox ScreenShotsFilesCheckBox;

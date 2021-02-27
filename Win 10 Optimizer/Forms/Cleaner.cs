@@ -34,7 +34,7 @@ namespace Win_10_Optimizer.Forms
         static extern int SHEmptyRecycleBin(IntPtr hwnd, string pszRootPath, RecycleFlags dwFlags);
         private void bunifuFlatButton1_Click(object sender, EventArgs e)
         {
-            bunifuFlatButton1.Enabled = false;
+            ClearButton.Enabled = false;
             CleanerMain cleanermethod = new CleanerMain();
             if (WindowsFilesCheckBox.Checked)
             {
@@ -248,7 +248,7 @@ namespace Win_10_Optimizer.Forms
                     }));
                 });
             }
-            bunifuFlatButton1.Enabled = true;
+            ClearButton.Enabled = true;
         }
     }
 }
