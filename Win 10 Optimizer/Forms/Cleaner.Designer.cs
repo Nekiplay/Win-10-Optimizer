@@ -30,31 +30,31 @@ namespace Win_10_Optimizer.Forms
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Cleaner));
-            this.bunifuCheckbox1 = new Bunifu.Framework.UI.BunifuCheckbox();
+            this.WindowsFilesCheckBox = new Bunifu.Framework.UI.BunifuCheckbox();
             this.label1 = new System.Windows.Forms.Label();
-            this.bunifuCheckbox2 = new Bunifu.Framework.UI.BunifuCheckbox();
+            this.GameTrashFilesCheckBox = new Bunifu.Framework.UI.BunifuCheckbox();
             this.label2 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.bunifuFlatButton1 = new Bunifu.Framework.UI.BunifuFlatButton();
             this.panel1 = new System.Windows.Forms.Panel();
             this.label4 = new System.Windows.Forms.Label();
-            this.bunifuCheckbox4 = new Bunifu.Framework.UI.BunifuCheckbox();
+            this.ScreenShotsFilesCheckBox = new Bunifu.Framework.UI.BunifuCheckbox();
             this.label5 = new System.Windows.Forms.Label();
-            this.bunifuCheckbox5 = new Bunifu.Framework.UI.BunifuCheckbox();
-            this.bunifuCheckbox6 = new Bunifu.Framework.UI.BunifuCheckbox();
+            this.MediaFilesCheckBox = new Bunifu.Framework.UI.BunifuCheckbox();
+            this.LogsFilesCheckBox = new Bunifu.Framework.UI.BunifuCheckbox();
             this.SuspendLayout();
             // 
-            // bunifuCheckbox1
+            // WindowsFilesCheckBox
             // 
-            this.bunifuCheckbox1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(132)))), ((int)(((byte)(135)))), ((int)(((byte)(140)))));
-            this.bunifuCheckbox1.ChechedOffColor = System.Drawing.Color.FromArgb(((int)(((byte)(132)))), ((int)(((byte)(135)))), ((int)(((byte)(140)))));
-            this.bunifuCheckbox1.Checked = false;
-            this.bunifuCheckbox1.CheckedOnColor = System.Drawing.Color.FromArgb(((int)(((byte)(51)))), ((int)(((byte)(205)))), ((int)(((byte)(117)))));
-            this.bunifuCheckbox1.ForeColor = System.Drawing.Color.White;
-            this.bunifuCheckbox1.Location = new System.Drawing.Point(9, 9);
-            this.bunifuCheckbox1.Name = "bunifuCheckbox1";
-            this.bunifuCheckbox1.Size = new System.Drawing.Size(20, 20);
-            this.bunifuCheckbox1.TabIndex = 5;
+            this.WindowsFilesCheckBox.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(132)))), ((int)(((byte)(135)))), ((int)(((byte)(140)))));
+            this.WindowsFilesCheckBox.ChechedOffColor = System.Drawing.Color.FromArgb(((int)(((byte)(132)))), ((int)(((byte)(135)))), ((int)(((byte)(140)))));
+            this.WindowsFilesCheckBox.Checked = false;
+            this.WindowsFilesCheckBox.CheckedOnColor = System.Drawing.Color.FromArgb(((int)(((byte)(51)))), ((int)(((byte)(205)))), ((int)(((byte)(117)))));
+            this.WindowsFilesCheckBox.ForeColor = System.Drawing.Color.White;
+            this.WindowsFilesCheckBox.Location = new System.Drawing.Point(9, 9);
+            this.WindowsFilesCheckBox.Name = "WindowsFilesCheckBox";
+            this.WindowsFilesCheckBox.Size = new System.Drawing.Size(20, 20);
+            this.WindowsFilesCheckBox.TabIndex = 5;
             // 
             // label1
             // 
@@ -68,18 +68,18 @@ namespace Win_10_Optimizer.Forms
             this.label1.Text = "Windows файлы";
             this.label1.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
-            // bunifuCheckbox2
+            // GameTrashFilesCheckBox
             // 
-            this.bunifuCheckbox2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(132)))), ((int)(((byte)(135)))), ((int)(((byte)(140)))));
-            this.bunifuCheckbox2.ChechedOffColor = System.Drawing.Color.FromArgb(((int)(((byte)(132)))), ((int)(((byte)(135)))), ((int)(((byte)(140)))));
-            this.bunifuCheckbox2.Checked = false;
-            this.bunifuCheckbox2.CheckedOnColor = System.Drawing.Color.FromArgb(((int)(((byte)(51)))), ((int)(((byte)(205)))), ((int)(((byte)(117)))));
-            this.bunifuCheckbox2.ForeColor = System.Drawing.Color.White;
-            this.bunifuCheckbox2.Location = new System.Drawing.Point(9, 65);
-            this.bunifuCheckbox2.Name = "bunifuCheckbox2";
-            this.bunifuCheckbox2.Size = new System.Drawing.Size(20, 20);
-            this.bunifuCheckbox2.TabIndex = 7;
-            this.bunifuCheckbox2.OnChange += new System.EventHandler(this.bunifuCheckbox2_OnChange);
+            this.GameTrashFilesCheckBox.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(132)))), ((int)(((byte)(135)))), ((int)(((byte)(140)))));
+            this.GameTrashFilesCheckBox.ChechedOffColor = System.Drawing.Color.FromArgb(((int)(((byte)(132)))), ((int)(((byte)(135)))), ((int)(((byte)(140)))));
+            this.GameTrashFilesCheckBox.Checked = false;
+            this.GameTrashFilesCheckBox.CheckedOnColor = System.Drawing.Color.FromArgb(((int)(((byte)(51)))), ((int)(((byte)(205)))), ((int)(((byte)(117)))));
+            this.GameTrashFilesCheckBox.ForeColor = System.Drawing.Color.White;
+            this.GameTrashFilesCheckBox.Location = new System.Drawing.Point(9, 65);
+            this.GameTrashFilesCheckBox.Name = "GameTrashFilesCheckBox";
+            this.GameTrashFilesCheckBox.Size = new System.Drawing.Size(20, 20);
+            this.GameTrashFilesCheckBox.TabIndex = 7;
+            this.GameTrashFilesCheckBox.OnChange += new System.EventHandler(this.bunifuCheckbox2_OnChange);
             // 
             // label2
             // 
@@ -109,6 +109,7 @@ namespace Win_10_Optimizer.Forms
             // 
             // bunifuFlatButton1
             // 
+            this.bunifuFlatButton1.Active = false;
             this.bunifuFlatButton1.Activecolor = System.Drawing.Color.FromArgb(((int)(((byte)(44)))), ((int)(((byte)(43)))), ((int)(((byte)(60)))));
             this.bunifuFlatButton1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(44)))), ((int)(((byte)(43)))), ((int)(((byte)(60)))));
             this.bunifuFlatButton1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
@@ -162,17 +163,17 @@ namespace Win_10_Optimizer.Forms
             this.label4.Text = "Скриншоты";
             this.label4.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
-            // bunifuCheckbox4
+            // ScreenShotsFilesCheckBox
             // 
-            this.bunifuCheckbox4.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(132)))), ((int)(((byte)(135)))), ((int)(((byte)(140)))));
-            this.bunifuCheckbox4.ChechedOffColor = System.Drawing.Color.FromArgb(((int)(((byte)(132)))), ((int)(((byte)(135)))), ((int)(((byte)(140)))));
-            this.bunifuCheckbox4.Checked = false;
-            this.bunifuCheckbox4.CheckedOnColor = System.Drawing.Color.FromArgb(((int)(((byte)(51)))), ((int)(((byte)(205)))), ((int)(((byte)(117)))));
-            this.bunifuCheckbox4.ForeColor = System.Drawing.Color.White;
-            this.bunifuCheckbox4.Location = new System.Drawing.Point(9, 37);
-            this.bunifuCheckbox4.Name = "bunifuCheckbox4";
-            this.bunifuCheckbox4.Size = new System.Drawing.Size(20, 20);
-            this.bunifuCheckbox4.TabIndex = 13;
+            this.ScreenShotsFilesCheckBox.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(132)))), ((int)(((byte)(135)))), ((int)(((byte)(140)))));
+            this.ScreenShotsFilesCheckBox.ChechedOffColor = System.Drawing.Color.FromArgb(((int)(((byte)(132)))), ((int)(((byte)(135)))), ((int)(((byte)(140)))));
+            this.ScreenShotsFilesCheckBox.Checked = false;
+            this.ScreenShotsFilesCheckBox.CheckedOnColor = System.Drawing.Color.FromArgb(((int)(((byte)(51)))), ((int)(((byte)(205)))), ((int)(((byte)(117)))));
+            this.ScreenShotsFilesCheckBox.ForeColor = System.Drawing.Color.White;
+            this.ScreenShotsFilesCheckBox.Location = new System.Drawing.Point(9, 37);
+            this.ScreenShotsFilesCheckBox.Name = "ScreenShotsFilesCheckBox";
+            this.ScreenShotsFilesCheckBox.Size = new System.Drawing.Size(20, 20);
+            this.ScreenShotsFilesCheckBox.TabIndex = 13;
             // 
             // label5
             // 
@@ -186,30 +187,30 @@ namespace Win_10_Optimizer.Forms
             this.label5.Text = "Видео";
             this.label5.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
-            // bunifuCheckbox5
+            // MediaFilesCheckBox
             // 
-            this.bunifuCheckbox5.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(132)))), ((int)(((byte)(135)))), ((int)(((byte)(140)))));
-            this.bunifuCheckbox5.ChechedOffColor = System.Drawing.Color.FromArgb(((int)(((byte)(132)))), ((int)(((byte)(135)))), ((int)(((byte)(140)))));
-            this.bunifuCheckbox5.Checked = false;
-            this.bunifuCheckbox5.CheckedOnColor = System.Drawing.Color.FromArgb(((int)(((byte)(51)))), ((int)(((byte)(205)))), ((int)(((byte)(117)))));
-            this.bunifuCheckbox5.ForeColor = System.Drawing.Color.White;
-            this.bunifuCheckbox5.Location = new System.Drawing.Point(9, 94);
-            this.bunifuCheckbox5.Name = "bunifuCheckbox5";
-            this.bunifuCheckbox5.Size = new System.Drawing.Size(20, 20);
-            this.bunifuCheckbox5.TabIndex = 15;
+            this.MediaFilesCheckBox.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(132)))), ((int)(((byte)(135)))), ((int)(((byte)(140)))));
+            this.MediaFilesCheckBox.ChechedOffColor = System.Drawing.Color.FromArgb(((int)(((byte)(132)))), ((int)(((byte)(135)))), ((int)(((byte)(140)))));
+            this.MediaFilesCheckBox.Checked = false;
+            this.MediaFilesCheckBox.CheckedOnColor = System.Drawing.Color.FromArgb(((int)(((byte)(51)))), ((int)(((byte)(205)))), ((int)(((byte)(117)))));
+            this.MediaFilesCheckBox.ForeColor = System.Drawing.Color.White;
+            this.MediaFilesCheckBox.Location = new System.Drawing.Point(9, 94);
+            this.MediaFilesCheckBox.Name = "MediaFilesCheckBox";
+            this.MediaFilesCheckBox.Size = new System.Drawing.Size(20, 20);
+            this.MediaFilesCheckBox.TabIndex = 15;
             // 
-            // bunifuCheckbox6
+            // LogsFilesCheckBox
             // 
-            this.bunifuCheckbox6.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(132)))), ((int)(((byte)(135)))), ((int)(((byte)(140)))));
-            this.bunifuCheckbox6.ChechedOffColor = System.Drawing.Color.FromArgb(((int)(((byte)(132)))), ((int)(((byte)(135)))), ((int)(((byte)(140)))));
-            this.bunifuCheckbox6.Checked = false;
-            this.bunifuCheckbox6.CheckedOnColor = System.Drawing.Color.FromArgb(((int)(((byte)(51)))), ((int)(((byte)(205)))), ((int)(((byte)(117)))));
-            this.bunifuCheckbox6.ForeColor = System.Drawing.Color.White;
-            this.bunifuCheckbox6.Location = new System.Drawing.Point(9, 122);
-            this.bunifuCheckbox6.Name = "bunifuCheckbox6";
-            this.bunifuCheckbox6.Size = new System.Drawing.Size(20, 20);
-            this.bunifuCheckbox6.TabIndex = 16;
-            this.bunifuCheckbox6.OnChange += new System.EventHandler(this.bunifuCheckbox6_OnChange);
+            this.LogsFilesCheckBox.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(132)))), ((int)(((byte)(135)))), ((int)(((byte)(140)))));
+            this.LogsFilesCheckBox.ChechedOffColor = System.Drawing.Color.FromArgb(((int)(((byte)(132)))), ((int)(((byte)(135)))), ((int)(((byte)(140)))));
+            this.LogsFilesCheckBox.Checked = false;
+            this.LogsFilesCheckBox.CheckedOnColor = System.Drawing.Color.FromArgb(((int)(((byte)(51)))), ((int)(((byte)(205)))), ((int)(((byte)(117)))));
+            this.LogsFilesCheckBox.ForeColor = System.Drawing.Color.White;
+            this.LogsFilesCheckBox.Location = new System.Drawing.Point(9, 122);
+            this.LogsFilesCheckBox.Name = "LogsFilesCheckBox";
+            this.LogsFilesCheckBox.Size = new System.Drawing.Size(20, 20);
+            this.LogsFilesCheckBox.TabIndex = 16;
+            this.LogsFilesCheckBox.OnChange += new System.EventHandler(this.bunifuCheckbox6_OnChange);
             // 
             // Cleaner
             // 
@@ -217,17 +218,17 @@ namespace Win_10_Optimizer.Forms
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(44)))), ((int)(((byte)(43)))), ((int)(((byte)(60)))));
             this.ClientSize = new System.Drawing.Size(149, 174);
-            this.Controls.Add(this.bunifuCheckbox6);
+            this.Controls.Add(this.LogsFilesCheckBox);
             this.Controls.Add(this.label5);
-            this.Controls.Add(this.bunifuCheckbox5);
+            this.Controls.Add(this.MediaFilesCheckBox);
             this.Controls.Add(this.label4);
-            this.Controls.Add(this.bunifuCheckbox4);
+            this.Controls.Add(this.ScreenShotsFilesCheckBox);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.bunifuFlatButton1);
-            this.Controls.Add(this.bunifuCheckbox2);
-            this.Controls.Add(this.bunifuCheckbox1);
+            this.Controls.Add(this.GameTrashFilesCheckBox);
+            this.Controls.Add(this.WindowsFilesCheckBox);
             this.Controls.Add(this.panel1);
             this.Name = "Cleaner";
             this.Text = "Cleaner";
@@ -238,17 +239,17 @@ namespace Win_10_Optimizer.Forms
 
         #endregion
 
-        private Bunifu.Framework.UI.BunifuCheckbox bunifuCheckbox1;
+        private Bunifu.Framework.UI.BunifuCheckbox WindowsFilesCheckBox;
         private System.Windows.Forms.Label label1;
-        private Bunifu.Framework.UI.BunifuCheckbox bunifuCheckbox2;
+        private Bunifu.Framework.UI.BunifuCheckbox GameTrashFilesCheckBox;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label3;
         private Bunifu.Framework.UI.BunifuFlatButton bunifuFlatButton1;
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.Label label4;
-        private Bunifu.Framework.UI.BunifuCheckbox bunifuCheckbox4;
+        private Bunifu.Framework.UI.BunifuCheckbox ScreenShotsFilesCheckBox;
         private System.Windows.Forms.Label label5;
-        private Bunifu.Framework.UI.BunifuCheckbox bunifuCheckbox5;
-        private Bunifu.Framework.UI.BunifuCheckbox bunifuCheckbox6;
+        private Bunifu.Framework.UI.BunifuCheckbox MediaFilesCheckBox;
+        private Bunifu.Framework.UI.BunifuCheckbox LogsFilesCheckBox;
     }
 }

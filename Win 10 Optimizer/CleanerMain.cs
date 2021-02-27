@@ -89,7 +89,7 @@ namespace Win_10_Optimizer
                     System.IO.DirectoryInfo myDirInfo = new DirectoryInfo(custompath);
                     foreach (FileInfo file in myDirInfo.GetFiles()) { try { file.Delete(); } catch (Exception ex) { } }
                     foreach (DirectoryInfo dir in myDirInfo.GetDirectories()) { try { dir.Delete(true); } catch (Exception ex) { } }
-                    try { Directory.Delete(dir); } catch { }
+                    try { Directory.Delete(dir, true); } catch { }
                 }
             }
             private void Clear()

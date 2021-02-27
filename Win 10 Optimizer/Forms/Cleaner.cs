@@ -61,7 +61,7 @@ namespace Win_10_Optimizer.Forms
         {
             bunifuFlatButton1.Enabled = false;
             CleanerMain cleanermethod = new CleanerMain();
-            if (bunifuCheckbox1.Checked)
+            if (WindowsFilesCheckBox.Checked)
             {
                 Task.Factory.StartNew(() =>
                 {
@@ -73,13 +73,13 @@ namespace Win_10_Optimizer.Forms
                         clear.Delete();
                     }
 
-                    bunifuCheckbox1.Invoke(new MethodInvoker(() =>
+                    WindowsFilesCheckBox.Invoke(new MethodInvoker(() =>
                     {
-                        bunifuCheckbox1.Checked = false;
+                        WindowsFilesCheckBox.Checked = false;
                     }));
                 });
             }
-            if (bunifuCheckbox5.Checked)
+            if (MediaFilesCheckBox.Checked)
             {
                 Task.Factory.StartNew(() =>
                 {
@@ -88,13 +88,13 @@ namespace Win_10_Optimizer.Forms
                         clear.Delete();
                     }
 
-                    bunifuCheckbox5.Invoke(new MethodInvoker(() =>
+                    MediaFilesCheckBox.Invoke(new MethodInvoker(() =>
                     {
-                        bunifuCheckbox5.Checked = false;
+                        MediaFilesCheckBox.Checked = false;
                     }));
                 });
             }
-            if (bunifuCheckbox4.Checked)
+            if (ScreenShotsFilesCheckBox.Checked)
             {
                 Task.Factory.StartNew(() =>
                 {
@@ -103,13 +103,13 @@ namespace Win_10_Optimizer.Forms
                         clear.Delete();
                     }
 
-                    bunifuCheckbox4.Invoke(new MethodInvoker(() =>
+                    ScreenShotsFilesCheckBox.Invoke(new MethodInvoker(() =>
                     {
-                        bunifuCheckbox4.Checked = false;
+                        ScreenShotsFilesCheckBox.Checked = false;
                     }));
                 });
             }
-            if (bunifuCheckbox6.Checked)
+            if (LogsFilesCheckBox.Checked)
             {
                 Task.Factory.StartNew(() =>
                 {
@@ -118,13 +118,13 @@ namespace Win_10_Optimizer.Forms
                         clear.Delete();
                     }
 
-                    bunifuCheckbox6.Invoke(new MethodInvoker(() =>
+                    LogsFilesCheckBox.Invoke(new MethodInvoker(() =>
                     {
-                        bunifuCheckbox6.Checked = false;
+                        LogsFilesCheckBox.Checked = false;
                     }));
                 });
             }
-            if (bunifuCheckbox2.Checked)
+            if (GameTrashFilesCheckBox.Checked)
             {
                 Task.Factory.StartNew(() =>
                 {
@@ -250,9 +250,9 @@ namespace Win_10_Optimizer.Forms
                             catch (Exception ex) { }
                         }
                     }
-                    bunifuCheckbox2.Invoke(new MethodInvoker(() =>
+                    GameTrashFilesCheckBox.Invoke(new MethodInvoker(() =>
                     {
-                        bunifuCheckbox2.Checked = false;
+                        GameTrashFilesCheckBox.Checked = false;
                     }));
                 });
             }
