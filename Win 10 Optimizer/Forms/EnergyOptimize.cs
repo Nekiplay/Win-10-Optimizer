@@ -25,6 +25,7 @@ namespace Win_10_Optimizer.Forms
 
         private void EnergyOptimize_Load_1(object sender, EventArgs e)
         {
+            /* Проверка максимальной производительности */
             Energy energy = new Energy();
             Task.Factory.StartNew(() =>
             {
@@ -41,6 +42,7 @@ namespace Win_10_Optimizer.Forms
                     }
                 }
             });
+            /* Проверка гибернаций */
             Gybernate gybernate = new Gybernate();
             Task.Factory.StartNew(() =>
             {
@@ -48,6 +50,45 @@ namespace Win_10_Optimizer.Forms
                 bunifuCheckbox2.Invoke(new MethodInvoker(() =>
                 {
                     bunifuCheckbox2.Checked = !on;
+                }));
+            });
+            /* Проверка алгоритма нейгла */
+            Task.Factory.StartNew(() =>
+            {
+                bool enabled = false;
+                /* Проверка по документаций Microsoft */
+                RegistryKey reg = Registry.LocalMachine;
+                RegistryKey SOFTWARE = reg.OpenSubKey(@"SOFTWARE\Microsoft\MSMQ\Parameters");
+                object value = SOFTWARE.GetValue("TcpNoDelay");
+                if (value == null && value.ToString() != "1")
+                {
+                    enabled = true;
+                }
+                else
+                {
+                    enabled = false;
+                }
+                /* Проверка от других источников */
+                bool enabled2 = false;
+                RegistryKey Interfaces = reg.OpenSubKey(@"SYSTEM\CurrentControlSet\Services\Tcpip\Parameters\Interfaces");
+                string[] names = Interfaces.GetSubKeyNames();
+                foreach (string name in names)
+                {
+                    RegistryKey kk = Interfaces.OpenSubKey(name);
+                    object value2 = kk.GetValue("TcpAckFrequency");
+                    object value3 = kk.GetValue("TcpNoDelay");
+                    if (value2 != null && value3 != null && value2.ToString() == "1" && value3.ToString() == "1")
+                    {
+                        enabled = true;
+                    }
+                    else
+                    {
+                        enabled = false;
+                    }
+                }
+                bunifuCheckbox3.Invoke(new MethodInvoker(() =>
+                {
+                    bunifuCheckbox3.Checked = enabled;
                 }));
             });
         }
@@ -74,6 +115,43 @@ namespace Win_10_Optimizer.Forms
             {
                 Gybernate gybernate = new Gybernate();
                 gybernate.Enable(!bunifuCheckbox2.Checked);
+            });
+        }
+
+        private void bunifuCheckbox3_OnChange(object sender, EventArgs e)
+        {
+            Task.Factory.StartNew(() =>
+            {
+                RegistryKey reg = Registry.LocalMachine;
+                RegistryKey helloKey = reg.OpenSubKey(@"SOFTWARE\Microsoft\MSMQ\Parameters", true);
+                if (bunifuCheckbox3.Checked)
+                {
+                    helloKey.SetValue("TcpNoDelay", 1);
+
+                    /* Включение в интерфейсах */
+                    RegistryKey Interfaces = reg.OpenSubKey(@"SYSTEM\CurrentControlSet\Services\Tcpip\Parameters\Interfaces", true);
+                    string[] names = Interfaces.GetSubKeyNames();
+                    foreach (string name in names)
+                    {
+                        RegistryKey keys = Interfaces.OpenSubKey(name, true);
+                        keys.SetValue("TcpNoDelay", 1);
+                        keys.SetValue("TcpAckFrequency", 1);
+                    }
+                }
+                else
+                {
+                    helloKey.DeleteValue("TcpNoDelay");
+
+                    /* Удаление в интерфейсах */
+                    RegistryKey Interfaces = reg.OpenSubKey(@"SYSTEM\CurrentControlSet\Services\Tcpip\Parameters\Interfaces", true);
+                    string[] names = Interfaces.GetSubKeyNames();
+                    foreach (string name in names)
+                    {
+                        RegistryKey keys = Interfaces.OpenSubKey(name, true);
+                        keys.DeleteValue("TcpNoDelay");
+                        keys.DeleteValue("TcpAckFrequency");
+                    }
+                }
             });
         }
     }

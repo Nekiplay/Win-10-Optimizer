@@ -51,8 +51,8 @@ namespace Win_10_Optimizer
         }
         private void Form1_Load(object sender, EventArgs e)
         {
-            ActivateButton(bunifuButton1, RGBColors.color1);
-            OpenChildForm(new Forms.EnergyOptimize(), true);
+            ActivateButton(OptimizeButton, RGBColors.color1);
+            OpenChildForm(optimize, false);
         }
         private readonly Panel leftBorderBtn;
         private Form currentChildForm;
@@ -90,22 +90,21 @@ namespace Win_10_Optimizer
             public static readonly Color color3 = Color.FromArgb(253, 138, 114);
         }
 
-        private void bunifuImageButton1_Click(object sender, EventArgs e)
-        {
-            Application.Exit();
-        }
-        private void bunifuButton1_Click(object sender, EventArgs e)
+        Forms.EnergyOptimize optimize = new Forms.EnergyOptimize();
+        Forms.Cleaner cleaner = new Forms.Cleaner();
+        private void bunifuButton4_Click(object sender, EventArgs e)
         {
             ActivateButton(sender, RGBColors.color1);
-            OpenChildForm(new Forms.EnergyOptimize(), true);
-        }
-        private void bunifuButton2_Click(object sender, EventArgs e)
-        {
-            ActivateButton(sender, RGBColors.color2);
-            OpenChildForm(new Forms.Cleaner(), true);
+            OpenChildForm(optimize, false);
         }
 
-        private void bunifuButton3_Click(object sender, EventArgs e)
+        private void CleanerButton_Click(object sender, EventArgs e)
+        {
+            ActivateButton(sender, RGBColors.color2);
+            OpenChildForm(cleaner, false);
+        }
+
+        private void ExitButton_Click(object sender, EventArgs e)
         {
             Application.Exit();
         }

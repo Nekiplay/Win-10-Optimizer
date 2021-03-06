@@ -95,12 +95,11 @@ namespace Win_10_Optimizer
                 }
                 else
                 {
-                    foreach (var drive in DriveInfo.GetDrives())
+                    foreach (var drive in System.IO.DriveInfo.GetDrives())
                     {
                         try 
                         {
                             string drivec = drive.Name.Substring(0, drive.Name.Length - 2);
-                            Console.WriteLine(dir.Replace("{drive}", drivec));
                             Clear(dir.Replace("{drive}", drivec)); 
                         } catch { }
                     }
@@ -113,14 +112,14 @@ namespace Win_10_Optimizer
                     if (!deleteall)
                     {
                         var result = System.IO.Directory.EnumerateFiles(custompath, pattern);
-                        if (result.Count() != 0) { foreach (var m in result) { try { File.Delete(m); } catch { } } }
+                        if (result.Count() != 0) { foreach (var m in result) { try { System.IO.File.Delete(m); } catch { } } }
                     }
                     else
                     {
-                        System.IO.DirectoryInfo myDirInfo = new DirectoryInfo(custompath);
-                        foreach (FileInfo file in myDirInfo.GetFiles()) { try { file.Delete(); } catch { } }
-                        foreach (DirectoryInfo dir in myDirInfo.GetDirectories()) { try { dir.Delete(true); } catch { } }
-                        try { Directory.Delete(dir, true); } catch { }
+                        System.IO.DirectoryInfo myDirInfo = new System.IO.DirectoryInfo(custompath);
+                        foreach (System.IO.FileInfo file in myDirInfo.GetFiles()) { try { file.Delete(); } catch { } }
+                        foreach (System.IO.DirectoryInfo dir in myDirInfo.GetDirectories()) { try { dir.Delete(true); } catch { } }
+                        try { System.IO.Directory.Delete(dir, true); } catch { }
                     }
                 }
             }
