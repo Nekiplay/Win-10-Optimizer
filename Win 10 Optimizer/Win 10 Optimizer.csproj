@@ -38,7 +38,7 @@
     <ApplicationManifest>app.manifest</ApplicationManifest>
   </PropertyGroup>
   <PropertyGroup>
-    <ApplicationIcon>png-transparent-computer-icons-data-transformation-others-miscellaneous-text-logo.ico</ApplicationIcon>
+    <ApplicationIcon>clear_icon_155649.ico</ApplicationIcon>
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="Bunifu.UI.WinForms.BunifuButton">
@@ -130,7 +130,7 @@
     <None Include="App.config" />
   </ItemGroup>
   <ItemGroup>
-    <Content Include="png-transparent-computer-icons-data-transformation-others-miscellaneous-text-logo.ico" />
+    <Content Include="clear_icon_155649.ico" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="WinUtils\" />
