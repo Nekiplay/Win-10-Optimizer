@@ -58,18 +58,6 @@ namespace Win_10_Optimizer.Forms
                 bool enabled = false;
                 /* Проверка по документаций Microsoft */
                 RegistryKey reg = Registry.LocalMachine;
-                RegistryKey SOFTWARE = reg.OpenSubKey(@"SOFTWARE\Microsoft\MSMQ\Parameters");
-                object value = SOFTWARE.GetValue("TcpNoDelay");
-                if (value == null && value.ToString() != "1")
-                {
-                    enabled = true;
-                }
-                else
-                {
-                    enabled = false;
-                }
-                /* Проверка от других источников */
-                bool enabled2 = false;
                 RegistryKey Interfaces = reg.OpenSubKey(@"SYSTEM\CurrentControlSet\Services\Tcpip\Parameters\Interfaces");
                 string[] names = Interfaces.GetSubKeyNames();
                 foreach (string name in names)
@@ -123,11 +111,8 @@ namespace Win_10_Optimizer.Forms
             Task.Factory.StartNew(() =>
             {
                 RegistryKey reg = Registry.LocalMachine;
-                RegistryKey helloKey = reg.OpenSubKey(@"SOFTWARE\Microsoft\MSMQ\Parameters", true);
                 if (bunifuCheckbox3.Checked)
                 {
-                    helloKey.SetValue("TcpNoDelay", 1);
-
                     /* Включение в интерфейсах */
                     RegistryKey Interfaces = reg.OpenSubKey(@"SYSTEM\CurrentControlSet\Services\Tcpip\Parameters\Interfaces", true);
                     string[] names = Interfaces.GetSubKeyNames();
@@ -140,8 +125,6 @@ namespace Win_10_Optimizer.Forms
                 }
                 else
                 {
-                    helloKey.DeleteValue("TcpNoDelay");
-
                     /* Удаление в интерфейсах */
                     RegistryKey Interfaces = reg.OpenSubKey(@"SYSTEM\CurrentControlSet\Services\Tcpip\Parameters\Interfaces", true);
                     string[] names = Interfaces.GetSubKeyNames();
