@@ -34,6 +34,16 @@ namespace Win_10_Optimizer.Forms
         static extern int SHEmptyRecycleBin(IntPtr hwnd, string pszRootPath, RecycleFlags dwFlags);
         private void bunifuFlatButton1_Click(object sender, EventArgs e)
         {
+            
+        }
+
+        private void Cleaner_Load(object sender, EventArgs e)
+        {
+
+        }
+
+        private void OptimizeButton_Click(object sender, EventArgs e)
+        {
             ClearButton.Enabled = false;
             CleanerMain cleanermethod = new CleanerMain();
             if (WindowsFilesCheckBox.Checked)
