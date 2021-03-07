@@ -65,13 +65,15 @@ namespace Win_10_Optimizer.Forms
                     RegistryKey kk = Interfaces.OpenSubKey(name);
                     object value2 = kk.GetValue("TcpAckFrequency");
                     object value3 = kk.GetValue("TcpNoDelay");
-                    if (value2 != null && value3 != null && value2.ToString() == "1" && value3.ToString() == "1")
+                    if (kk.GetValue("TcpAckFrequency") != null  && kk.GetValue("TcpNoDelay") != null
+                    && kk.GetValue("TcpAckFrequency").ToString() == "1" 
+                    && kk.GetValue("TcpNoDelay").ToString() == "1"
+                    && kk.GetValue("NameServer") != null
+                    && kk.GetValue("DhcpDomain") != null
+                    && kk.GetValue("DhcpDomain").ToString() == "lan"
+                    )
                     {
                         enabled = true;
-                    }
-                    else
-                    {
-                        enabled = false;
                     }
                 }
                 bunifuCheckbox3.Invoke(new MethodInvoker(() =>
