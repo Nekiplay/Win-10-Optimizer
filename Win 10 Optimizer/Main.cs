@@ -90,8 +90,8 @@ namespace Win_10_Optimizer
             public static readonly Color color3 = Color.FromArgb(253, 138, 114);
         }
 
-        Forms.EnergyOptimize optimize = new Forms.EnergyOptimize();
-        Forms.Cleaner cleaner = new Forms.Cleaner();
+        readonly Forms.EnergyOptimize optimize = new Forms.EnergyOptimize();
+        readonly Forms.Cleaner cleaner = new Forms.Cleaner();
         private void bunifuButton4_Click(object sender, EventArgs e)
         {
             ActivateButton(sender, RGBColors.color1);
