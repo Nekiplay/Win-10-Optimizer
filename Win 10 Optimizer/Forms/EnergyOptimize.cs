@@ -69,7 +69,7 @@ namespace Win_10_Optimizer.Forms
                     //Console.WriteLine(kk.GetValue("NameServer") != null);
                     //Console.WriteLine(kk.GetValue("DhcpDomain") != null);
                     //Console.WriteLine(kk.GetValue("DhcpDomain").ToString() == "lan");
-                    if (kk.GetValue("TcpAckFrequency") != null  && kk.GetValue("TcpNoDelay") != null
+                    if (kk.GetValue("TcpAckFrequency") != null && kk.GetValue("TcpNoDelay") != null
                     && kk.GetValue("TcpAckFrequency").ToString() == "1" 
                     && kk.GetValue("TcpNoDelay").ToString() == "1"
                     && kk.GetValue("NameServer") != null
