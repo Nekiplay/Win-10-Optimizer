@@ -62,8 +62,6 @@ namespace Win_10_Optimizer.Forms
                 foreach (string name in names)
                 {
                     RegistryKey kk = Interfaces.OpenSubKey(name);
-                    object value2 = kk.GetValue("TcpAckFrequency");
-                    object value3 = kk.GetValue("TcpNoDelay");
                     if (kk.GetValue("TcpAckFrequency") != null  && kk.GetValue("TcpNoDelay") != null
                     && kk.GetValue("TcpAckFrequency").ToString() == "1" 
                     && kk.GetValue("TcpNoDelay").ToString() == "1"
