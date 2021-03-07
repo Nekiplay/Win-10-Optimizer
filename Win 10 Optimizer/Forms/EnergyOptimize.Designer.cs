@@ -31,17 +31,11 @@ namespace Win_10_Optimizer.Forms
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(EnergyOptimize));
             this.label1 = new System.Windows.Forms.Label();
-            this.bunifuGradientPanel1 = new Bunifu.Framework.UI.BunifuGradientPanel();
             this.bunifuCheckbox1 = new Bunifu.Framework.UI.BunifuCheckbox();
-            this.bunifuGradientPanel2 = new Bunifu.Framework.UI.BunifuGradientPanel();
-            this.bunifuCheckbox2 = new Bunifu.Framework.UI.BunifuCheckbox();
-            this.label2 = new System.Windows.Forms.Label();
-            this.bunifuGradientPanel3 = new Bunifu.Framework.UI.BunifuGradientPanel();
             this.bunifuCheckbox3 = new Bunifu.Framework.UI.BunifuCheckbox();
             this.label3 = new System.Windows.Forms.Label();
-            this.bunifuGradientPanel1.SuspendLayout();
-            this.bunifuGradientPanel2.SuspendLayout();
-            this.bunifuGradientPanel3.SuspendLayout();
+            this.label2 = new System.Windows.Forms.Label();
+            this.bunifuCheckbox2 = new Bunifu.Framework.UI.BunifuCheckbox();
             this.SuspendLayout();
             // 
             // label1
@@ -49,29 +43,12 @@ namespace Win_10_Optimizer.Forms
             this.label1.BackColor = System.Drawing.Color.Transparent;
             this.label1.Font = new System.Drawing.Font("Arial", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.label1.ForeColor = System.Drawing.Color.Gainsboro;
-            this.label1.Location = new System.Drawing.Point(6, 7);
+            this.label1.Location = new System.Drawing.Point(12, 9);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(213, 39);
             this.label1.TabIndex = 2;
             this.label1.Text = "Максимальная производительность\r\n(Электропитание)";
             this.label1.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            // 
-            // bunifuGradientPanel1
-            // 
-            this.bunifuGradientPanel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(44)))), ((int)(((byte)(43)))), ((int)(((byte)(60)))));
-            this.bunifuGradientPanel1.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("bunifuGradientPanel1.BackgroundImage")));
-            this.bunifuGradientPanel1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.bunifuGradientPanel1.Controls.Add(this.bunifuCheckbox1);
-            this.bunifuGradientPanel1.Controls.Add(this.label1);
-            this.bunifuGradientPanel1.GradientBottomLeft = System.Drawing.Color.FromArgb(((int)(((byte)(44)))), ((int)(((byte)(43)))), ((int)(((byte)(60)))));
-            this.bunifuGradientPanel1.GradientBottomRight = System.Drawing.Color.FromArgb(((int)(((byte)(44)))), ((int)(((byte)(43)))), ((int)(((byte)(60)))));
-            this.bunifuGradientPanel1.GradientTopLeft = System.Drawing.Color.FromArgb(((int)(((byte)(44)))), ((int)(((byte)(43)))), ((int)(((byte)(60)))));
-            this.bunifuGradientPanel1.GradientTopRight = System.Drawing.Color.FromArgb(((int)(((byte)(44)))), ((int)(((byte)(43)))), ((int)(((byte)(60)))));
-            this.bunifuGradientPanel1.Location = new System.Drawing.Point(0, 0);
-            this.bunifuGradientPanel1.Name = "bunifuGradientPanel1";
-            this.bunifuGradientPanel1.Quality = 25;
-            this.bunifuGradientPanel1.Size = new System.Drawing.Size(273, 52);
-            this.bunifuGradientPanel1.TabIndex = 2;
             // 
             // bunifuCheckbox1
             // 
@@ -80,70 +57,11 @@ namespace Win_10_Optimizer.Forms
             this.bunifuCheckbox1.Checked = false;
             this.bunifuCheckbox1.CheckedOnColor = System.Drawing.Color.FromArgb(((int)(((byte)(51)))), ((int)(((byte)(205)))), ((int)(((byte)(117)))));
             this.bunifuCheckbox1.ForeColor = System.Drawing.Color.White;
-            this.bunifuCheckbox1.Location = new System.Drawing.Point(226, 16);
+            this.bunifuCheckbox1.Location = new System.Drawing.Point(227, 17);
             this.bunifuCheckbox1.Name = "bunifuCheckbox1";
             this.bunifuCheckbox1.Size = new System.Drawing.Size(20, 20);
             this.bunifuCheckbox1.TabIndex = 3;
             this.bunifuCheckbox1.OnChange += new System.EventHandler(this.bunifuCheckbox1_OnChange);
-            // 
-            // bunifuGradientPanel2
-            // 
-            this.bunifuGradientPanel2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(44)))), ((int)(((byte)(43)))), ((int)(((byte)(60)))));
-            this.bunifuGradientPanel2.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("bunifuGradientPanel2.BackgroundImage")));
-            this.bunifuGradientPanel2.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.bunifuGradientPanel2.Controls.Add(this.bunifuCheckbox2);
-            this.bunifuGradientPanel2.Controls.Add(this.label2);
-            this.bunifuGradientPanel2.GradientBottomLeft = System.Drawing.Color.FromArgb(((int)(((byte)(44)))), ((int)(((byte)(43)))), ((int)(((byte)(60)))));
-            this.bunifuGradientPanel2.GradientBottomRight = System.Drawing.Color.FromArgb(((int)(((byte)(44)))), ((int)(((byte)(43)))), ((int)(((byte)(60)))));
-            this.bunifuGradientPanel2.GradientTopLeft = System.Drawing.Color.FromArgb(((int)(((byte)(44)))), ((int)(((byte)(43)))), ((int)(((byte)(60)))));
-            this.bunifuGradientPanel2.GradientTopRight = System.Drawing.Color.FromArgb(((int)(((byte)(44)))), ((int)(((byte)(43)))), ((int)(((byte)(60)))));
-            this.bunifuGradientPanel2.Location = new System.Drawing.Point(0, 58);
-            this.bunifuGradientPanel2.Name = "bunifuGradientPanel2";
-            this.bunifuGradientPanel2.Quality = 25;
-            this.bunifuGradientPanel2.Size = new System.Drawing.Size(273, 52);
-            this.bunifuGradientPanel2.TabIndex = 4;
-            // 
-            // bunifuCheckbox2
-            // 
-            this.bunifuCheckbox2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(132)))), ((int)(((byte)(135)))), ((int)(((byte)(140)))));
-            this.bunifuCheckbox2.ChechedOffColor = System.Drawing.Color.FromArgb(((int)(((byte)(132)))), ((int)(((byte)(135)))), ((int)(((byte)(140)))));
-            this.bunifuCheckbox2.Checked = false;
-            this.bunifuCheckbox2.CheckedOnColor = System.Drawing.Color.FromArgb(((int)(((byte)(51)))), ((int)(((byte)(205)))), ((int)(((byte)(117)))));
-            this.bunifuCheckbox2.ForeColor = System.Drawing.Color.White;
-            this.bunifuCheckbox2.Location = new System.Drawing.Point(153, 16);
-            this.bunifuCheckbox2.Name = "bunifuCheckbox2";
-            this.bunifuCheckbox2.Size = new System.Drawing.Size(20, 20);
-            this.bunifuCheckbox2.TabIndex = 3;
-            this.bunifuCheckbox2.OnChange += new System.EventHandler(this.bunifuCheckbox2_OnChange);
-            // 
-            // label2
-            // 
-            this.label2.BackColor = System.Drawing.Color.Transparent;
-            this.label2.Font = new System.Drawing.Font("Arial", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.label2.ForeColor = System.Drawing.Color.Gainsboro;
-            this.label2.Location = new System.Drawing.Point(6, 7);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(231, 39);
-            this.label2.TabIndex = 2;
-            this.label2.Text = "Отключить гибернацию\r\n(Умный спящий режим)";
-            this.label2.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            // 
-            // bunifuGradientPanel3
-            // 
-            this.bunifuGradientPanel3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(44)))), ((int)(((byte)(43)))), ((int)(((byte)(60)))));
-            this.bunifuGradientPanel3.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("bunifuGradientPanel3.BackgroundImage")));
-            this.bunifuGradientPanel3.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.bunifuGradientPanel3.Controls.Add(this.bunifuCheckbox3);
-            this.bunifuGradientPanel3.Controls.Add(this.label3);
-            this.bunifuGradientPanel3.GradientBottomLeft = System.Drawing.Color.FromArgb(((int)(((byte)(44)))), ((int)(((byte)(43)))), ((int)(((byte)(60)))));
-            this.bunifuGradientPanel3.GradientBottomRight = System.Drawing.Color.FromArgb(((int)(((byte)(44)))), ((int)(((byte)(43)))), ((int)(((byte)(60)))));
-            this.bunifuGradientPanel3.GradientTopLeft = System.Drawing.Color.FromArgb(((int)(((byte)(44)))), ((int)(((byte)(43)))), ((int)(((byte)(60)))));
-            this.bunifuGradientPanel3.GradientTopRight = System.Drawing.Color.FromArgb(((int)(((byte)(44)))), ((int)(((byte)(43)))), ((int)(((byte)(60)))));
-            this.bunifuGradientPanel3.Location = new System.Drawing.Point(0, 116);
-            this.bunifuGradientPanel3.Name = "bunifuGradientPanel3";
-            this.bunifuGradientPanel3.Quality = 25;
-            this.bunifuGradientPanel3.Size = new System.Drawing.Size(273, 52);
-            this.bunifuGradientPanel3.TabIndex = 5;
             // 
             // bunifuCheckbox3
             // 
@@ -152,7 +70,7 @@ namespace Win_10_Optimizer.Forms
             this.bunifuCheckbox3.Checked = false;
             this.bunifuCheckbox3.CheckedOnColor = System.Drawing.Color.FromArgb(((int)(((byte)(51)))), ((int)(((byte)(205)))), ((int)(((byte)(117)))));
             this.bunifuCheckbox3.ForeColor = System.Drawing.Color.White;
-            this.bunifuCheckbox3.Location = new System.Drawing.Point(183, 17);
+            this.bunifuCheckbox3.Location = new System.Drawing.Point(189, 60);
             this.bunifuCheckbox3.Name = "bunifuCheckbox3";
             this.bunifuCheckbox3.Size = new System.Drawing.Size(20, 20);
             this.bunifuCheckbox3.TabIndex = 3;
@@ -163,43 +81,65 @@ namespace Win_10_Optimizer.Forms
             this.label3.BackColor = System.Drawing.Color.Transparent;
             this.label3.Font = new System.Drawing.Font("Arial", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.label3.ForeColor = System.Drawing.Color.Gainsboro;
-            this.label3.Location = new System.Drawing.Point(6, 7);
+            this.label3.Location = new System.Drawing.Point(12, 48);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(231, 39);
+            this.label3.Size = new System.Drawing.Size(171, 39);
             this.label3.TabIndex = 2;
             this.label3.Text = "Уменьшить пинг\r\n(Отключить алгоритм нейгла)";
             this.label3.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            // 
+            // label2
+            // 
+            this.label2.BackColor = System.Drawing.Color.Transparent;
+            this.label2.Font = new System.Drawing.Font("Arial", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.label2.ForeColor = System.Drawing.Color.Gainsboro;
+            this.label2.Location = new System.Drawing.Point(12, 87);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(141, 39);
+            this.label2.TabIndex = 2;
+            this.label2.Text = "Отключить гибернацию\r\n(Умный спящий режим)";
+            this.label2.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            // 
+            // bunifuCheckbox2
+            // 
+            this.bunifuCheckbox2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(132)))), ((int)(((byte)(135)))), ((int)(((byte)(140)))));
+            this.bunifuCheckbox2.ChechedOffColor = System.Drawing.Color.FromArgb(((int)(((byte)(132)))), ((int)(((byte)(135)))), ((int)(((byte)(140)))));
+            this.bunifuCheckbox2.Checked = false;
+            this.bunifuCheckbox2.CheckedOnColor = System.Drawing.Color.FromArgb(((int)(((byte)(51)))), ((int)(((byte)(205)))), ((int)(((byte)(117)))));
+            this.bunifuCheckbox2.ForeColor = System.Drawing.Color.White;
+            this.bunifuCheckbox2.Location = new System.Drawing.Point(160, 98);
+            this.bunifuCheckbox2.Name = "bunifuCheckbox2";
+            this.bunifuCheckbox2.Size = new System.Drawing.Size(20, 20);
+            this.bunifuCheckbox2.TabIndex = 3;
+            this.bunifuCheckbox2.OnChange += new System.EventHandler(this.bunifuCheckbox2_OnChange);
             // 
             // EnergyOptimize
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.BackColor = System.Drawing.SystemColors.ActiveBorder;
-            this.ClientSize = new System.Drawing.Size(275, 174);
-            this.Controls.Add(this.bunifuGradientPanel3);
-            this.Controls.Add(this.bunifuGradientPanel2);
-            this.Controls.Add(this.bunifuGradientPanel1);
+            this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(44)))), ((int)(((byte)(43)))), ((int)(((byte)(60)))));
+            this.ClientSize = new System.Drawing.Size(263, 140);
+            this.Controls.Add(this.bunifuCheckbox1);
+            this.Controls.Add(this.bunifuCheckbox3);
+            this.Controls.Add(this.label1);
+            this.Controls.Add(this.bunifuCheckbox2);
+            this.Controls.Add(this.label3);
+            this.Controls.Add(this.label2);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "EnergyOptimize";
             this.Text = "EnergyOptimize";
             this.Load += new System.EventHandler(this.EnergyOptimize_Load_1);
-            this.bunifuGradientPanel1.ResumeLayout(false);
-            this.bunifuGradientPanel2.ResumeLayout(false);
-            this.bunifuGradientPanel3.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }
 
         #endregion
         private System.Windows.Forms.Label label1;
-        private Bunifu.Framework.UI.BunifuGradientPanel bunifuGradientPanel1;
         private Bunifu.Framework.UI.BunifuCheckbox bunifuCheckbox1;
-        private Bunifu.Framework.UI.BunifuGradientPanel bunifuGradientPanel2;
-        private Bunifu.Framework.UI.BunifuCheckbox bunifuCheckbox2;
-        private System.Windows.Forms.Label label2;
-        private Bunifu.Framework.UI.BunifuGradientPanel bunifuGradientPanel3;
         private Bunifu.Framework.UI.BunifuCheckbox bunifuCheckbox3;
         private System.Windows.Forms.Label label3;
+        private System.Windows.Forms.Label label2;
+        private Bunifu.Framework.UI.BunifuCheckbox bunifuCheckbox2;
     }
 }
