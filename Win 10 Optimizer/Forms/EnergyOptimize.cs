@@ -56,7 +56,6 @@ namespace Win_10_Optimizer.Forms
             Task.Factory.StartNew(() =>
             {
                 bool enabled = false;
-                /* Проверка по документаций Microsoft */
                 RegistryKey reg = Registry.LocalMachine;
                 RegistryKey Interfaces = reg.OpenSubKey(@"SYSTEM\CurrentControlSet\Services\Tcpip\Parameters\Interfaces");
                 string[] names = Interfaces.GetSubKeyNames();
