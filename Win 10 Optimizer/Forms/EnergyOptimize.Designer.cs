@@ -51,10 +51,10 @@ namespace Win_10_Optimizer.Forms
             this.label1.ForeColor = System.Drawing.Color.Gainsboro;
             this.label1.Location = new System.Drawing.Point(6, 7);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(231, 39);
+            this.label1.Size = new System.Drawing.Size(213, 39);
             this.label1.TabIndex = 2;
             this.label1.Text = "Максимальная производительность\r\n(Электропитание)";
-            this.label1.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.label1.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
             // bunifuGradientPanel1
             // 
@@ -80,7 +80,7 @@ namespace Win_10_Optimizer.Forms
             this.bunifuCheckbox1.Checked = false;
             this.bunifuCheckbox1.CheckedOnColor = System.Drawing.Color.FromArgb(((int)(((byte)(51)))), ((int)(((byte)(205)))), ((int)(((byte)(117)))));
             this.bunifuCheckbox1.ForeColor = System.Drawing.Color.White;
-            this.bunifuCheckbox1.Location = new System.Drawing.Point(243, 16);
+            this.bunifuCheckbox1.Location = new System.Drawing.Point(226, 16);
             this.bunifuCheckbox1.Name = "bunifuCheckbox1";
             this.bunifuCheckbox1.Size = new System.Drawing.Size(20, 20);
             this.bunifuCheckbox1.TabIndex = 3;
@@ -110,7 +110,7 @@ namespace Win_10_Optimizer.Forms
             this.bunifuCheckbox2.Checked = false;
             this.bunifuCheckbox2.CheckedOnColor = System.Drawing.Color.FromArgb(((int)(((byte)(51)))), ((int)(((byte)(205)))), ((int)(((byte)(117)))));
             this.bunifuCheckbox2.ForeColor = System.Drawing.Color.White;
-            this.bunifuCheckbox2.Location = new System.Drawing.Point(243, 16);
+            this.bunifuCheckbox2.Location = new System.Drawing.Point(153, 16);
             this.bunifuCheckbox2.Name = "bunifuCheckbox2";
             this.bunifuCheckbox2.Size = new System.Drawing.Size(20, 20);
             this.bunifuCheckbox2.TabIndex = 3;
@@ -126,7 +126,7 @@ namespace Win_10_Optimizer.Forms
             this.label2.Size = new System.Drawing.Size(231, 39);
             this.label2.TabIndex = 2;
             this.label2.Text = "Отключить гибернацию\r\n(Умный спящий режим)";
-            this.label2.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.label2.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
             // bunifuGradientPanel3
             // 
@@ -152,7 +152,7 @@ namespace Win_10_Optimizer.Forms
             this.bunifuCheckbox3.Checked = false;
             this.bunifuCheckbox3.CheckedOnColor = System.Drawing.Color.FromArgb(((int)(((byte)(51)))), ((int)(((byte)(205)))), ((int)(((byte)(117)))));
             this.bunifuCheckbox3.ForeColor = System.Drawing.Color.White;
-            this.bunifuCheckbox3.Location = new System.Drawing.Point(243, 16);
+            this.bunifuCheckbox3.Location = new System.Drawing.Point(183, 17);
             this.bunifuCheckbox3.Name = "bunifuCheckbox3";
             this.bunifuCheckbox3.Size = new System.Drawing.Size(20, 20);
             this.bunifuCheckbox3.TabIndex = 3;
@@ -168,7 +168,7 @@ namespace Win_10_Optimizer.Forms
             this.label3.Size = new System.Drawing.Size(231, 39);
             this.label3.TabIndex = 2;
             this.label3.Text = "Уменьшить пинг\r\n(Отключить алгоритм нейгла)";
-            this.label3.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.label3.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
             // EnergyOptimize
             // 

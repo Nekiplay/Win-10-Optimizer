@@ -279,7 +279,6 @@ namespace Win_10_Optimizer.Forms
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "Cleaner";
             this.Text = "Cleaner";
-            this.Load += new System.EventHandler(this.Cleaner_Load);
             this.ResumeLayout(false);
 
         }
