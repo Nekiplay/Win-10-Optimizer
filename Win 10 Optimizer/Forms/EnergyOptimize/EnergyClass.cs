@@ -20,7 +20,6 @@ namespace Win_10_Optimizer.Forms.EnergyOptimize
                 string text1 = text;
                 if (!string.IsNullOrEmpty(GetSchemeID(text1)))
                 {
-                    Console.WriteLine(text1);
                     text1 = text1.Replace(" (", "&");
                     text1 = text1.Replace(")", "&");
                     string type = Regex.Match(text1, "&(.*)&").Groups[1].Value;
@@ -71,11 +70,11 @@ namespace Win_10_Optimizer.Forms.EnergyOptimize
         }
         public void SetActiv(string id)
         {
-            List<string> cmdtext = new Win_10_Optimizer.Utilites.ProcessUtils().StartCmd("chcp 1251 & powercfg -SETACTIVE " + id);
+            new Win_10_Optimizer.Utilites.ProcessUtils().StartCmd("chcp 1251 & powercfg -SETACTIVE " + id);
         }
         public void Delete(string id)
         {
-            List<string> cmdtext = new Win_10_Optimizer.Utilites.ProcessUtils().StartCmd("chcp 1251 & powercfg /d " + id);
+            new Win_10_Optimizer.Utilites.ProcessUtils().StartCmd("chcp 1251 & powercfg /d " + id);
         }
         public void Enable(bool on)
         {
