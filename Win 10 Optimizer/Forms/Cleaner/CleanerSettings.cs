@@ -138,7 +138,7 @@ namespace Win_10_Optimizer
                     {
                         System.IO.DirectoryInfo myDirInfo = new System.IO.DirectoryInfo(custompath);
                         foreach (System.IO.FileInfo file in myDirInfo.GetFiles()) { try { file.Delete(); } catch { } }
-                        foreach (System.IO.DirectoryInfo dir in myDirInfo.GetDirectories()) { try { dir.Delete(true); } catch { } }
+                        foreach (System.IO.DirectoryInfo diri in myDirInfo.GetDirectories()) { try { diri.Delete(true); } catch { } }
                         try { System.IO.Directory.Delete(dir, true); } catch { }
                     }
                 }
