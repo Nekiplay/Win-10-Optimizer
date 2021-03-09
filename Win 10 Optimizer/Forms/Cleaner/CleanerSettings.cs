@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Microsoft.Win32;
+using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
@@ -7,7 +8,7 @@ using System.Threading.Tasks;
 
 namespace Win_10_Optimizer
 {
-    public class CleanerMain
+    public class CleanerSettings
     {
         /* Логи */
         public List<ClearFiles> logsfiles = new List<ClearFiles> {
@@ -66,8 +67,28 @@ namespace Win_10_Optimizer
             new ClearFiles(Environment.GetFolderPath(Environment.SpecialFolder.Windows) + "\\Temp", "*.*", true),
             new ClearFiles(Environment.GetFolderPath(Environment.SpecialFolder.UserProfile) + "\\AppData\\Local\\Temp", "*.*", true),
         };
-
-        /* Find Class */
+        /* Steam Files */
+        public List<ClearFiles> steamfiles = new List<ClearFiles>();
+        public CleanerSettings()
+        {
+            /* Steam Games */
+            string steamdir = (string)Registry.GetValue(@"HKEY_LOCAL_MACHINE\SOFTWARE\Valve\Steam", "InstallPath", "Nothing");
+            if (string.IsNullOrEmpty(steamdir) || steamdir == "Nothing")
+            {
+                steamdir = (string)Registry.GetValue(@"HKEY_LOCAL_MACHINE\SOFTWARE\WOW6432Node\Valve\Steam", "InstallPath", "Nothing");
+            }
+            steamfiles.Clear();
+            steamfiles.Add(new ClearFiles(steamdir + "\\steamapps\\common\\GarrysMod", "*.log"));
+            steamfiles.Add(new ClearFiles(steamdir + "\\steamapps\\common\\GarrysMod", "*.mdmp"));
+            steamfiles.Add(new ClearFiles(steamdir + "\\steamapps\\common\\GarrysMod\\crashes", "*.*", true));
+            steamfiles.Add(new ClearFiles(steamdir + "\\steamapps\\common\\Warface\\0_1177\\LogBackups", "*.log"));
+            steamfiles.Add(new ClearFiles(steamdir + "\\steamapps\\common\\Warface\\GameCenter", "*.log"));
+            steamfiles.Add(new ClearFiles(steamdir + "\\steamapps\\common\\Among Us", "*.log"));
+            steamfiles.Add(new ClearFiles(steamdir + "\\steamapps\\common\\Unturned\\Log", "*.log"));
+            steamfiles.Add(new ClearFiles(steamdir + "\\steamapps\\common\\Half-Life 2", "*.log"));
+            steamfiles.Add(new ClearFiles(steamdir + "\\logs", "*.*", true));
+        }
+        /* Класс для хранения данных */
         public class ClearFiles
         {
             private readonly string dir;
@@ -84,25 +105,23 @@ namespace Win_10_Optimizer
                 this.pattern = pattern;
                 this.deleteall = deleteall;
             }
-            public bool Exist (string path){  try { return System.IO.Directory.Exists(path); } catch { return false; } }
+            private bool Exist (string path){  try { return System.IO.Directory.Exists(path); } catch { return false; } }
             public void Delete()
             {
                 if (!dir.StartsWith("{drive}"))
                 {
-                    if (Exist(dir))
-                    {
-                        Clear();
-                    }
+                    Clear();
                 }
                 else
                 {
                     foreach (var drive in System.IO.DriveInfo.GetDrives())
                     {
-                        try 
+                        try
                         {
                             string drivec = drive.Name.Substring(0, drive.Name.Length - 2);
-                            Clear(dir.Replace("{drive}", drivec)); 
-                        } catch { }
+                            Clear(dir.Replace("{drive}", drivec));
+                        }
+                        catch { }
                     }
                 }    
             }

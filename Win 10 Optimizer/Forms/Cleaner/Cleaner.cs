@@ -33,10 +33,10 @@ namespace Win_10_Optimizer.Forms
         // The signature of SHEmptyRecycleBin (located in Shell32.dll)
         static extern int SHEmptyRecycleBin(IntPtr hwnd, string pszRootPath, RecycleFlags dwFlags);
 
-        private void OptimizeButton_Click(object sender, EventArgs e)
+        private void ClearButton_MouseClick(object sender, MouseEventArgs e)
         {
             ClearButton.Enabled = false;
-            CleanerMain cleanermethod = new CleanerMain();
+            CleanerSettings cleanermethod = new CleanerSettings();
             if (WindowsFilesCheckBox.Checked)
             {
                 Task.Factory.StartNew(() =>
@@ -44,7 +44,7 @@ namespace Win_10_Optimizer.Forms
                     /* Settings and Worker */
                     SHEmptyRecycleBin(IntPtr.Zero, null, RecycleFlags.SHERB_NOSOUND | RecycleFlags.SHERB_NOCONFIRMATION | RecycleFlags.SHERB_NOPROGRESSUI);
 
-                    foreach (CleanerMain.ClearFiles clear in cleanermethod.windowsfiles)
+                    foreach (CleanerSettings.ClearFiles clear in cleanermethod.windowsfiles)
                     {
                         clear.Delete();
                     }
@@ -55,26 +55,11 @@ namespace Win_10_Optimizer.Forms
                     }));
                 });
             }
-            if (MediaFilesCheckBox.Checked)
-            {
-                Task.Factory.StartNew(() =>
-                {
-                    foreach (CleanerMain.ClearFiles clear in cleanermethod.videofiles)
-                    {
-                        clear.Delete();
-                    }
-
-                    MediaFilesCheckBox.Invoke(new MethodInvoker(() =>
-                    {
-                        MediaFilesCheckBox.Checked = false;
-                    }));
-                });
-            }
             if (ScreenShotsFilesCheckBox.Checked)
             {
                 Task.Factory.StartNew(() =>
                 {
-                    foreach (CleanerMain.ClearFiles clear in cleanermethod.screenshotfiles)
+                    foreach (CleanerSettings.ClearFiles clear in cleanermethod.screenshotfiles)
                     {
                         clear.Delete();
                     }
@@ -85,11 +70,41 @@ namespace Win_10_Optimizer.Forms
                     }));
                 });
             }
+            if (GameTrashFilesCheckBox.Checked)
+            {
+                Task.Factory.StartNew(() =>
+                {
+                    foreach (CleanerSettings.ClearFiles clear in cleanermethod.steamfiles)
+                    {
+                        clear.Delete();
+                    }
+
+                    GameTrashFilesCheckBox.Invoke(new MethodInvoker(() =>
+                    {
+                        GameTrashFilesCheckBox.Checked = false;
+                    }));
+                });
+            }
+            if (MediaFilesCheckBox.Checked)
+            {
+                Task.Factory.StartNew(() =>
+                {
+                    foreach (CleanerSettings.ClearFiles clear in cleanermethod.videofiles)
+                    {
+                        clear.Delete();
+                    }
+
+                    MediaFilesCheckBox.Invoke(new MethodInvoker(() =>
+                    {
+                        MediaFilesCheckBox.Checked = false;
+                    }));
+                });
+            }
             if (LogsFilesCheckBox.Checked)
             {
                 Task.Factory.StartNew(() =>
                 {
-                    foreach (CleanerMain.ClearFiles clear in cleanermethod.logsfiles)
+                    foreach (CleanerSettings.ClearFiles clear in cleanermethod.logsfiles)
                     {
                         clear.Delete();
                     }
@@ -104,7 +119,7 @@ namespace Win_10_Optimizer.Forms
             {
                 Task.Factory.StartNew(() =>
                 {
-                    foreach (CleanerMain.ClearFiles clear in cleanermethod.cachefiles)
+                    foreach (CleanerSettings.ClearFiles clear in cleanermethod.cachefiles)
                     {
                         clear.Delete();
                     }
@@ -112,140 +127,6 @@ namespace Win_10_Optimizer.Forms
                     ScreenShotsFilesCheckBox.Invoke(new MethodInvoker(() =>
                     {
                         CacheFilesCheckBox.Checked = false;
-                    }));
-                });
-            }
-            if (GameTrashFilesCheckBox.Checked)
-            {
-                Task.Factory.StartNew(() =>
-                {
-                    string strSteamInstallPath = (string)Registry.GetValue(@"HKEY_LOCAL_MACHINE\SOFTWARE\Valve\Steam", "InstallPath", "Nothing");
-                    if (!string.IsNullOrEmpty(strSteamInstallPath) || strSteamInstallPath == "Nothing")
-                    {
-                        strSteamInstallPath = (string)Registry.GetValue(@"HKEY_LOCAL_MACHINE\SOFTWARE\WOW6432Node\Valve\Steam", "InstallPath", "Nothing");
-                    }
-
-                    if (Directory.Exists(strSteamInstallPath + "\\steamapps\\common\\GarrysMod"))
-                    {
-                        var result = Directory.EnumerateFiles(strSteamInstallPath + "\\steamapps\\common\\GarrysMod", "*.log");
-                        foreach (var m in result)
-                        {
-                            try
-                            {
-                                File.Delete(m);
-                            }
-                            catch { }
-                        }
-                        var result2 = Directory.EnumerateFiles(strSteamInstallPath + "\\steamapps\\common\\GarrysMod", "*.mdmp");
-                        foreach (var m in result2)
-                        {
-                            try { File.Delete(m); }
-                            catch { }
-                        }
-                        if (Directory.Exists(strSteamInstallPath + "\\steamapps\\common\\GarrysMod\\crashes"))
-                        {
-                            try
-                            {
-                                Directory.Delete(strSteamInstallPath + "\\steamapps\\common\\GarrysMod\\crashes", true);
-                            }
-                            catch { }
-                        }
-                    }
-                    if (Directory.Exists(strSteamInstallPath + "\\steamapps\\common\\Counter-Strike Global Offensive"))
-                    {
-                        var result = Directory.EnumerateFiles(strSteamInstallPath + "\\steamapps\\common\\Counter-Strike Global Offensive", "*.mdmp");
-                        foreach (var m in result)
-                        {
-                            try
-                            {
-                                File.Delete(m);
-                            }
-                            catch { }
-                        }
-                    }
-                    if (Directory.Exists(strSteamInstallPath + "\\steamapps\\common\\Warface\\0_1177\\LogBackups"))
-                    {
-                        var result = Directory.EnumerateFiles(strSteamInstallPath + "\\steamapps\\common\\Warface\\0_1177\\LogBackups", "*.log");
-                        foreach (var m in result)
-                        {
-                            try
-                            {
-                                File.Delete(m);
-                            }
-                            catch { }
-                        }
-                    }
-                    if (Directory.Exists(strSteamInstallPath + "\\steamapps\\common\\Warface\\GameCenter"))
-                    {
-                        var result = Directory.EnumerateFiles(strSteamInstallPath + "\\steamapps\\common\\Warface\\GameCenter", "*.log");
-                        foreach (var m in result)
-                        {
-                            try
-                            {
-                                File.Delete(m);
-                            }
-                            catch { }
-                        }
-                    }
-                    if (Directory.Exists(strSteamInstallPath + "\\steamapps\\common\\Among Us"))
-                    {
-                        var result = Directory.EnumerateFiles(strSteamInstallPath + "\\steamapps\\common\\Among Us", "*.log");
-                        foreach (var m in result)
-                        {
-                            try
-                            {
-                                File.Delete(m);
-                            }
-                            catch { }
-                        }
-                    }
-                    if (Directory.Exists(strSteamInstallPath + "\\steamapps\\common\\Unturned\\Logs"))
-                    {
-                        var result = Directory.EnumerateFiles(strSteamInstallPath + "\\steamapps\\common\\Unturned\\Logs", "*.log");
-                        foreach (var m in result)
-                        {
-                            try
-                            {
-                                File.Delete(m);
-                            }
-                            catch { }
-                        }
-                    }
-                    if (Directory.Exists(strSteamInstallPath + "\\steamapps\\common\\Half-Life 2"))
-                    {
-                        var result = Directory.EnumerateFiles(strSteamInstallPath + "\\steamapps\\common\\Half-Life 2", "*.log");
-                        foreach (var m in result)
-                        {
-                            try
-                            {
-                                File.Delete(m);
-                            }
-                            catch { }
-                        }
-                    }
-                    if (Directory.Exists(strSteamInstallPath + "\\Logs"))
-                    {
-                        System.IO.DirectoryInfo myDirInfo = new DirectoryInfo(strSteamInstallPath + "\\Logs");
-                        foreach (FileInfo file in myDirInfo.GetFiles())
-                        {
-                            try
-                            {
-                                file.Delete();
-                            }
-                            catch { }
-                        }
-                        foreach (DirectoryInfo dir in myDirInfo.GetDirectories())
-                        {
-                            try
-                            {
-                                dir.Delete(true);
-                            }
-                            catch { }
-                        }
-                    }
-                    GameTrashFilesCheckBox.Invoke(new MethodInvoker(() =>
-                    {
-                        GameTrashFilesCheckBox.Checked = false;
                     }));
                 });
             }
