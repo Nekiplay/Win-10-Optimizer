@@ -12,9 +12,9 @@ using System.Windows.Forms;
 
 namespace Win_10_Optimizer
 {
-    public partial class Main : Form
+    public partial class MainForm : Form
     {
-        public Main()
+        public MainForm()
         {
             InitializeComponent();
             this.FormBorderStyle = FormBorderStyle.None;
@@ -90,7 +90,7 @@ namespace Win_10_Optimizer
             public static readonly Color color3 = Color.FromArgb(253, 138, 114);
         }
 
-        readonly Forms.EnergyOptimize optimize = new Forms.EnergyOptimize();
+        readonly Forms.EnergyForm optimize = new Forms.EnergyForm();
         readonly Forms.Cleaner cleaner = new Forms.Cleaner();
 
         private void ExitButton_Click(object sender, EventArgs e)

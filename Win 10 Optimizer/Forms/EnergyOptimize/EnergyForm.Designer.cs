@@ -1,7 +1,7 @@
 ﻿
 namespace Win_10_Optimizer.Forms
 {
-    partial class EnergyOptimize
+    partial class EnergyForm
     {
         /// <summary>
         /// Required designer variable.
@@ -29,7 +29,7 @@ namespace Win_10_Optimizer.Forms
         /// </summary>
         private void InitializeComponent()
         {
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(EnergyOptimize));
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(EnergyForm));
             this.label1 = new System.Windows.Forms.Label();
             this.bunifuCheckbox1 = new Bunifu.Framework.UI.BunifuCheckbox();
             this.bunifuCheckbox3 = new Bunifu.Framework.UI.BunifuCheckbox();

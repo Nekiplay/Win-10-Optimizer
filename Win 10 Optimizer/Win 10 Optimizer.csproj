@@ -67,25 +67,25 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Forms\Cleaner\CleanerSettings.cs" />
-    <Compile Include="Forms\EnergyOptimize\Energy.cs" />
-    <Compile Include="Forms\EnergyOptimize\Gybernate.cs" />
-    <Compile Include="Main.cs">
+    <Compile Include="Forms\EnergyOptimize\EnergyClass.cs" />
+    <Compile Include="Forms\EnergyOptimize\GybernateClass.cs" />
+    <Compile Include="Forms\MainForm.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Main.Designer.cs">
-      <DependentUpon>Main.cs</DependentUpon>
+    <Compile Include="Forms\MainForm.Designer.cs">
+      <DependentUpon>MainForm.cs</DependentUpon>
     </Compile>
-    <Compile Include="Forms\Cleaner\Cleaner.cs">
+    <Compile Include="Forms\Cleaner\CleanerForm.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Forms\Cleaner\Cleaner.Designer.cs">
-      <DependentUpon>Cleaner.cs</DependentUpon>
+    <Compile Include="Forms\Cleaner\CleanerForm.Designer.cs">
+      <DependentUpon>CleanerForm.cs</DependentUpon>
     </Compile>
-    <Compile Include="Forms\EnergyOptimize\EnergyOptimize.cs">
+    <Compile Include="Forms\EnergyOptimize\EnergyForm.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Forms\EnergyOptimize\EnergyOptimize.Designer.cs">
-      <DependentUpon>EnergyOptimize.cs</DependentUpon>
+    <Compile Include="Forms\EnergyOptimize\EnergyForm.Designer.cs">
+      <DependentUpon>EnergyForm.cs</DependentUpon>
     </Compile>
     <Compile Include="Forms\Services.cs">
       <SubType>Form</SubType>
@@ -96,14 +96,14 @@
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="WinAPI.cs" />
-    <EmbeddedResource Include="Main.resx">
-      <DependentUpon>Main.cs</DependentUpon>
+    <EmbeddedResource Include="Forms\MainForm.resx">
+      <DependentUpon>MainForm.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Forms\Cleaner\Cleaner.resx">
-      <DependentUpon>Cleaner.cs</DependentUpon>
+    <EmbeddedResource Include="Forms\Cleaner\CleanerForm.resx">
+      <DependentUpon>CleanerForm.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Forms\EnergyOptimize\EnergyOptimize.resx">
-      <DependentUpon>EnergyOptimize.cs</DependentUpon>
+    <EmbeddedResource Include="Forms\EnergyOptimize\EnergyForm.resx">
+      <DependentUpon>EnergyForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\Services.resx">
       <DependentUpon>Services.cs</DependentUpon>

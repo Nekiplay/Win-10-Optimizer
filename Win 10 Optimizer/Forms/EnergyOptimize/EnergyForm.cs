@@ -6,9 +6,9 @@ using System.Windows.Forms;
 
 namespace Win_10_Optimizer.Forms
 {
-    public partial class EnergyOptimize : Form
+    public partial class EnergyForm : Form
     {
-        public EnergyOptimize()
+        public EnergyForm()
         {
             InitializeComponent();
         }
@@ -16,7 +16,7 @@ namespace Win_10_Optimizer.Forms
         private void EnergyOptimize_Load_1(object sender, EventArgs e)
         {
             /* Проверка максимальной производительности */
-            Forms.EnergyOptimize.Energy energy = new Forms.EnergyOptimize.Energy();
+            Forms.EnergyOptimize.EnergyClass energy = new Forms.EnergyOptimize.EnergyClass();
             Task.Factory.StartNew(() =>
             {
                 List<Tuple<string, string, bool>> schems = energy.ListSchemes();
@@ -33,7 +33,7 @@ namespace Win_10_Optimizer.Forms
                 }
             });
             /* Проверка гибернаций */
-            Forms.EnergyOptimize.Gybernate gybernate = new Forms.EnergyOptimize.Gybernate();
+            Forms.EnergyOptimize.GybernateClass gybernate = new Forms.EnergyOptimize.GybernateClass();
             Task.Factory.StartNew(() =>
             {
                 bool on = gybernate.Activated();
@@ -81,7 +81,7 @@ namespace Win_10_Optimizer.Forms
         {
             Task.Factory.StartNew(() =>
             {
-                Forms.EnergyOptimize.Energy energy = new Forms.EnergyOptimize.Energy();
+                Forms.EnergyOptimize.EnergyClass energy = new Forms.EnergyOptimize.EnergyClass();
                 energy.Enable(bunifuCheckbox1.Checked);
                 if (!bunifuCheckbox1.Checked)
                 {
@@ -97,7 +97,7 @@ namespace Win_10_Optimizer.Forms
         {
             Task.Factory.StartNew(() =>
             {
-                Forms.EnergyOptimize.Gybernate gybernate = new Forms.EnergyOptimize.Gybernate();
+                Forms.EnergyOptimize.GybernateClass gybernate = new Forms.EnergyOptimize.GybernateClass();
                 gybernate.Enable(!bunifuCheckbox2.Checked);
             });
         }

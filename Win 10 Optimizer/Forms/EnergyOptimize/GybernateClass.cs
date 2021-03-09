@@ -8,7 +8,7 @@ using System.Threading.Tasks;
 
 namespace Win_10_Optimizer.Forms.EnergyOptimize
 {
-    public class Gybernate
+    public class GybernateClass
     {
         public bool Activated()
         {

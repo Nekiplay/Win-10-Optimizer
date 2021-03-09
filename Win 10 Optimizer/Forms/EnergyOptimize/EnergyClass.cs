@@ -9,7 +9,7 @@ using System.Threading.Tasks;
 
 namespace Win_10_Optimizer.Forms.EnergyOptimize
 {
-    public class Energy
+    public class EnergyClass
     {
         public List<Tuple<string, string, bool>> ListSchemes()
         {
