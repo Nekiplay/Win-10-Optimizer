@@ -62,13 +62,6 @@ namespace Win_10_Optimizer.Forms
                 foreach (string name in names)
                 {
                     RegistryKey kk = Interfaces.OpenSubKey(name);
-                    //Console.WriteLine(kk.GetValue("TcpAckFrequency") != null);
-                    //Console.WriteLine(kk.GetValue("TcpNoDelay") != null);
-                    //Console.WriteLine(kk.GetValue("TcpAckFrequency").ToString() == "1");
-                    //Console.WriteLine(kk.GetValue("TcpNoDelay").ToString() == "1");
-                    //Console.WriteLine(kk.GetValue("NameServer") != null);
-                    //Console.WriteLine(kk.GetValue("DhcpDomain") != null);
-                    //Console.WriteLine(kk.GetValue("DhcpDomain").ToString() == "lan");
                     if (kk.GetValue("TcpAckFrequency") != null && kk.GetValue("TcpNoDelay") != null
                     && kk.GetValue("TcpAckFrequency").ToString() == "1" 
                     && kk.GetValue("TcpNoDelay").ToString() == "1"
@@ -78,7 +71,6 @@ namespace Win_10_Optimizer.Forms
                     )
                     {
                         enabled = true;
-                        //Console.WriteLine(enabled);
                     }
                     RegistryKey Software = reg.OpenSubKey(@"Software\Microsoft\MSMQ\Parameters", false);
                     if (Software.GetValue("TcpNoDelay") != null
