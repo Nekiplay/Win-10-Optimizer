@@ -12,31 +12,15 @@ namespace Win_10_Optimizer.Forms.EnergyOptimize
     {
         public bool Activated()
         {
-            Process proc = new Process()
+            List<string> cmdtext = new Win_10_Optimizer.Utilites.ProcessUtils().StartCmd("chcp 1251 & powercfg /a");
+            foreach (string text in cmdtext)
             {
-                StartInfo = new ProcessStartInfo("cmd.exe", "/c chcp 1251 & powercfg /a")
+                string text1 = text;
+                if (!string.IsNullOrEmpty(text1))
                 {
-                    RedirectStandardOutput = true,
-                    UseShellExecute = false,
-                    CreateNoWindow = true,
-                    WindowStyle = ProcessWindowStyle.Hidden
-                }
-            };
-
-            proc.Start();
-
-            string line;
-            using (StreamReader sr = proc.StandardOutput)
-            {
-                while (!sr.EndOfStream)
-                {
-                    line = sr.ReadLine();
-                    if (!string.IsNullOrEmpty(line))
+                    if (text1.Contains("Режим гибернации не включен"))
                     {
-                        if (line.Contains("Режим гибернации не включен"))
-                        {
-                            return false;
-                        }
+                        return false;
                     }
                 }
             }
@@ -44,17 +28,7 @@ namespace Win_10_Optimizer.Forms.EnergyOptimize
         }
         public void Enable(bool on)
         {
-            Process proc = new Process()
-            {
-                StartInfo = new ProcessStartInfo("cmd.exe", "/c chcp 1251 & powercfg /h " + on.ToString().Replace("True", "on").Replace("False", "off"))
-                {
-                    RedirectStandardOutput = true,
-                    UseShellExecute = false,
-                    CreateNoWindow = true,
-                    WindowStyle = ProcessWindowStyle.Hidden
-                }
-            };
-            proc.Start();
+            new Win_10_Optimizer.Utilites.ProcessUtils().StartCmd("chcp 1251 & powercfg /h " + on.ToString().Replace("True", "on").Replace("False", "off"));
         }
     }
 }
