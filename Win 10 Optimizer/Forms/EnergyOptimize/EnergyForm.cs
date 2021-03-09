@@ -122,6 +122,17 @@ namespace Win_10_Optimizer.Forms
                     RegistryKey Software = reg.OpenSubKey(@"Software\Microsoft\MSMQ\Parameters", true);
                     Software.SetValue("TcpNoDelay", 1);
                     Software.SetValue("TcpAckFrequency", 1);
+
+                    new Utilites.ProcessUtils().StartCmd("netsh interface ip delete arpcache" 
+                        + " & netsh winsock reset catalog"
+                        + " & netsh int ip reset c:resetlog.txt"
+                        + " & netsh int ip reset C:\tcplog.txt"
+                        + " & netsh winsock reset catalog"
+                        + " & netsh int tcp set global rsc=enabled"
+                        + " & netsh int tcp set heuristics disabled"
+                        + " & netsh int tcp set global dca=enabled"
+                        + " & netsh int tcp set global netdma=enabled"
+                        );
                 }
                 else
                 {

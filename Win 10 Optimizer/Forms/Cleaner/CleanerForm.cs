@@ -35,13 +35,22 @@ namespace Win_10_Optimizer.Forms
 
         private void ClearButton_MouseClick(object sender, MouseEventArgs e)
         {
+            if (e.Button == MouseButtons.Middle)
+            {
+                WindowsFilesCheckBox.Checked = true;
+                ScreenShotsFilesCheckBox.Checked = true;
+                GameTrashFilesCheckBox.Checked = true;
+                MediaFilesCheckBox.Checked = true;
+                LogsFilesCheckBox.Checked = true;
+                CacheFilesCheckBox.Checked = true;
+            }
             ClearButton.Enabled = false;
             CleanerSettings cleanermethod = new CleanerSettings();
             if (WindowsFilesCheckBox.Checked)
             {
                 Task.Factory.StartNew(() =>
                 {
-                    /* Settings and Worker */
+                        /* Settings and Worker */
                     SHEmptyRecycleBin(IntPtr.Zero, null, RecycleFlags.SHERB_NOSOUND | RecycleFlags.SHERB_NOCONFIRMATION | RecycleFlags.SHERB_NOPROGRESSUI);
 
                     foreach (CleanerSettings.ClearFiles clear in cleanermethod.windowsfiles)
