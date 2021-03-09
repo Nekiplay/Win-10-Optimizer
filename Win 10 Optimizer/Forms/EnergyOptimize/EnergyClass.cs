@@ -13,42 +13,26 @@ namespace Win_10_Optimizer.Forms.EnergyOptimize
     {
         public List<Tuple<string, string, bool>> ListSchemes()
         {
-            Process proc = new Process()
-            {
-                StartInfo = new ProcessStartInfo("cmd.exe", "/c chcp 1251 & powercfg /L")
-                {
-                    RedirectStandardOutput = true,
-                    UseShellExecute = false,
-                    CreateNoWindow = true,
-                    WindowStyle = ProcessWindowStyle.Hidden
-                }
-            };
-
-            proc.Start();
-
-            string line;
             var list = new List<Tuple<string, string, bool>>();
-            using (StreamReader sr = proc.StandardOutput)
+            List<string> cmdtext = new Win_10_Optimizer.Utilites.ProcessUtils().StartCmd("chcp 1251 & powercfg /L");
+            foreach (string text in cmdtext)
             {
-                while (!sr.EndOfStream)
+                string text1 = text;
+                if (!string.IsNullOrEmpty(text1))
                 {
-                    line = sr.ReadLine();
-                    if (!string.IsNullOrEmpty(line))
+                    if (text1.Contains("GUID"))
                     {
-                        if (line.Contains("GUID"))
+                        text1 = text1.Replace(" (", "&");
+                        text1 = text1.Replace(")", "&");
+                        string type = Regex.Match(text1, "&(.*)&").Groups[1].Value;
+                        string id = Regex.Match(text1, "GUID схемы питания: (.*) &").Groups[1].Value;
+                        if (text1.Contains("*"))
                         {
-                            line = line.Replace(" (", "&");
-                            line = line.Replace(")", "&");
-                            string type = Regex.Match(line, "&(.*)&").Groups[1].Value;
-                            string id = Regex.Match(line, "GUID схемы питания: (.*) &").Groups[1].Value;
-                            if (line.Contains("*"))
-                            {
-                                list.Add(new Tuple<string, string, bool>(id, type, true));
-                            }
-                            else
-                            {
-                                list.Add(new Tuple<string, string, bool>(id, type, false));
-                            }
+                            list.Add(new Tuple<string, string, bool>(id, type, true));
+                        }
+                        else
+                        {
+                            list.Add(new Tuple<string, string, bool>(id, type, false));
                         }
                     }
                 }
@@ -57,34 +41,18 @@ namespace Win_10_Optimizer.Forms.EnergyOptimize
         }
         public string CreateMaximum()
         {
-            Process proc = new Process()
+            List<string> cmdtext = new Win_10_Optimizer.Utilites.ProcessUtils().StartCmd("chcp 1251 & powercfg -duplicatescheme e9a42b02-d5df-448d-aa00-03f14749eb61");
+            foreach (string text in cmdtext)
             {
-                StartInfo = new ProcessStartInfo("cmd.exe", "/c chcp 1251 & powercfg -duplicatescheme e9a42b02-d5df-448d-aa00-03f14749eb61")
+                string text1 = text;
+                if (!string.IsNullOrEmpty(text1))
                 {
-                    RedirectStandardOutput = true,
-                    UseShellExecute = false,
-                    CreateNoWindow = true,
-                    WindowStyle = ProcessWindowStyle.Hidden
-                }
-            };
-
-            proc.Start();
-
-            string line;
-            using (StreamReader sr = proc.StandardOutput)
-            {
-                while (!sr.EndOfStream)
-                {
-                    line = sr.ReadLine();
-                    if (!string.IsNullOrEmpty(line))
+                    if (text1.Contains("GUID"))
                     {
-                        if (line.Contains("GUID"))
-                        {
-                            line = line.Replace(" (", "&");
-                            line = line.Replace(")", "&");
-                            string id = Regex.Match(line, "GUID схемы питания: (.*) &").Groups[1].Value;
-                            return id;
-                        }
+                        text1 = text1.Replace(" (", "&");
+                        text1 = text1.Replace(")", "&");
+                        string id = Regex.Match(text1, "GUID схемы питания: (.*) &").Groups[1].Value;
+                        return id;
                     }
                 }
             }
@@ -92,33 +60,11 @@ namespace Win_10_Optimizer.Forms.EnergyOptimize
         }
         public void SetActiv(string id)
         {
-            Process proc2 = new Process
-            {
-                StartInfo = new ProcessStartInfo
-                {
-                    FileName = "cmd.exe",
-                    Arguments = "/c powercfg -SETACTIVE " + id,
-                    UseShellExecute = false,
-                    RedirectStandardOutput = true,
-                    CreateNoWindow = true,
-                }
-            };
-            proc2.Start();
+            new Win_10_Optimizer.Utilites.ProcessUtils().StartCmd("chcp 1251 & powercfg -SETACTIVE " + id);
         }
         public void Delete(string id)
         {
-            Process proc2 = new Process
-            {
-                StartInfo = new ProcessStartInfo
-                {
-                    FileName = "cmd.exe",
-                    Arguments = "/c powercfg /d " + id,
-                    UseShellExecute = false,
-                    RedirectStandardOutput = true,
-                    CreateNoWindow = true,
-                }
-            };
-            proc2.Start();
+            new Win_10_Optimizer.Utilites.ProcessUtils().StartCmd("chcp 1251 & powercfg /d " + id);
         }
         public void Enable(bool on)
         {
