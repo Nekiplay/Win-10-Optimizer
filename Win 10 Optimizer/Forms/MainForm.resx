@@ -118,33 +118,6 @@
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
   <assembly alias="System.Drawing" name="System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
-  <data name="ExitButton.BackgroundImage" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
-    <value>
-        iVBORw0KGgoAAAANSUhEUgAAAHIAAAAeCAYAAADw60pcAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8
-        YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAACeSURBVGhD7dFBDYBQEMTQLwnQAP4FIAMBQEhPBAMlnaSn
-        3dsb7UdbpnVf5u0sYbcdjDfk10NpgjFIezAGaQ/GIO3BGKQ9GIO0B2OQ9mAM0h6MQdqDMUh7MAZpD8Yg
-        7cEYpD0Yg7QHY5D2YAzSHoxB2oMxSHswBmkPxiDtwRikPRiDtAdjkPZgDNIejEHagzFIezA+kMf7WJoO
-        GJt/Y1zsMj6Jh9gCowAAAABJRU5ErkJggg==
-</value>
-  </data>
-  <data name="CleanerButton.BackgroundImage" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
-    <value>
-        iVBORw0KGgoAAAANSUhEUgAAAHEAAAAeCAYAAAAb3PFfAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8
-        YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAACeSURBVGhD7dFBDYBQEMTQLwnQAP4FIAMBQEhPBAMlnaSn
-        3dsb7SdbpnVf5u0sWbcbhDfi10MpgjBEcxCGaA7CEM1BGKI5CEM0B2GI5iAM0RyEIZqDMERzEIZoDsIQ
-        zUEYojkIQzQHYYjmIAzRHIQhmoMwRHMQhmgOwhDNQRiiOQhDNAdhiOYgDNEchCGagzBEcxA+iMf7WIoO
-        CJt7Y1wh2hBFxxhDqgAAAABJRU5ErkJggg==
-</value>
-  </data>
-  <data name="OptimizeButton.BackgroundImage" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
-    <value>
-        iVBORw0KGgoAAAANSUhEUgAAAHIAAAAeCAYAAADw60pcAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8
-        YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAACeSURBVGhD7dFBDYBQEMTQLwnQAP4FIAMBQEhPBAMlnaSn
-        3dsb7UdbpnVf5u0sYbcdjDfk10NpgjFIezAGaQ/GIO3BGKQ9GIO0B2OQ9mAM0h6MQdqDMUh7MAZpD8Yg
-        7cEYpD0Yg7QHY5D2YAzSHoxB2oMxSHswBmkPxiDtwRikPRiDtAdjkPZgDNIejEHagzFIezA+kMf7WJoO
-        GJt/Y1zsMj6Jh9gCowAAAABJRU5ErkJggg==
-</value>
-  </data>
   <data name="bunifuPictureBox1.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
         iVBORw0KGgoAAAANSUhEUgAAAgAAAAIACAMAAADDpiTIAAAABGdBTUEAALGPC/xhBQAAAjpQTFRFxtr8
@@ -212,6 +185,33 @@
         BMA5AuAcAXCOADhHAJwjAM4RAOcIgHMEwDkC4BwBcI4AOEcAnCMAzhEA5wiAcwTAOQLgHAFwjgA4RwCc
         IwDOEQDnCIBzBMA5AuAcAXCOADhHAJwjAM4RAOcIgHMEwDkC4BwBcI4AOEcAnCMAzgULQJ8+/wLcsCN4
         fyerrQAAAABJRU5ErkJggg==
+</value>
+  </data>
+  <data name="ExitButton.BackgroundImage" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+    <value>
+        iVBORw0KGgoAAAANSUhEUgAAAHIAAAAeCAYAAADw60pcAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8
+        YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAACeSURBVGhD7dFBDYBQEMTQLwnQAP4FIAMBQEhPBAMlnaSn
+        3dsb7UdbpnVf5u0sYbcdjDfk10NpgjFIezAGaQ/GIO3BGKQ9GIO0B2OQ9mAM0h6MQdqDMUh7MAZpD8Yg
+        7cEYpD0Yg7QHY5D2YAzSHoxB2oMxSHswBmkPxiDtwRikPRiDtAdjkPZgDNIejEHagzFIezA+kMf7WJoO
+        GJt/Y1zsMj6Jh9gCowAAAABJRU5ErkJggg==
+</value>
+  </data>
+  <data name="CleanerButton.BackgroundImage" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+    <value>
+        iVBORw0KGgoAAAANSUhEUgAAAHEAAAAeCAYAAAAb3PFfAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8
+        YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAACeSURBVGhD7dFBDYBQEMTQLwnQAP4FIAMBQEhPBAMlnaSn
+        3dsb7SdbpnVf5u0sWbcbhDfi10MpgjBEcxCGaA7CEM1BGKI5CEM0B2GI5iAM0RyEIZqDMERzEIZoDsIQ
+        zUEYojkIQzQHYYjmIAzRHIQhmoMwRHMQhmgOwhDNQRiiOQhDNAdhiOYgDNEchCGagzBEcxA+iMf7WIoO
+        CJt7Y1wh2hBFxxhDqgAAAABJRU5ErkJggg==
+</value>
+  </data>
+  <data name="OptimizeButton.BackgroundImage" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+    <value>
+        iVBORw0KGgoAAAANSUhEUgAAAHIAAAAeCAYAAADw60pcAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8
+        YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAACeSURBVGhD7dFBDYBQEMTQLwnQAP4FIAMBQEhPBAMlnaSn
+        3dsb7UdbpnVf5u0sYbcdjDfk10NpgjFIezAGaQ/GIO3BGKQ9GIO0B2OQ9mAM0h6MQdqDMUh7MAZpD8Yg
+        7cEYpD0Yg7QHY5D2YAzSHoxB2oMxSHswBmkPxiDtwRikPRiDtAdjkPZgDNIejEHagzFIezA+kMf7WJoO
+        GJt/Y1zsMj6Jh9gCowAAAABJRU5ErkJggg==
 </value>
   </data>
   <metadata name="bunifuDragControl1.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">

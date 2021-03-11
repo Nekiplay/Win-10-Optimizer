@@ -46,6 +46,8 @@ namespace Win_10_Optimizer.Forms
             this.CacheFilesCheckBox = new Bunifu.Framework.UI.BunifuCheckbox();
             this.label6 = new System.Windows.Forms.Label();
             this.ClearButton = new Bunifu.UI.WinForms.BunifuButton.BunifuButton();
+            this.BackUpFilesCheckBox = new Bunifu.Framework.UI.BunifuCheckbox();
+            this.label7 = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
             // WindowsFilesCheckBox
@@ -55,21 +57,22 @@ namespace Win_10_Optimizer.Forms
             this.WindowsFilesCheckBox.Checked = false;
             this.WindowsFilesCheckBox.CheckedOnColor = System.Drawing.Color.FromArgb(((int)(((byte)(51)))), ((int)(((byte)(205)))), ((int)(((byte)(117)))));
             this.WindowsFilesCheckBox.ForeColor = System.Drawing.Color.White;
-            this.WindowsFilesCheckBox.Location = new System.Drawing.Point(221, 9);
+            this.WindowsFilesCheckBox.Location = new System.Drawing.Point(112, 6);
             this.WindowsFilesCheckBox.Name = "WindowsFilesCheckBox";
             this.WindowsFilesCheckBox.Size = new System.Drawing.Size(20, 20);
             this.WindowsFilesCheckBox.TabIndex = 5;
             // 
             // label1
             // 
+            this.label1.AutoSize = true;
             this.label1.BackColor = System.Drawing.Color.Transparent;
-            this.label1.Font = new System.Drawing.Font("Arial", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.label1.Font = new System.Drawing.Font("Arial", 8.25F, System.Drawing.FontStyle.Bold);
             this.label1.ForeColor = System.Drawing.Color.Gainsboro;
-            this.label1.Location = new System.Drawing.Point(12, 9);
+            this.label1.Location = new System.Drawing.Point(8, 9);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(217, 20);
+            this.label1.Size = new System.Drawing.Size(99, 14);
             this.label1.TabIndex = 4;
-            this.label1.Text = "Windows файлы (Windows garbage)";
+            this.label1.Text = "Windows файлы";
             this.label1.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
             // GameTrashFilesCheckBox
@@ -79,45 +82,48 @@ namespace Win_10_Optimizer.Forms
             this.GameTrashFilesCheckBox.Checked = false;
             this.GameTrashFilesCheckBox.CheckedOnColor = System.Drawing.Color.FromArgb(((int)(((byte)(51)))), ((int)(((byte)(205)))), ((int)(((byte)(117)))));
             this.GameTrashFilesCheckBox.ForeColor = System.Drawing.Color.White;
-            this.GameTrashFilesCheckBox.Location = new System.Drawing.Point(169, 65);
+            this.GameTrashFilesCheckBox.Location = new System.Drawing.Point(79, 58);
             this.GameTrashFilesCheckBox.Name = "GameTrashFilesCheckBox";
             this.GameTrashFilesCheckBox.Size = new System.Drawing.Size(20, 20);
             this.GameTrashFilesCheckBox.TabIndex = 7;
             // 
             // label2
             // 
+            this.label2.AutoSize = true;
             this.label2.BackColor = System.Drawing.Color.Transparent;
             this.label2.Font = new System.Drawing.Font("Arial", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.label2.ForeColor = System.Drawing.Color.Gainsboro;
-            this.label2.Location = new System.Drawing.Point(12, 65);
+            this.label2.Location = new System.Drawing.Point(8, 60);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(166, 20);
+            this.label2.Size = new System.Drawing.Size(65, 14);
             this.label2.TabIndex = 6;
-            this.label2.Text = "Мусор игр (Game garbage)";
+            this.label2.Text = "Мусор игр";
             this.label2.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
             // label3
             // 
+            this.label3.AutoSize = true;
             this.label3.BackColor = System.Drawing.Color.Transparent;
             this.label3.Font = new System.Drawing.Font("Arial", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.label3.ForeColor = System.Drawing.Color.Gainsboro;
-            this.label3.Location = new System.Drawing.Point(12, 122);
+            this.label3.Location = new System.Drawing.Point(8, 140);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(106, 20);
+            this.label3.Size = new System.Drawing.Size(34, 14);
             this.label3.TabIndex = 8;
-            this.label3.Text = "Логи (Logs)";
+            this.label3.Text = "Логи";
             this.label3.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
             // label4
             // 
+            this.label4.AutoSize = true;
             this.label4.BackColor = System.Drawing.Color.Transparent;
             this.label4.Font = new System.Drawing.Font("Arial", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.label4.ForeColor = System.Drawing.Color.Gainsboro;
-            this.label4.Location = new System.Drawing.Point(12, 37);
+            this.label4.Location = new System.Drawing.Point(8, 35);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(166, 20);
+            this.label4.Size = new System.Drawing.Size(72, 14);
             this.label4.TabIndex = 12;
-            this.label4.Text = "Скриншоты (Screenshots)";
+            this.label4.Text = "Скриншоты";
             this.label4.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
             // ScreenShotsFilesCheckBox
@@ -127,21 +133,22 @@ namespace Win_10_Optimizer.Forms
             this.ScreenShotsFilesCheckBox.Checked = false;
             this.ScreenShotsFilesCheckBox.CheckedOnColor = System.Drawing.Color.FromArgb(((int)(((byte)(51)))), ((int)(((byte)(205)))), ((int)(((byte)(117)))));
             this.ScreenShotsFilesCheckBox.ForeColor = System.Drawing.Color.White;
-            this.ScreenShotsFilesCheckBox.Location = new System.Drawing.Point(169, 37);
+            this.ScreenShotsFilesCheckBox.Location = new System.Drawing.Point(86, 32);
             this.ScreenShotsFilesCheckBox.Name = "ScreenShotsFilesCheckBox";
             this.ScreenShotsFilesCheckBox.Size = new System.Drawing.Size(20, 20);
             this.ScreenShotsFilesCheckBox.TabIndex = 13;
             // 
             // label5
             // 
+            this.label5.AutoSize = true;
             this.label5.BackColor = System.Drawing.Color.Transparent;
             this.label5.Font = new System.Drawing.Font("Arial", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.label5.ForeColor = System.Drawing.Color.Gainsboro;
-            this.label5.Location = new System.Drawing.Point(12, 94);
+            this.label5.Location = new System.Drawing.Point(8, 114);
             this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(106, 20);
+            this.label5.Size = new System.Drawing.Size(42, 14);
             this.label5.TabIndex = 14;
-            this.label5.Text = "Видео (Video)";
+            this.label5.Text = "Видео";
             this.label5.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
             // MediaFilesCheckBox
@@ -151,7 +158,7 @@ namespace Win_10_Optimizer.Forms
             this.MediaFilesCheckBox.Checked = false;
             this.MediaFilesCheckBox.CheckedOnColor = System.Drawing.Color.FromArgb(((int)(((byte)(51)))), ((int)(((byte)(205)))), ((int)(((byte)(117)))));
             this.MediaFilesCheckBox.ForeColor = System.Drawing.Color.White;
-            this.MediaFilesCheckBox.Location = new System.Drawing.Point(98, 94);
+            this.MediaFilesCheckBox.Location = new System.Drawing.Point(56, 111);
             this.MediaFilesCheckBox.Name = "MediaFilesCheckBox";
             this.MediaFilesCheckBox.Size = new System.Drawing.Size(20, 20);
             this.MediaFilesCheckBox.TabIndex = 15;
@@ -163,7 +170,7 @@ namespace Win_10_Optimizer.Forms
             this.LogsFilesCheckBox.Checked = false;
             this.LogsFilesCheckBox.CheckedOnColor = System.Drawing.Color.FromArgb(((int)(((byte)(51)))), ((int)(((byte)(205)))), ((int)(((byte)(117)))));
             this.LogsFilesCheckBox.ForeColor = System.Drawing.Color.White;
-            this.LogsFilesCheckBox.Location = new System.Drawing.Point(87, 122);
+            this.LogsFilesCheckBox.Location = new System.Drawing.Point(47, 137);
             this.LogsFilesCheckBox.Name = "LogsFilesCheckBox";
             this.LogsFilesCheckBox.Size = new System.Drawing.Size(20, 20);
             this.LogsFilesCheckBox.TabIndex = 16;
@@ -175,21 +182,22 @@ namespace Win_10_Optimizer.Forms
             this.CacheFilesCheckBox.Checked = false;
             this.CacheFilesCheckBox.CheckedOnColor = System.Drawing.Color.FromArgb(((int)(((byte)(51)))), ((int)(((byte)(205)))), ((int)(((byte)(117)))));
             this.CacheFilesCheckBox.ForeColor = System.Drawing.Color.White;
-            this.CacheFilesCheckBox.Location = new System.Drawing.Point(87, 148);
+            this.CacheFilesCheckBox.Location = new System.Drawing.Point(42, 165);
             this.CacheFilesCheckBox.Name = "CacheFilesCheckBox";
             this.CacheFilesCheckBox.Size = new System.Drawing.Size(20, 20);
             this.CacheFilesCheckBox.TabIndex = 18;
             // 
             // label6
             // 
+            this.label6.AutoSize = true;
             this.label6.BackColor = System.Drawing.Color.Transparent;
             this.label6.Font = new System.Drawing.Font("Arial", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.label6.ForeColor = System.Drawing.Color.Gainsboro;
-            this.label6.Location = new System.Drawing.Point(12, 148);
+            this.label6.Location = new System.Drawing.Point(8, 169);
             this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(106, 20);
+            this.label6.Size = new System.Drawing.Size(29, 14);
             this.label6.TabIndex = 17;
-            this.label6.Text = "Кэш (Cache)";
+            this.label6.Text = "Кэш";
             this.label6.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
             // ClearButton
@@ -229,7 +237,7 @@ namespace Win_10_Optimizer.Forms
             this.ClearButton.IdleIconLeftImage = null;
             this.ClearButton.IdleIconRightImage = null;
             this.ClearButton.IndicateFocus = true;
-            this.ClearButton.Location = new System.Drawing.Point(12, 171);
+            this.ClearButton.Location = new System.Drawing.Point(7, 191);
             this.ClearButton.Name = "ClearButton";
             stateProperties1.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(105)))), ((int)(((byte)(181)))), ((int)(((byte)(255)))));
             stateProperties1.BorderRadius = 3;
@@ -256,12 +264,39 @@ namespace Win_10_Optimizer.Forms
             this.ClearButton.UseDefaultRadiusAndThickness = true;
             this.ClearButton.MouseClick += new System.Windows.Forms.MouseEventHandler(this.ClearButton_MouseClick);
             // 
+            // BackUpFilesCheckBox
+            // 
+            this.BackUpFilesCheckBox.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(132)))), ((int)(((byte)(135)))), ((int)(((byte)(140)))));
+            this.BackUpFilesCheckBox.ChechedOffColor = System.Drawing.Color.FromArgb(((int)(((byte)(132)))), ((int)(((byte)(135)))), ((int)(((byte)(140)))));
+            this.BackUpFilesCheckBox.Checked = false;
+            this.BackUpFilesCheckBox.CheckedOnColor = System.Drawing.Color.FromArgb(((int)(((byte)(51)))), ((int)(((byte)(205)))), ((int)(((byte)(117)))));
+            this.BackUpFilesCheckBox.ForeColor = System.Drawing.Color.White;
+            this.BackUpFilesCheckBox.Location = new System.Drawing.Point(63, 84);
+            this.BackUpFilesCheckBox.Name = "BackUpFilesCheckBox";
+            this.BackUpFilesCheckBox.Size = new System.Drawing.Size(20, 20);
+            this.BackUpFilesCheckBox.TabIndex = 21;
+            // 
+            // label7
+            // 
+            this.label7.AutoSize = true;
+            this.label7.BackColor = System.Drawing.Color.Transparent;
+            this.label7.Font = new System.Drawing.Font("Arial", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.label7.ForeColor = System.Drawing.Color.Gainsboro;
+            this.label7.Location = new System.Drawing.Point(8, 87);
+            this.label7.Name = "label7";
+            this.label7.Size = new System.Drawing.Size(49, 14);
+            this.label7.TabIndex = 20;
+            this.label7.Text = "Бэкапы";
+            this.label7.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            // 
             // Cleaner
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(44)))), ((int)(((byte)(43)))), ((int)(((byte)(60)))));
-            this.ClientSize = new System.Drawing.Size(254, 207);
+            this.ClientSize = new System.Drawing.Size(254, 230);
+            this.Controls.Add(this.BackUpFilesCheckBox);
+            this.Controls.Add(this.label7);
             this.Controls.Add(this.ClearButton);
             this.Controls.Add(this.CacheFilesCheckBox);
             this.Controls.Add(this.LogsFilesCheckBox);
@@ -280,6 +315,7 @@ namespace Win_10_Optimizer.Forms
             this.Name = "Cleaner";
             this.Text = "Cleaner";
             this.ResumeLayout(false);
+            this.PerformLayout();
 
         }
 
@@ -298,5 +334,7 @@ namespace Win_10_Optimizer.Forms
         private Bunifu.Framework.UI.BunifuCheckbox CacheFilesCheckBox;
         private System.Windows.Forms.Label label6;
         private Bunifu.UI.WinForms.BunifuButton.BunifuButton ClearButton;
+        private Bunifu.Framework.UI.BunifuCheckbox BackUpFilesCheckBox;
+        private System.Windows.Forms.Label label7;
     }
 }

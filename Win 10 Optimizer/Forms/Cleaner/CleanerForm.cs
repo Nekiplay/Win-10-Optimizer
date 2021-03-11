@@ -33,7 +33,7 @@ namespace Win_10_Optimizer.Forms
         // The signature of SHEmptyRecycleBin (located in Shell32.dll)
         static extern int SHEmptyRecycleBin(IntPtr hwnd, string pszRootPath, RecycleFlags dwFlags);
 
-        private void ClearButton_MouseClick(object sender, MouseEventArgs e)
+        private async void ClearButton_MouseClick(object sender, MouseEventArgs e)
         {
             if (e.Button == MouseButtons.Middle)
             {
@@ -43,19 +43,21 @@ namespace Win_10_Optimizer.Forms
                 MediaFilesCheckBox.Checked = true;
                 LogsFilesCheckBox.Checked = true;
                 CacheFilesCheckBox.Checked = true;
+                BackUpFilesCheckBox.Checked = true;
             }
             ClearButton.Enabled = false;
             CleanerSettings cleanermethod = new CleanerSettings();
+            long deleted = 0;
             if (WindowsFilesCheckBox.Checked)
             {
-                Task.Factory.StartNew(() =>
+                await Task.Factory.StartNew(() =>
                 {
                         /* Settings and Worker */
                     SHEmptyRecycleBin(IntPtr.Zero, null, RecycleFlags.SHERB_NOSOUND | RecycleFlags.SHERB_NOCONFIRMATION | RecycleFlags.SHERB_NOPROGRESSUI);
 
                     foreach (CleanerSettings.ClearFiles clear in cleanermethod.windowsfiles)
                     {
-                        clear.Delete();
+                        deleted += clear.Delete();
                     }
 
                     WindowsFilesCheckBox.Invoke(new MethodInvoker(() =>
@@ -66,11 +68,11 @@ namespace Win_10_Optimizer.Forms
             }
             if (ScreenShotsFilesCheckBox.Checked)
             {
-                Task.Factory.StartNew(() =>
+                await Task.Factory.StartNew(() =>
                 {
                     foreach (CleanerSettings.ClearFiles clear in cleanermethod.screenshotfiles)
                     {
-                        clear.Delete();
+                        deleted += clear.Delete();
                     }
 
                     ScreenShotsFilesCheckBox.Invoke(new MethodInvoker(() =>
@@ -81,11 +83,11 @@ namespace Win_10_Optimizer.Forms
             }
             if (GameTrashFilesCheckBox.Checked)
             {
-                Task.Factory.StartNew(() =>
+                await Task.Factory.StartNew(() =>
                 {
                     foreach (CleanerSettings.ClearFiles clear in cleanermethod.steamfiles)
                     {
-                        clear.Delete();
+                        deleted += clear.Delete();
                     }
 
                     GameTrashFilesCheckBox.Invoke(new MethodInvoker(() =>
@@ -94,13 +96,28 @@ namespace Win_10_Optimizer.Forms
                     }));
                 });
             }
+            if (BackUpFilesCheckBox.Checked)
+            {
+                await Task.Factory.StartNew(() =>
+                {
+                    foreach (CleanerSettings.ClearFiles clear in cleanermethod.backupfiles)
+                    {
+                        deleted += clear.Delete();
+                    }
+
+                    BackUpFilesCheckBox.Invoke(new MethodInvoker(() =>
+                    {
+                        BackUpFilesCheckBox.Checked = false;
+                    }));
+                });
+            }
             if (MediaFilesCheckBox.Checked)
             {
-                Task.Factory.StartNew(() =>
+                await Task.Factory.StartNew(() =>
                 {
                     foreach (CleanerSettings.ClearFiles clear in cleanermethod.videofiles)
                     {
-                        clear.Delete();
+                        deleted += clear.Delete();
                     }
 
                     MediaFilesCheckBox.Invoke(new MethodInvoker(() =>
@@ -111,11 +128,11 @@ namespace Win_10_Optimizer.Forms
             }
             if (LogsFilesCheckBox.Checked)
             {
-                Task.Factory.StartNew(() =>
+                await Task.Factory.StartNew(() =>
                 {
                     foreach (CleanerSettings.ClearFiles clear in cleanermethod.logsfiles)
                     {
-                        clear.Delete();
+                        deleted += clear.Delete();
                     }
 
                     LogsFilesCheckBox.Invoke(new MethodInvoker(() =>
@@ -126,11 +143,11 @@ namespace Win_10_Optimizer.Forms
             }
             if (CacheFilesCheckBox.Checked)
             {
-                Task.Factory.StartNew(() =>
+                await Task.Factory.StartNew(() =>
                 {
                     foreach (CleanerSettings.ClearFiles clear in cleanermethod.cachefiles)
                     {
-                        clear.Delete();
+                        deleted += clear.Delete();
                     }
 
                     ScreenShotsFilesCheckBox.Invoke(new MethodInvoker(() =>
@@ -139,7 +156,22 @@ namespace Win_10_Optimizer.Forms
                     }));
                 });
             }
+            NotificationManager.Manager notify = new NotificationManager.Manager();
+            notify.MaxTextWidth = 150;
+            notify.EnableOffset = false;
+            notify.Alert("Очищено: " + BytesToString(deleted), NotificationManager.NotificationType.Info);
+            notify.StopTimer(1000);
             ClearButton.Enabled = true;
+        }
+        static String BytesToString(long byteCount)
+        {
+            string[] suf = { "Байт", "KB", "MB", "GB", "TB", "PB", "EB" }; //
+            if (byteCount == 0)
+                return "0" + suf[0];
+            long bytes = Math.Abs(byteCount);
+            int place = Convert.ToInt32(Math.Floor(Math.Log(bytes, 1024)));
+            double num = Math.Round(bytes / Math.Pow(1024, place), 1);
+            return (Math.Sign(byteCount) * num).ToString() + suf[place];
         }
     }
 }

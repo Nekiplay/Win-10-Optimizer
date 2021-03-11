@@ -26,6 +26,16 @@ namespace Win_10_Optimizer
             new ClearFiles(Environment.GetFolderPath(Environment.SpecialFolder.ApplicationData) + "\\.minecraft\\logs", "*.*", true),
             new ClearFiles(Environment.GetFolderPath(Environment.SpecialFolder.ApplicationData) + "\\.vimeworld\\minigames\\logs", "*.*", true),
             new ClearFiles(Environment.GetFolderPath(Environment.SpecialFolder.UserProfile) + "\\.cristalix\\launcher.log", "*.*", true),
+            /* OzoneMC (Манйркрафт) */
+            new ClearFiles(Environment.GetFolderPath(Environment.SpecialFolder.UserProfile) + "\\Olympus\\logs", "*.*", true),
+            new ClearFiles(Environment.GetFolderPath(Environment.SpecialFolder.UserProfile) + "\\Olympus", "*.log"),
+            new ClearFiles(Environment.GetFolderPath(Environment.SpecialFolder.UserProfile) + "\\Olympus\\HiTech\\liteconfig", "*.log"),
+            new ClearFiles(Environment.GetFolderPath(Environment.SpecialFolder.UserProfile) + "\\Olympus\\HiTech\\journeymap", "*.log"),
+            /* Lunar Client (Манйркрафт) */
+            new ClearFiles(Environment.GetFolderPath(Environment.SpecialFolder.UserProfile) + "\\.lunarclient\\logs\\launcher", "*.log", true),
+            new ClearFiles(Environment.GetFolderPath(Environment.SpecialFolder.UserProfile) + "\\.lunarclient\\offline\\files\\1.7\\logs", "*.*", true),
+            new ClearFiles(Environment.GetFolderPath(Environment.SpecialFolder.UserProfile) + "\\.lunarclient\\offline\\1.7\\logs", "*.*", true),
+            new ClearFiles(Environment.GetFolderPath(Environment.SpecialFolder.UserProfile) + "\\.lunarclient\\offline\\1.8\\logs", "*.*", true),
             /* AnyDesk */
             new ClearFiles(Environment.GetFolderPath(Environment.SpecialFolder.ApplicationData) + "\\AnyDesk\\chat", "*.*", true),
             /* Discord */
@@ -37,6 +47,10 @@ namespace Win_10_Optimizer
             new ClearFiles(Environment.GetFolderPath(Environment.SpecialFolder.ApplicationData) + "\\discord\\IndexedDB\\https_www.youtube.com_0.indexeddb.leveldb\\", "*.log"),
             new ClearFiles(Environment.GetFolderPath(Environment.SpecialFolder.ApplicationData) + "\\discord\\IndexedDB\\https_www.youtube.com_0.indexeddb.leveldb\\", "*.log"),
             new ClearFiles(Environment.GetFolderPath(Environment.SpecialFolder.ApplicationData) + "\\discord\\Crashpad\\reports\\", "*.dmp"),
+            /* ShareX */
+            new ClearFiles(Environment.GetFolderPath(Environment.SpecialFolder.MyDocuments) + "\\ShareX\\Logs", "*.txt", true),
+            /* VirualBox */
+            new ClearFiles(Environment.GetFolderPath(Environment.SpecialFolder.UserProfile) + "\\.VirtualBox", "*.log*"),
         };
         /* Кэш (Cache) */
         public List<ClearFiles> cachefiles = new List<ClearFiles>
@@ -66,6 +80,10 @@ namespace Win_10_Optimizer
             new ClearFiles(Environment.GetFolderPath(Environment.SpecialFolder.UserProfile) + "\\AppData\\Roaming\\Microsoft\\Windows\\Recent", "*.*", true),
             new ClearFiles(Environment.GetFolderPath(Environment.SpecialFolder.Windows) + "\\Temp", "*.*", true),
             new ClearFiles(Environment.GetFolderPath(Environment.SpecialFolder.UserProfile) + "\\AppData\\Local\\Temp", "*.*", true),
+        };
+        /* Бэкапы */
+        public List<ClearFiles> backupfiles = new List<ClearFiles> {
+            new ClearFiles(Environment.GetFolderPath(Environment.SpecialFolder.MyDocuments) + "\\ShareX\\Backup", "*.json", true),
         };
         /* Steam Files */
         public List<ClearFiles> steamfiles = new List<ClearFiles>();
@@ -106,11 +124,12 @@ namespace Win_10_Optimizer
                 this.deleteall = deleteall;
             }
             private bool Exist (string path){  try { return System.IO.Directory.Exists(path); } catch { return false; } }
-            public void Delete()
+            public long Delete()
             {
+                long deleted = 0;
                 if (!dir.StartsWith("{drive}"))
                 {
-                    Clear();
+                    deleted += Clear();
                 }
                 else
                 {
@@ -119,33 +138,49 @@ namespace Win_10_Optimizer
                         try
                         {
                             string drivec = drive.Name.Substring(0, drive.Name.Length - 2);
-                            Clear(dir.Replace("{drive}", drivec));
+                            deleted += Clear(dir.Replace("{drive}", drivec));
                         }
                         catch { }
                     }
-                }    
+                }
+                return deleted;
             }
-            private void Clear(string custompath)
+            private long Clear(string custompath)
             {
+                long bytesdeleted = 0;
                 if (Exist(custompath))
                 {
                     if (!deleteall)
                     {
                         var result = System.IO.Directory.EnumerateFiles(custompath, pattern);
-                        if (result.Count() != 0) { foreach (var m in result) { try { System.IO.File.Delete(m); } catch { } } }
+                        if (result.Count() != 0) { foreach (var m in result) { try { System.IO.FileInfo file = new System.IO.FileInfo(m); System.IO.File.Delete(m); bytesdeleted += file.Length; } catch { } }  }
                     }
                     else
                     {
                         System.IO.DirectoryInfo myDirInfo = new System.IO.DirectoryInfo(custompath);
-                        foreach (System.IO.FileInfo file in myDirInfo.GetFiles()) { try { file.Delete(); } catch { } }
-                        foreach (System.IO.DirectoryInfo diri in myDirInfo.GetDirectories()) { try { diri.Delete(true); } catch { } }
+                        foreach (System.IO.FileInfo file in myDirInfo.GetFiles()) { try { file.Delete(); bytesdeleted += file.Length; } catch { } }
+                        foreach (System.IO.DirectoryInfo diri in myDirInfo.GetDirectories()) 
+                        {
+                            try 
+                            { 
+                                foreach (System.IO.FileInfo file in diri.GetFiles())
+                                {
+                                    file.Delete();
+                                    bytesdeleted += file.Length;
+                                }
+                                diri.Delete(true); 
+                            } 
+                            catch 
+                            { } 
+                        }
                         try { System.IO.Directory.Delete(dir, true); } catch { }
                     }
                 }
+                return bytesdeleted;
             }
-            private void Clear()
+            private long Clear()
             {
-                Clear(dir);
+                return Clear(dir);
             }
         }
     }
