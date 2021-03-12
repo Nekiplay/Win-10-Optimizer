@@ -61,7 +61,7 @@ namespace Win_10_Optimizer
             /* Unlocker */
             new ClearFiles("C:\\Program Files\\Unlocker", "README.TXT"),
             /* OSU (Game) */
-            new ClearFiles("C:\\Users\\Herob\\AppData\\Local\\osu!\\Logs", "*.log", true),
+            new ClearFiles(Environment.GetFolderPath(Environment.SpecialFolder.UserProfile + "\\AppData\\Local\\osu!\\Logs", "*.log", true),
         };
         /* Кэш (Cache) */
         public List<ClearFiles> cachefiles = new List<ClearFiles>
