@@ -13,17 +13,21 @@ namespace Win_10_Optimizer
         /* Логи */
         public List<ClearFiles> logsfiles = new List<ClearFiles> {
             /* NVIDIA */
-            new ClearFiles("C:\\ProgramData\\NVIDIA\\", @"*.log"),
-            new ClearFiles("C:\\ProgramData\\NVIDIA Corporation\\", "*.log"),
-            new ClearFiles("C:\\ProgramData\\NVIDIA Corporation\\nvstapisvr\\", "*.log"),
+            new ClearFiles("C:\\ProgramData\\NVIDIA", @"*.log"),
+            new ClearFiles("C:\\ProgramData\\NVIDIA Corporation", "*.log"),
+            new ClearFiles("C:\\ProgramData\\NVIDIA Corporation\\nvstapisvr", "*.log"),
+            new ClearFiles("C:\\ProgramData\\NVIDIA Corporation\\nvStereoInstaller", "*.log"),
+            new ClearFiles("C:\\ProgramData\\NVIDIA Corporation\\NvFBCPlugin", "*.txt"),
             /* Razer */
             new ClearFiles("C:\\ProgramData\\Razer\\Services\\Logs\\", "*.log"),
-            new ClearFiles("C:\\ProgramData\\Razer\\RazerCortexManifestRepair\\Logs\\", "*.log"),
-            new ClearFiles("C:\\ProgramData\\Razer\\BigDataSDK\\Logs\\", "*.log"),
+            new ClearFiles("C:\\ProgramData\\Razer\\RazerCortexManifestRepair\\Logs", "*.log"),
+            new ClearFiles("C:\\ProgramData\\Razer\\BigDataSDK\\Logs", "*.log"),
             /* Виндовс */
-            new ClearFiles("C:\\ProgramData\\Progress\\Installer\\Logs\\", "*.log"),
+            new ClearFiles("C:\\ProgramData\\Progress\\Installer\\Logs", "*.log"),
             /* Манйркрафт */
             new ClearFiles(Environment.GetFolderPath(Environment.SpecialFolder.ApplicationData) + "\\.minecraft\\logs", "*.*", true),
+            new ClearFiles(Environment.GetFolderPath(Environment.SpecialFolder.ApplicationData) + "\\.minecraft", "*.log"),
+            new ClearFiles(Environment.GetFolderPath(Environment.SpecialFolder.ApplicationData) + "\\.minecraft", "*log*"),
             new ClearFiles(Environment.GetFolderPath(Environment.SpecialFolder.ApplicationData) + "\\.vimeworld\\minigames\\logs", "*.*", true),
             new ClearFiles(Environment.GetFolderPath(Environment.SpecialFolder.UserProfile) + "\\.cristalix\\launcher.log", "*.*", true),
             /* OzoneMC (Манйркрафт) */
@@ -39,24 +43,33 @@ namespace Win_10_Optimizer
             /* AnyDesk */
             new ClearFiles(Environment.GetFolderPath(Environment.SpecialFolder.ApplicationData) + "\\AnyDesk\\chat", "*.*", true),
             /* Discord */
-            new ClearFiles(Environment.GetFolderPath(Environment.SpecialFolder.ApplicationData) + "\\discord\\", "*.log"),
-            new ClearFiles(Environment.GetFolderPath(Environment.SpecialFolder.ApplicationData) + "\\discord\\VideoDecodeStats\\", "*.log"),
-            new ClearFiles(Environment.GetFolderPath(Environment.SpecialFolder.ApplicationData) + "\\discord\\discord\\shared_proto_db\\metadata\\", "*.log"),
-            new ClearFiles(Environment.GetFolderPath(Environment.SpecialFolder.ApplicationData) + "\\discord\\discord\\Session Storage\\", "*.log"),
-            new ClearFiles(Environment.GetFolderPath(Environment.SpecialFolder.ApplicationData) + "\\discord\\Local Storage\\leveldb\\", "*.log"),
-            new ClearFiles(Environment.GetFolderPath(Environment.SpecialFolder.ApplicationData) + "\\discord\\IndexedDB\\https_www.youtube.com_0.indexeddb.leveldb\\", "*.log"),
-            new ClearFiles(Environment.GetFolderPath(Environment.SpecialFolder.ApplicationData) + "\\discord\\IndexedDB\\https_www.youtube.com_0.indexeddb.leveldb\\", "*.log"),
-            new ClearFiles(Environment.GetFolderPath(Environment.SpecialFolder.ApplicationData) + "\\discord\\Crashpad\\reports\\", "*.dmp"),
+            new ClearFiles(Environment.GetFolderPath(Environment.SpecialFolder.ApplicationData) + "\\discord", "*.log"),
+            new ClearFiles(Environment.GetFolderPath(Environment.SpecialFolder.ApplicationData) + "\\discord\\VideoDecodeStats", "*.log"),
+            new ClearFiles(Environment.GetFolderPath(Environment.SpecialFolder.ApplicationData) + "\\discord\\discord\\shared_proto_db\\metadata", "*.log"),
+            new ClearFiles(Environment.GetFolderPath(Environment.SpecialFolder.ApplicationData) + "\\discord\\discord\\Session Storage", "*.log"),
+            new ClearFiles(Environment.GetFolderPath(Environment.SpecialFolder.ApplicationData) + "\\discord\\Local Storage\\leveldb", "*.log"),
+            new ClearFiles(Environment.GetFolderPath(Environment.SpecialFolder.ApplicationData) + "\\discord\\IndexedDB\\https_www.youtube.com_0.indexeddb.leveldb", "*.log"),
+            new ClearFiles(Environment.GetFolderPath(Environment.SpecialFolder.ApplicationData) + "\\discord\\IndexedDB\\https_www.youtube.com_0.indexeddb.leveldb", "*.log"),
+            new ClearFiles(Environment.GetFolderPath(Environment.SpecialFolder.ApplicationData) + "\\discord\\Crashpad\\reports", "*.dmp"),
             /* ShareX */
             new ClearFiles(Environment.GetFolderPath(Environment.SpecialFolder.MyDocuments) + "\\ShareX\\Logs", "*.txt", true),
             /* VirualBox */
             new ClearFiles(Environment.GetFolderPath(Environment.SpecialFolder.UserProfile) + "\\.VirtualBox", "*.log*"),
+            new ClearFiles("C:\\ProgramData\\VirtualBox", "*.*", true),
+            /* Avast */
+            new ClearFiles("C:\\ProgramData\\Avast Software\\Persistent Data\\Avast\\Logs", "*.*", true),
+            /* Unlocker */
+            new ClearFiles("C:\\Program Files\\Unlocker", "README.TXT"),
+            /* OSU (Game) */
+            new ClearFiles("C:\\Users\\Herob\\AppData\\Local\\osu!\\Logs", "*.log", true),
         };
         /* Кэш (Cache) */
         public List<ClearFiles> cachefiles = new List<ClearFiles>
         {
             /* Discord */
-            new ClearFiles(Environment.GetFolderPath(Environment.SpecialFolder.ApplicationData) + "\\discord\\Code Cache\\", "*.*", true),
+            new ClearFiles(Environment.GetFolderPath(Environment.SpecialFolder.ApplicationData) + "\\discord\\Code Cache", "*.*", true),
+            /* Windows (Beta Test) */
+            new ClearFiles("C:\\ProgramData\\Package Cache", "*.*", true),
         };
         /* Скриншоты */
         public List<ClearFiles> screenshotfiles = new List<ClearFiles> {
@@ -65,8 +78,8 @@ namespace Win_10_Optimizer
             new ClearFiles(Environment.GetFolderPath(Environment.SpecialFolder.MyDocuments) + "\\Lightshot", "*.*", true),
             new ClearFiles("{drive}:\\Fraps\\Screenshots", "*.*", true),
             /* Майнкрафт */
-            new ClearFiles(Environment.GetFolderPath(Environment.SpecialFolder.ApplicationData) + "\\.minecraft\\screenshots\\", "*.*", true),
-            new ClearFiles(Environment.GetFolderPath(Environment.SpecialFolder.ApplicationData) + "\\.vimeworld\\minigames\\screenshots\\", "*.*", true),
+            new ClearFiles(Environment.GetFolderPath(Environment.SpecialFolder.ApplicationData) + "\\.minecraft\\screenshots", "*.*", true),
+            new ClearFiles(Environment.GetFolderPath(Environment.SpecialFolder.ApplicationData) + "\\.vimeworld\\minigames\\screenshots", "*.*", true),
         };
         /* Видео */
         public List<ClearFiles> videofiles = new List<ClearFiles> {
@@ -87,6 +100,12 @@ namespace Win_10_Optimizer
         };
         /* Steam Files */
         public List<ClearFiles> steamfiles = new List<ClearFiles>();
+        /* Настройки читов */
+        public List<ClearFiles> cheatconfigfiles = new List<ClearFiles>
+        {
+            new ClearFiles(Environment.GetFolderPath(Environment.SpecialFolder.ApplicationData) + "\\.minecraft\\Jigsaw", "*.*", true),
+            new ClearFiles(Environment.GetFolderPath(Environment.SpecialFolder.ApplicationData) + "\\.minecraft\\LiquidBounce-1.8", "*.*", true),
+        };
         public CleanerSettings()
         {
             /* Steam Games */
@@ -95,7 +114,6 @@ namespace Win_10_Optimizer
             {
                 steamdir = (string)Registry.GetValue(@"HKEY_LOCAL_MACHINE\SOFTWARE\WOW6432Node\Valve\Steam", "InstallPath", "Nothing");
             }
-            steamfiles.Clear();
             steamfiles.Add(new ClearFiles(steamdir + "\\steamapps\\common\\GarrysMod", "*.log"));
             steamfiles.Add(new ClearFiles(steamdir + "\\steamapps\\common\\GarrysMod", "*.mdmp"));
             steamfiles.Add(new ClearFiles(steamdir + "\\steamapps\\common\\GarrysMod\\crashes", "*.*", true));
@@ -105,6 +123,8 @@ namespace Win_10_Optimizer
             steamfiles.Add(new ClearFiles(steamdir + "\\steamapps\\common\\Unturned\\Log", "*.log"));
             steamfiles.Add(new ClearFiles(steamdir + "\\steamapps\\common\\Half-Life 2", "*.log"));
             steamfiles.Add(new ClearFiles(steamdir + "\\logs", "*.*", true));
+
+            cheatconfigfiles.Add(new ClearFiles(steamdir + "\\steamapps\\common\\Counter-Strike Global Offensive\\ot", "*.*", true));
         }
         /* Класс для хранения данных */
         public class ClearFiles

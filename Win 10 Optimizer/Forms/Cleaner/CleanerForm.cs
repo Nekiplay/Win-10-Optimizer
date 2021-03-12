@@ -33,6 +33,14 @@ namespace Win_10_Optimizer.Forms
         // The signature of SHEmptyRecycleBin (located in Shell32.dll)
         static extern int SHEmptyRecycleBin(IntPtr hwnd, string pszRootPath, RecycleFlags dwFlags);
 
+        private Task cheatcfg;
+        private Task windows;
+        private Task screenshots;
+        private Task gametrash;
+        private Task backups;
+        private Task mediafiles;
+        private Task logsfiles;
+        private Task cashfiles;
         private async void ClearButton_MouseClick(object sender, MouseEventArgs e)
         {
             if (e.Button == MouseButtons.Middle)
@@ -44,13 +52,29 @@ namespace Win_10_Optimizer.Forms
                 LogsFilesCheckBox.Checked = true;
                 CacheFilesCheckBox.Checked = true;
                 BackUpFilesCheckBox.Checked = true;
+                CheatConfigFilesCheckBox.Checked = true;
             }
             ClearButton.Enabled = false;
             CleanerSettings cleanermethod = new CleanerSettings();
             long deleted = 0;
+            if (CheatConfigFilesCheckBox.Checked)
+            {
+                cheatcfg = Task.Factory.StartNew(() =>
+                {
+                    foreach (CleanerSettings.ClearFiles clear in cleanermethod.cheatconfigfiles)
+                    {
+                        deleted += clear.Delete();
+                    }
+
+                    CheatConfigFilesCheckBox.Invoke(new MethodInvoker(() =>
+                    {
+                        CheatConfigFilesCheckBox.Checked = false;
+                    }));
+                });
+            }
             if (WindowsFilesCheckBox.Checked)
             {
-                await Task.Factory.StartNew(() =>
+                windows = Task.Factory.StartNew(() =>
                 {
                         /* Settings and Worker */
                     SHEmptyRecycleBin(IntPtr.Zero, null, RecycleFlags.SHERB_NOSOUND | RecycleFlags.SHERB_NOCONFIRMATION | RecycleFlags.SHERB_NOPROGRESSUI);
@@ -68,7 +92,7 @@ namespace Win_10_Optimizer.Forms
             }
             if (ScreenShotsFilesCheckBox.Checked)
             {
-                await Task.Factory.StartNew(() =>
+                screenshots = Task.Factory.StartNew(() =>
                 {
                     foreach (CleanerSettings.ClearFiles clear in cleanermethod.screenshotfiles)
                     {
@@ -83,7 +107,7 @@ namespace Win_10_Optimizer.Forms
             }
             if (GameTrashFilesCheckBox.Checked)
             {
-                await Task.Factory.StartNew(() =>
+                gametrash = Task.Factory.StartNew(() =>
                 {
                     foreach (CleanerSettings.ClearFiles clear in cleanermethod.steamfiles)
                     {
@@ -98,7 +122,7 @@ namespace Win_10_Optimizer.Forms
             }
             if (BackUpFilesCheckBox.Checked)
             {
-                await Task.Factory.StartNew(() =>
+                backups = Task.Factory.StartNew(() =>
                 {
                     foreach (CleanerSettings.ClearFiles clear in cleanermethod.backupfiles)
                     {
@@ -113,7 +137,7 @@ namespace Win_10_Optimizer.Forms
             }
             if (MediaFilesCheckBox.Checked)
             {
-                await Task.Factory.StartNew(() =>
+                mediafiles = Task.Factory.StartNew(() =>
                 {
                     foreach (CleanerSettings.ClearFiles clear in cleanermethod.videofiles)
                     {
@@ -128,7 +152,7 @@ namespace Win_10_Optimizer.Forms
             }
             if (LogsFilesCheckBox.Checked)
             {
-                await Task.Factory.StartNew(() =>
+                logsfiles = Task.Factory.StartNew(() =>
                 {
                     foreach (CleanerSettings.ClearFiles clear in cleanermethod.logsfiles)
                     {
@@ -143,7 +167,7 @@ namespace Win_10_Optimizer.Forms
             }
             if (CacheFilesCheckBox.Checked)
             {
-                await Task.Factory.StartNew(() =>
+                cashfiles = Task.Factory.StartNew(() =>
                 {
                     foreach (CleanerSettings.ClearFiles clear in cleanermethod.cachefiles)
                     {
@@ -156,6 +180,14 @@ namespace Win_10_Optimizer.Forms
                     }));
                 });
             }
+            await cashfiles;
+            await logsfiles;
+            await mediafiles;
+            await backups;
+            await gametrash;
+            await screenshots;
+            await windows;
+            await cheatcfg;
             NotificationManager.Manager notify = new NotificationManager.Manager();
             notify.MaxTextWidth = 150;
             notify.EnableOffset = false;

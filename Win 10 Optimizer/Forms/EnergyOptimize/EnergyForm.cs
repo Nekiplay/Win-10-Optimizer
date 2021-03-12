@@ -55,14 +55,15 @@ namespace Win_10_Optimizer.Forms
                     if (kk.GetValue("TcpAckFrequency") != null && kk.GetValue("TcpNoDelay") != null
                     && kk.GetValue("TcpAckFrequency").ToString() == "1" 
                     && kk.GetValue("TcpNoDelay").ToString() == "1"
-                    && kk.GetValue("NameServer") != null
-                    && kk.GetValue("DhcpDomain") != null
-                    && kk.GetValue("DhcpDomain").ToString() == "lan"
                     )
                     {
                         enabled = true;
                     }
                     RegistryKey Software = reg.OpenSubKey(@"Software\Microsoft\MSMQ\Parameters", false);
+                    if (Software == null)
+                    {
+                        reg.CreateSubKey(@"Software\Microsoft\MSMQ\Parameters");
+                    }
                     if (Software.GetValue("TcpNoDelay") == null
                     || Software.GetValue("TcpNoDelay").ToString() != "1"
                     )
