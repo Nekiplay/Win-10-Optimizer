@@ -11,6 +11,7 @@ namespace Win_10_Optimizer.Forms.EnergyOptimize
 {
     public class EnergyClass
     {
+        /* Плдучение текущих схем электропитанмя */
         public List<Tuple<string, string, bool>> ListSchemes()
         {
             var list = new List<Tuple<string, string, bool>>();
@@ -36,6 +37,7 @@ namespace Win_10_Optimizer.Forms.EnergyOptimize
             }
             return list;
         }
+        /* Получение ID схемы из текста в CMD */
         private string GetSchemeID(List<string> cmdtext)
         {
             string id = "";
@@ -48,6 +50,7 @@ namespace Win_10_Optimizer.Forms.EnergyOptimize
             }
             return id;
         }
+        /* Получение ID схемы из текста в CMD */
         private string GetSchemeID(string text)
         {
             string text1 = text;
@@ -63,19 +66,23 @@ namespace Win_10_Optimizer.Forms.EnergyOptimize
             }
             return "";
         }
+        /* Создание схема с максимальной производительностью */
         public string CreateMaximum()
         {
             List<string> cmdtext = new Win_10_Optimizer.Utilites.ProcessUtils().StartCmd("chcp 1251 & powercfg -duplicatescheme e9a42b02-d5df-448d-aa00-03f14749eb61");
             return GetSchemeID(cmdtext);
         }
+        /* Установка активной схемы */
         public void SetActiv(string id)
         {
             new Win_10_Optimizer.Utilites.ProcessUtils().StartCmd("chcp 1251 & powercfg -SETACTIVE " + id);
         }
+        /* Удаление схема */
         public void Delete(string id)
         {
             new Win_10_Optimizer.Utilites.ProcessUtils().StartCmd("chcp 1251 & powercfg /d " + id);
         }
+        /* Включение и выключение */
         public void Enable(bool on)
         {
             List<Tuple<string, string, bool>> schems = ListSchemes();
@@ -125,5 +132,4 @@ namespace Win_10_Optimizer.Forms.EnergyOptimize
             }
         }
     }
-
 }
