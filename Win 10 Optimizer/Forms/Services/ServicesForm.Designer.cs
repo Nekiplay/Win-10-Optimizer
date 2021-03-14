@@ -43,7 +43,7 @@ namespace Win_10_Optimizer.Forms
             this.WindowsUpdaterCheckBox.Checked = false;
             this.WindowsUpdaterCheckBox.CheckedOnColor = System.Drawing.Color.FromArgb(((int)(((byte)(51)))), ((int)(((byte)(205)))), ((int)(((byte)(117)))));
             this.WindowsUpdaterCheckBox.ForeColor = System.Drawing.Color.White;
-            this.WindowsUpdaterCheckBox.Location = new System.Drawing.Point(205, 12);
+            this.WindowsUpdaterCheckBox.Location = new System.Drawing.Point(205, 11);
             this.WindowsUpdaterCheckBox.Name = "WindowsUpdaterCheckBox";
             this.WindowsUpdaterCheckBox.Size = new System.Drawing.Size(20, 20);
             this.WindowsUpdaterCheckBox.TabIndex = 5;
@@ -54,9 +54,9 @@ namespace Win_10_Optimizer.Forms
             this.label1.BackColor = System.Drawing.Color.Transparent;
             this.label1.Font = new System.Drawing.Font("Arial", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.label1.ForeColor = System.Drawing.Color.Gainsboro;
-            this.label1.Location = new System.Drawing.Point(12, 9);
+            this.label1.Location = new System.Drawing.Point(12, 7);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(213, 29);
+            this.label1.Size = new System.Drawing.Size(200, 29);
             this.label1.TabIndex = 4;
             this.label1.Text = "Отключить обновления Windows";
             this.label1.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -81,7 +81,7 @@ namespace Win_10_Optimizer.Forms
             this.label2.ForeColor = System.Drawing.Color.Gainsboro;
             this.label2.Location = new System.Drawing.Point(12, 38);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(213, 29);
+            this.label2.Size = new System.Drawing.Size(182, 29);
             this.label2.TabIndex = 6;
             this.label2.Text = "Отключить защитник Windows";
             this.label2.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
