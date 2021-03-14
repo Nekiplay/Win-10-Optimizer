@@ -92,6 +92,7 @@ namespace Win_10_Optimizer
 
         readonly Forms.EnergyForm optimize = new Forms.EnergyForm();
         readonly Forms.Cleaner cleaner = new Forms.Cleaner();
+        readonly Forms.ServicesForm services = new Forms.ServicesForm();
 
         private void ExitButton_Click(object sender, EventArgs e)
         {
@@ -117,6 +118,15 @@ namespace Win_10_Optimizer
             {
                 ActivateButton(sender, RGBColors.color1);
                 OpenChildForm(optimize, false);
+            }
+        }
+
+        private void bunifuButton1_MouseClick(object sender, MouseEventArgs e)
+        {
+            if (e.Button == MouseButtons.Left)
+            {
+                ActivateButton(sender, RGBColors.color1);
+                OpenChildForm(services, false);
             }
         }
     }

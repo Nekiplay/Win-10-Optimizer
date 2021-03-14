@@ -58,6 +58,7 @@
     <Reference Include="System.Design" />
     <Reference Include="System.Management" />
     <Reference Include="System.Security" />
+    <Reference Include="System.ServiceProcess" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
     <Reference Include="Microsoft.CSharp" />
@@ -90,11 +91,12 @@
     <Compile Include="Forms\EnergyOptimize\EnergyForm.Designer.cs">
       <DependentUpon>EnergyForm.cs</DependentUpon>
     </Compile>
-    <Compile Include="Forms\Services.cs">
+    <Compile Include="Forms\Services\ServiceHelper.cs" />
+    <Compile Include="Forms\Services\ServicesForm.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Forms\Services.Designer.cs">
-      <DependentUpon>Services.cs</DependentUpon>
+    <Compile Include="Forms\Services\ServicesForm.Designer.cs">
+      <DependentUpon>ServicesForm.cs</DependentUpon>
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -109,8 +111,8 @@
     <EmbeddedResource Include="Forms\EnergyOptimize\EnergyForm.resx">
       <DependentUpon>EnergyForm.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Forms\Services.resx">
-      <DependentUpon>Services.cs</DependentUpon>
+    <EmbeddedResource Include="Forms\Services\ServicesForm.resx">
+      <DependentUpon>ServicesForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
