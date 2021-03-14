@@ -43,9 +43,9 @@ namespace Win_10_Optimizer.Forms
             });
         }
 
-        private async void WindowsUpdaterCheckBox_OnChange(object sender, EventArgs e)
+        private void WindowsUpdaterCheckBox_OnChange(object sender, EventArgs e)
         {
-            await Task.Factory.StartNew(() =>
+            Task.Factory.StartNew(() =>
             {
                 ServiceController windowsupdater = new ServiceController("Центр обновления Windows");
                 if (windowsupdater != null)
