@@ -120,11 +120,11 @@
   <assembly alias="System.Drawing" name="System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
   <data name="bunifuButton1.BackgroundImage" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
-        iVBORw0KGgoAAAANSUhEUgAAAHEAAAAeCAYAAAAb3PFfAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8
+        iVBORw0KGgoAAAANSUhEUgAAAHIAAAAeCAYAAADw60pcAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8
         YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAACeSURBVGhD7dFBDYBQEMTQLwnQAP4FIAMBQEhPBAMlnaSn
-        3dsb7SdbpnVf5u0sWbcbhDfi10MpgjBEcxCGaA7CEM1BGKI5CEM0B2GI5iAM0RyEIZqDMERzEIZoDsIQ
-        zUEYojkIQzQHYYjmIAzRHIQhmoMwRHMQhmgOwhDNQRiiOQhDNAdhiOYgDNEchCGagzBEcxA+iMf7WIoO
-        CJt7Y1wh2hBFxxhDqgAAAABJRU5ErkJggg==
+        3dsb7UdbpnVf5u0sYbcdjDfk10NpgjFIezAGaQ/GIO3BGKQ9GIO0B2OQ9mAM0h6MQdqDMUh7MAZpD8Yg
+        7cEYpD0Yg7QHY5D2YAzSHoxB2oMxSHswBmkPxiDtwRikPRiDtAdjkPZgDNIejEHagzFIezA+kMf7WJoO
+        GJt/Y1zsMj6Jh9gCowAAAABJRU5ErkJggg==
 </value>
   </data>
   <data name="bunifuPictureBox1.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
@@ -207,11 +207,11 @@
   </data>
   <data name="CleanerButton.BackgroundImage" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
-        iVBORw0KGgoAAAANSUhEUgAAAHEAAAAeCAYAAAAb3PFfAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8
+        iVBORw0KGgoAAAANSUhEUgAAAHIAAAAeCAYAAADw60pcAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8
         YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAACeSURBVGhD7dFBDYBQEMTQLwnQAP4FIAMBQEhPBAMlnaSn
-        3dsb7SdbpnVf5u0sWbcbhDfi10MpgjBEcxCGaA7CEM1BGKI5CEM0B2GI5iAM0RyEIZqDMERzEIZoDsIQ
-        zUEYojkIQzQHYYjmIAzRHIQhmoMwRHMQhmgOwhDNQRiiOQhDNAdhiOYgDNEchCGagzBEcxA+iMf7WIoO
-        CJt7Y1wh2hBFxxhDqgAAAABJRU5ErkJggg==
+        3dsb7UdbpnVf5u0sYbcdjDfk10NpgjFIezAGaQ/GIO3BGKQ9GIO0B2OQ9mAM0h6MQdqDMUh7MAZpD8Yg
+        7cEYpD0Yg7QHY5D2YAzSHoxB2oMxSHswBmkPxiDtwRikPRiDtAdjkPZgDNIejEHagzFIezA+kMf7WJoO
+        GJt/Y1zsMj6Jh9gCowAAAABJRU5ErkJggg==
 </value>
   </data>
   <data name="OptimizeButton.BackgroundImage" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">

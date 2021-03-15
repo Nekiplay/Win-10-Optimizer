@@ -180,14 +180,38 @@ namespace Win_10_Optimizer.Forms
                     }));
                 });
             }
-            await cashfiles;
-            await logsfiles;
-            await mediafiles;
-            await backups;
-            await gametrash;
-            await screenshots;
-            await windows;
-            await cheatcfg;
+            if (cashfiles != null)
+            {
+                await cashfiles;
+            }
+            if (logsfiles != null)
+            {
+                await logsfiles;
+            }
+            if (mediafiles != null)
+            {
+                await mediafiles;
+            }
+            if (backups != null)
+            {
+                await backups;
+            }
+            if (gametrash != null)
+            {
+                await gametrash;
+            }
+            if (screenshots != null)
+            {
+                await screenshots;
+            }
+            if (windows != null)
+            {
+                await windows;
+            }
+            if (cheatcfg != null)
+            {
+                await cheatcfg;
+            }
             NotificationManager.Manager notify = new NotificationManager.Manager();
             notify.MaxTextWidth = 150;
             notify.EnableOffset = false;

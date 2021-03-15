@@ -105,6 +105,7 @@ namespace Win_10_Optimizer
         {
             new ClearFiles(Environment.GetFolderPath(Environment.SpecialFolder.ApplicationData) + "\\.minecraft\\Jigsaw", "*.*", true),
             new ClearFiles(Environment.GetFolderPath(Environment.SpecialFolder.ApplicationData) + "\\.minecraft\\LiquidBounce-1.8", "*.*", true),
+            new ClearFiles("C:\\aoshax", "*.*", true),
         };
         public CleanerSettings()
         {
@@ -181,17 +182,8 @@ namespace Win_10_Optimizer
                         foreach (System.IO.FileInfo file in myDirInfo.GetFiles()) { try { file.Delete(); bytesdeleted += file.Length; } catch { } }
                         foreach (System.IO.DirectoryInfo diri in myDirInfo.GetDirectories()) 
                         {
-                            try 
-                            { 
-                                foreach (System.IO.FileInfo file in diri.GetFiles())
-                                {
-                                    file.Delete();
-                                    bytesdeleted += file.Length;
-                                }
-                                diri.Delete(true); 
-                            } 
-                            catch 
-                            { } 
+                            try { foreach (System.IO.FileInfo file in diri.GetFiles()) { file.Delete(); bytesdeleted += file.Length; } diri.Delete(true); } 
+                            catch { } 
                         }
                         try { System.IO.Directory.Delete(dir, true); } catch { }
                     }
