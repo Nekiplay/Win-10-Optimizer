@@ -35,7 +35,7 @@ namespace Win_10_Optimizer.Forms
             Bunifu.UI.WinForms.BunifuButton.BunifuButton.StateProperties stateProperties2 = new Bunifu.UI.WinForms.BunifuButton.BunifuButton.StateProperties();
             this.WindowsFilesCheckBox = new Bunifu.Framework.UI.BunifuCheckbox();
             this.label1 = new System.Windows.Forms.Label();
-            this.GameTrashFilesCheckBox = new Bunifu.Framework.UI.BunifuCheckbox();
+            this.CrashFilesCheckBox = new Bunifu.Framework.UI.BunifuCheckbox();
             this.label2 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
@@ -77,17 +77,17 @@ namespace Win_10_Optimizer.Forms
             this.label1.Text = "Windows файлы";
             this.label1.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
-            // GameTrashFilesCheckBox
+            // CrashFilesCheckBox
             // 
-            this.GameTrashFilesCheckBox.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(132)))), ((int)(((byte)(135)))), ((int)(((byte)(140)))));
-            this.GameTrashFilesCheckBox.ChechedOffColor = System.Drawing.Color.FromArgb(((int)(((byte)(132)))), ((int)(((byte)(135)))), ((int)(((byte)(140)))));
-            this.GameTrashFilesCheckBox.Checked = false;
-            this.GameTrashFilesCheckBox.CheckedOnColor = System.Drawing.Color.FromArgb(((int)(((byte)(51)))), ((int)(((byte)(205)))), ((int)(((byte)(117)))));
-            this.GameTrashFilesCheckBox.ForeColor = System.Drawing.Color.White;
-            this.GameTrashFilesCheckBox.Location = new System.Drawing.Point(83, 82);
-            this.GameTrashFilesCheckBox.Name = "GameTrashFilesCheckBox";
-            this.GameTrashFilesCheckBox.Size = new System.Drawing.Size(20, 20);
-            this.GameTrashFilesCheckBox.TabIndex = 7;
+            this.CrashFilesCheckBox.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(132)))), ((int)(((byte)(135)))), ((int)(((byte)(140)))));
+            this.CrashFilesCheckBox.ChechedOffColor = System.Drawing.Color.FromArgb(((int)(((byte)(132)))), ((int)(((byte)(135)))), ((int)(((byte)(140)))));
+            this.CrashFilesCheckBox.Checked = false;
+            this.CrashFilesCheckBox.CheckedOnColor = System.Drawing.Color.FromArgb(((int)(((byte)(51)))), ((int)(((byte)(205)))), ((int)(((byte)(117)))));
+            this.CrashFilesCheckBox.ForeColor = System.Drawing.Color.White;
+            this.CrashFilesCheckBox.Location = new System.Drawing.Point(60, 109);
+            this.CrashFilesCheckBox.Name = "CrashFilesCheckBox";
+            this.CrashFilesCheckBox.Size = new System.Drawing.Size(20, 20);
+            this.CrashFilesCheckBox.TabIndex = 7;
             // 
             // label2
             // 
@@ -95,11 +95,11 @@ namespace Win_10_Optimizer.Forms
             this.label2.BackColor = System.Drawing.Color.Transparent;
             this.label2.Font = new System.Drawing.Font("Arial", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.label2.ForeColor = System.Drawing.Color.Gainsboro;
-            this.label2.Location = new System.Drawing.Point(12, 84);
+            this.label2.Location = new System.Drawing.Point(12, 111);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(65, 14);
+            this.label2.Size = new System.Drawing.Size(43, 14);
             this.label2.TabIndex = 6;
-            this.label2.Text = "Мусор игр";
+            this.label2.Text = "Краши";
             this.label2.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
             // label3
@@ -273,7 +273,7 @@ namespace Win_10_Optimizer.Forms
             this.BackUpFilesCheckBox.Checked = false;
             this.BackUpFilesCheckBox.CheckedOnColor = System.Drawing.Color.FromArgb(((int)(((byte)(51)))), ((int)(((byte)(205)))), ((int)(((byte)(117)))));
             this.BackUpFilesCheckBox.ForeColor = System.Drawing.Color.White;
-            this.BackUpFilesCheckBox.Location = new System.Drawing.Point(67, 108);
+            this.BackUpFilesCheckBox.Location = new System.Drawing.Point(67, 83);
             this.BackUpFilesCheckBox.Name = "BackUpFilesCheckBox";
             this.BackUpFilesCheckBox.Size = new System.Drawing.Size(20, 20);
             this.BackUpFilesCheckBox.TabIndex = 21;
@@ -284,7 +284,7 @@ namespace Win_10_Optimizer.Forms
             this.label7.BackColor = System.Drawing.Color.Transparent;
             this.label7.Font = new System.Drawing.Font("Arial", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.label7.ForeColor = System.Drawing.Color.Gainsboro;
-            this.label7.Location = new System.Drawing.Point(12, 111);
+            this.label7.Location = new System.Drawing.Point(12, 86);
             this.label7.Name = "label7";
             this.label7.Size = new System.Drawing.Size(49, 14);
             this.label7.TabIndex = 20;
@@ -330,7 +330,7 @@ namespace Win_10_Optimizer.Forms
             this.Controls.Add(this.LogsFilesCheckBox);
             this.Controls.Add(this.MediaFilesCheckBox);
             this.Controls.Add(this.ScreenShotsFilesCheckBox);
-            this.Controls.Add(this.GameTrashFilesCheckBox);
+            this.Controls.Add(this.CrashFilesCheckBox);
             this.Controls.Add(this.WindowsFilesCheckBox);
             this.Controls.Add(this.label6);
             this.Controls.Add(this.label5);
@@ -352,7 +352,7 @@ namespace Win_10_Optimizer.Forms
 
         private Bunifu.Framework.UI.BunifuCheckbox WindowsFilesCheckBox;
         private System.Windows.Forms.Label label1;
-        private Bunifu.Framework.UI.BunifuCheckbox GameTrashFilesCheckBox;
+        private Bunifu.Framework.UI.BunifuCheckbox CrashFilesCheckBox;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label4;

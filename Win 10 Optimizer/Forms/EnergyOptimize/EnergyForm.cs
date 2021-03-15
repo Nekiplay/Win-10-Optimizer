@@ -28,7 +28,6 @@ namespace Win_10_Optimizer.Forms
                         {
                             bunifuCheckbox1.Checked = true;
                         }));
-                        energy.Delete(s.Item1);
                     }
                 }
             });

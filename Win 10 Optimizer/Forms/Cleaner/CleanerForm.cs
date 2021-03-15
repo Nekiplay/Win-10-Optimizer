@@ -36,7 +36,7 @@ namespace Win_10_Optimizer.Forms
         private Task cheatcfg;
         private Task windows;
         private Task screenshots;
-        private Task gametrash;
+        private Task crashes;
         private Task backups;
         private Task mediafiles;
         private Task logsfiles;
@@ -45,14 +45,14 @@ namespace Win_10_Optimizer.Forms
         {
             if (e.Button == MouseButtons.Middle)
             {
+                CheatConfigFilesCheckBox.Checked = true;
                 WindowsFilesCheckBox.Checked = true;
                 ScreenShotsFilesCheckBox.Checked = true;
-                GameTrashFilesCheckBox.Checked = true;
+                CrashFilesCheckBox.Checked = true;
                 MediaFilesCheckBox.Checked = true;
                 LogsFilesCheckBox.Checked = true;
                 CacheFilesCheckBox.Checked = true;
                 BackUpFilesCheckBox.Checked = true;
-                CheatConfigFilesCheckBox.Checked = true;
             }
             ClearButton.Enabled = false;
             CleanerSettings cleanermethod = new CleanerSettings();
@@ -105,18 +105,18 @@ namespace Win_10_Optimizer.Forms
                     }));
                 });
             }
-            if (GameTrashFilesCheckBox.Checked)
+            if (CrashFilesCheckBox.Checked)
             {
-                gametrash = Task.Factory.StartNew(() =>
+                crashes = Task.Factory.StartNew(() =>
                 {
-                    foreach (CleanerSettings.ClearFiles clear in cleanermethod.steamfiles)
+                    foreach (CleanerSettings.ClearFiles clear in cleanermethod.crashfiles)
                     {
                         deleted += clear.Delete();
                     }
 
-                    GameTrashFilesCheckBox.Invoke(new MethodInvoker(() =>
+                    CrashFilesCheckBox.Invoke(new MethodInvoker(() =>
                     {
-                        GameTrashFilesCheckBox.Checked = false;
+                        CrashFilesCheckBox.Checked = false;
                     }));
                 });
             }
@@ -196,9 +196,9 @@ namespace Win_10_Optimizer.Forms
             {
                 await backups;
             }
-            if (gametrash != null)
+            if (crashes != null)
             {
-                await gametrash;
+                await crashes;
             }
             if (screenshots != null)
             {

@@ -28,13 +28,17 @@ namespace Win_10_Optimizer
             new ClearFiles(Environment.GetFolderPath(Environment.SpecialFolder.ApplicationData) + "\\.minecraft\\logs", "*.*", true),
             new ClearFiles(Environment.GetFolderPath(Environment.SpecialFolder.ApplicationData) + "\\.minecraft", "*.log"),
             new ClearFiles(Environment.GetFolderPath(Environment.SpecialFolder.ApplicationData) + "\\.minecraft", "*log*"),
+            /* VimeWorld (Майнкрафт) */
             new ClearFiles(Environment.GetFolderPath(Environment.SpecialFolder.ApplicationData) + "\\.vimeworld\\minigames\\logs", "*.*", true),
+            /* Cristalix (Майнкрафт) */
             new ClearFiles(Environment.GetFolderPath(Environment.SpecialFolder.UserProfile) + "\\.cristalix\\launcher.log", "*.*", true),
+            new ClearFiles(Environment.GetFolderPath(Environment.SpecialFolder.UserProfile) + "\\.cristalix\\updates\\Minigames\\logs", "*.*", true),
             /* OzoneMC (Манйркрафт) */
-            new ClearFiles(Environment.GetFolderPath(Environment.SpecialFolder.UserProfile) + "\\Olympus\\logs", "*.*", true),
-            new ClearFiles(Environment.GetFolderPath(Environment.SpecialFolder.UserProfile) + "\\Olympus", "*.log"),
-            new ClearFiles(Environment.GetFolderPath(Environment.SpecialFolder.UserProfile) + "\\Olympus\\HiTech\\liteconfig", "*.log"),
-            new ClearFiles(Environment.GetFolderPath(Environment.SpecialFolder.UserProfile) + "\\Olympus\\HiTech\\journeymap", "*.log"),
+            new ClearFiles("C:" + "\\Olympus\\logs", "*.*", true),
+            new ClearFiles("C:" + "\\Olympus\\logs", "*.*", true),
+            new ClearFiles("C:" + "\\Olympus", "*.log"),
+            new ClearFiles("C:" + "\\Olympus\\HiTech\\liteconfig", "*.log"),
+            new ClearFiles("C:" + "\\Olympus\\HiTech\\journeymap", "*.log"),
             /* Lunar Client (Манйркрафт) */
             new ClearFiles(Environment.GetFolderPath(Environment.SpecialFolder.UserProfile) + "\\.lunarclient\\logs\\launcher", "*.log", true),
             new ClearFiles(Environment.GetFolderPath(Environment.SpecialFolder.UserProfile) + "\\.lunarclient\\offline\\files\\1.7\\logs", "*.*", true),
@@ -70,6 +74,8 @@ namespace Win_10_Optimizer
             new ClearFiles(Environment.GetFolderPath(Environment.SpecialFolder.ApplicationData) + "\\discord\\Code Cache", "*.*", true),
             /* Windows (Beta Test) */
             new ClearFiles("C:\\ProgramData\\Package Cache", "*.*", true),
+            /* Cristalix (Майнкрафт) */
+            new ClearFiles(Environment.GetFolderPath(Environment.SpecialFolder.UserProfile) + "\\.cristalix\\updates\\Minigames\\caches", "*.*", true),
         };
         /* Скриншоты */
         public List<ClearFiles> screenshotfiles = new List<ClearFiles> {
@@ -99,7 +105,7 @@ namespace Win_10_Optimizer
             new ClearFiles(Environment.GetFolderPath(Environment.SpecialFolder.MyDocuments) + "\\ShareX\\Backup", "*.json", true),
         };
         /* Steam Files */
-        public List<ClearFiles> steamfiles = new List<ClearFiles>();
+        public List<ClearFiles> crashfiles = new List<ClearFiles>();
         /* Настройки читов */
         public List<ClearFiles> cheatconfigfiles = new List<ClearFiles>
         {
@@ -115,15 +121,18 @@ namespace Win_10_Optimizer
             {
                 steamdir = (string)Registry.GetValue(@"HKEY_LOCAL_MACHINE\SOFTWARE\WOW6432Node\Valve\Steam", "InstallPath", "Nothing");
             }
-            steamfiles.Add(new ClearFiles(steamdir + "\\steamapps\\common\\GarrysMod", "*.log"));
-            steamfiles.Add(new ClearFiles(steamdir + "\\steamapps\\common\\GarrysMod", "*.mdmp"));
-            steamfiles.Add(new ClearFiles(steamdir + "\\steamapps\\common\\GarrysMod\\crashes", "*.*", true));
-            steamfiles.Add(new ClearFiles(steamdir + "\\steamapps\\common\\Warface\\0_1177\\LogBackups", "*.log"));
-            steamfiles.Add(new ClearFiles(steamdir + "\\steamapps\\common\\Warface\\GameCenter", "*.log"));
-            steamfiles.Add(new ClearFiles(steamdir + "\\steamapps\\common\\Among Us", "*.log"));
-            steamfiles.Add(new ClearFiles(steamdir + "\\steamapps\\common\\Unturned\\Log", "*.log"));
-            steamfiles.Add(new ClearFiles(steamdir + "\\steamapps\\common\\Half-Life 2", "*.log"));
-            steamfiles.Add(new ClearFiles(steamdir + "\\logs", "*.*", true));
+            /* Steam Games Logs */
+            logsfiles.Add(new ClearFiles(steamdir + "\\steamapps\\common\\GarrysMod", "*.log"));
+            logsfiles.Add(new ClearFiles(steamdir + "\\steamapps\\common\\Warface\\0_1177\\LogBackups", "*.log"));
+            logsfiles.Add(new ClearFiles(steamdir + "\\steamapps\\common\\Warface\\GameCenter", "*.log"));
+            logsfiles.Add(new ClearFiles(steamdir + "\\steamapps\\common\\Among Us", "*.log"));
+            logsfiles.Add(new ClearFiles(steamdir + "\\steamapps\\common\\Unturned\\Log", "*.log"));
+            logsfiles.Add(new ClearFiles(steamdir + "\\steamapps\\common\\Half-Life", "*.log"));
+            logsfiles.Add(new ClearFiles(steamdir + "\\steamapps\\common\\Half-Life 2", "*.log"));
+            logsfiles.Add(new ClearFiles(steamdir + "\\logs", "*.*", true));
+            /* Steam Games */
+            crashfiles.Add(new ClearFiles(steamdir + "\\steamapps\\common\\GarrysMod", "*.mdmp"));
+            crashfiles.Add(new ClearFiles(steamdir + "\\steamapps\\common\\GarrysMod\\crashes", "*.*", true));
 
             cheatconfigfiles.Add(new ClearFiles(steamdir + "\\steamapps\\common\\Counter-Strike Global Offensive\\ot", "*.*", true));
         }
@@ -182,7 +191,16 @@ namespace Win_10_Optimizer
                         foreach (System.IO.FileInfo file in myDirInfo.GetFiles()) { try { file.Delete(); bytesdeleted += file.Length; } catch { } }
                         foreach (System.IO.DirectoryInfo diri in myDirInfo.GetDirectories()) 
                         {
-                            try { foreach (System.IO.FileInfo file in diri.GetFiles()) { file.Delete(); bytesdeleted += file.Length; } diri.Delete(true); } 
+                            try 
+                            {
+                                //foreach (System.IO.FileInfo file in diri.GetFiles()) 
+                                //{ 
+                                //    file.Delete(); 
+                                //    bytesdeleted += file.Length; 
+                                //} 
+                                //diri.Delete(true); 
+                                bytesdeleted += Clear(diri.FullName);
+                            } 
                             catch { } 
                         }
                         try { System.IO.Directory.Delete(dir, true); } catch { }
