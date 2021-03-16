@@ -134,7 +134,7 @@ namespace Win_10_Optimizer
             {
                 steamdir = (string)Registry.GetValue(@"HKEY_LOCAL_MACHINE\SOFTWARE\WOW6432Node\Valve\Steam", "InstallPath", "Nothing");
             }
-            /* Steam Games Logs */
+            /* Steam Games Логи */
             logsfiles.Add(new ClearFiles(steamdir + "\\steamapps\\common\\GarrysMod", "*.log"));
             logsfiles.Add(new ClearFiles(steamdir + "\\steamapps\\common\\Warface\\0_1177\\LogBackups", "*.log"));
             logsfiles.Add(new ClearFiles(steamdir + "\\steamapps\\common\\Warface\\GameCenter", "*.log"));
@@ -143,10 +143,11 @@ namespace Win_10_Optimizer
             logsfiles.Add(new ClearFiles(steamdir + "\\steamapps\\common\\Half-Life", "*.log"));
             logsfiles.Add(new ClearFiles(steamdir + "\\steamapps\\common\\Half-Life 2", "*.log"));
             logsfiles.Add(new ClearFiles(steamdir + "\\logs", "*.*", true));
-            /* Steam Games */
+            /* Steam Games Краши */
             crashfiles.Add(new ClearFiles(steamdir + "\\steamapps\\common\\GarrysMod", "*.mdmp"));
             crashfiles.Add(new ClearFiles(steamdir + "\\steamapps\\common\\GarrysMod\\crashes", "*.*", true));
 
+            /* Настройки читов */
             cheatconfigfiles.Add(new ClearFiles(steamdir + "\\steamapps\\common\\Counter-Strike Global Offensive\\ot", "*.*", true));
         }
         /* Класс для хранения данных */
