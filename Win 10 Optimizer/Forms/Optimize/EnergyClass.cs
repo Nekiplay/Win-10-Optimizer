@@ -11,7 +11,7 @@ namespace Win_10_Optimizer.Forms.EnergyOptimize
 {
     public class EnergyClass
     {
-        /* Плдучение текущих схем электропитанмя */
+        /* Получение текущих схем электропитанмя */
         public List<Tuple<string, string, bool>> ListSchemes()
         {
             var list = new List<Tuple<string, string, bool>>();
@@ -37,7 +37,7 @@ namespace Win_10_Optimizer.Forms.EnergyOptimize
             }
             return list;
         }
-        /* Получение ID схемы из текста в CMD */
+        /* Получение ID схемы из списка текста в CMD */
         private string GetSchemeID(List<string> cmdtext)
         {
             string id = "";

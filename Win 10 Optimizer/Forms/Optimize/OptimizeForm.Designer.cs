@@ -1,7 +1,7 @@
 ﻿
 namespace Win_10_Optimizer.Forms
 {
-    partial class EnergyForm
+    partial class OptimizeForm
     {
         /// <summary>
         /// Required designer variable.
@@ -29,13 +29,15 @@ namespace Win_10_Optimizer.Forms
         /// </summary>
         private void InitializeComponent()
         {
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(EnergyForm));
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(OptimizeForm));
             this.label1 = new System.Windows.Forms.Label();
             this.bunifuCheckbox1 = new Bunifu.Framework.UI.BunifuCheckbox();
             this.bunifuCheckbox3 = new Bunifu.Framework.UI.BunifuCheckbox();
             this.label3 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.bunifuCheckbox2 = new Bunifu.Framework.UI.BunifuCheckbox();
+            this.bunifuCheckbox4 = new Bunifu.Framework.UI.BunifuCheckbox();
+            this.label4 = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
             // label1
@@ -113,12 +115,39 @@ namespace Win_10_Optimizer.Forms
             this.bunifuCheckbox2.TabIndex = 3;
             this.bunifuCheckbox2.OnChange += new System.EventHandler(this.bunifuCheckbox2_OnChange);
             // 
-            // EnergyOptimize
+            // bunifuCheckbox4
+            // 
+            this.bunifuCheckbox4.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(132)))), ((int)(((byte)(135)))), ((int)(((byte)(140)))));
+            this.bunifuCheckbox4.ChechedOffColor = System.Drawing.Color.FromArgb(((int)(((byte)(132)))), ((int)(((byte)(135)))), ((int)(((byte)(140)))));
+            this.bunifuCheckbox4.Checked = false;
+            this.bunifuCheckbox4.CheckedOnColor = System.Drawing.Color.FromArgb(((int)(((byte)(51)))), ((int)(((byte)(205)))), ((int)(((byte)(117)))));
+            this.bunifuCheckbox4.ForeColor = System.Drawing.Color.White;
+            this.bunifuCheckbox4.Location = new System.Drawing.Point(112, 136);
+            this.bunifuCheckbox4.Name = "bunifuCheckbox4";
+            this.bunifuCheckbox4.Size = new System.Drawing.Size(20, 20);
+            this.bunifuCheckbox4.TabIndex = 5;
+            this.bunifuCheckbox4.OnChange += new System.EventHandler(this.bunifuCheckbox4_OnChange);
+            // 
+            // label4
+            // 
+            this.label4.BackColor = System.Drawing.Color.Transparent;
+            this.label4.Font = new System.Drawing.Font("Arial", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.label4.ForeColor = System.Drawing.Color.Gainsboro;
+            this.label4.Location = new System.Drawing.Point(12, 126);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(102, 39);
+            this.label4.TabIndex = 4;
+            this.label4.Text = "Уменьшить пинг\r\n(Быстрый DNS)";
+            this.label4.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            // 
+            // OptimizeForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(44)))), ((int)(((byte)(43)))), ((int)(((byte)(60)))));
-            this.ClientSize = new System.Drawing.Size(255, 130);
+            this.ClientSize = new System.Drawing.Size(255, 173);
+            this.Controls.Add(this.bunifuCheckbox4);
+            this.Controls.Add(this.label4);
             this.Controls.Add(this.bunifuCheckbox1);
             this.Controls.Add(this.bunifuCheckbox3);
             this.Controls.Add(this.label1);
@@ -127,7 +156,7 @@ namespace Win_10_Optimizer.Forms
             this.Controls.Add(this.label2);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
-            this.Name = "EnergyOptimize";
+            this.Name = "OptimizeForm";
             this.Text = "EnergyOptimize";
             this.Load += new System.EventHandler(this.EnergyOptimize_Load_1);
             this.ResumeLayout(false);
@@ -141,5 +170,7 @@ namespace Win_10_Optimizer.Forms
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label2;
         private Bunifu.Framework.UI.BunifuCheckbox bunifuCheckbox2;
+        private Bunifu.Framework.UI.BunifuCheckbox bunifuCheckbox4;
+        private System.Windows.Forms.Label label4;
     }
 }

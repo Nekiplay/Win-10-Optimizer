@@ -72,8 +72,9 @@
   <ItemGroup>
     <Compile Include="Forms\Cleaner\CleanerFileSettings.cs" />
     <Compile Include="Forms\Cleaner\CleanerRegeditSettings.cs" />
-    <Compile Include="Forms\EnergyOptimize\EnergyClass.cs" />
-    <Compile Include="Forms\EnergyOptimize\GybernateClass.cs" />
+    <Compile Include="Forms\Optimize\DNSSettings.cs" />
+    <Compile Include="Forms\Optimize\EnergyClass.cs" />
+    <Compile Include="Forms\Optimize\GybernateClass.cs" />
     <Compile Include="Forms\MainForm.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -86,11 +87,11 @@
     <Compile Include="Forms\Cleaner\CleanerForm.Designer.cs">
       <DependentUpon>CleanerForm.cs</DependentUpon>
     </Compile>
-    <Compile Include="Forms\EnergyOptimize\EnergyForm.cs">
+    <Compile Include="Forms\Optimize\OptimizeForm.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Forms\EnergyOptimize\EnergyForm.Designer.cs">
-      <DependentUpon>EnergyForm.cs</DependentUpon>
+    <Compile Include="Forms\Optimize\OptimizeForm.Designer.cs">
+      <DependentUpon>OptimizeForm.cs</DependentUpon>
     </Compile>
     <Compile Include="Forms\Services\ServiceHelper.cs" />
     <Compile Include="Forms\Services\ServicesForm.cs">
@@ -109,8 +110,8 @@
     <EmbeddedResource Include="Forms\Cleaner\CleanerForm.resx">
       <DependentUpon>CleanerForm.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Forms\EnergyOptimize\EnergyForm.resx">
-      <DependentUpon>EnergyForm.cs</DependentUpon>
+    <EmbeddedResource Include="Forms\Optimize\OptimizeForm.resx">
+      <DependentUpon>OptimizeForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\Services\ServicesForm.resx">
       <DependentUpon>ServicesForm.cs</DependentUpon>

@@ -90,7 +90,7 @@ namespace Win_10_Optimizer
             public static readonly Color color3 = Color.FromArgb(253, 138, 114);
         }
 
-        readonly Forms.EnergyForm optimize = new Forms.EnergyForm();
+        readonly Forms.OptimizeForm optimize = new Forms.OptimizeForm();
         readonly Forms.CleanerForm cleaner = new Forms.CleanerForm();
         readonly Forms.ServicesForm services = new Forms.ServicesForm();
 
