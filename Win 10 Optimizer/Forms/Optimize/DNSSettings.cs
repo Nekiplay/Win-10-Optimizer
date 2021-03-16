@@ -12,6 +12,7 @@ namespace Win_10_Optimizer.Forms.Optimize
     {
         public List<DNS> DNSList = new List<DNS>
         {
+            /* Русские DNS */
             new DNS("195.98.79.117*8.8.8.8", "RU", "Unknow"),
             new DNS("31.204.180.44*8.8.8.8", "RU", "Unknow"),
             new DNS("195.191.183.60*8.8.8.8", "RU", "Unknow"),
@@ -40,7 +41,9 @@ namespace Win_10_Optimizer.Forms.Optimize
             new DNS("62.76.76.62*8.8.8.8", "RU", "Unknow"),
             new DNS("92.223.109.31*8.8.8.8", "RU", "Unknow"),
             new DNS("176.103.130.131*176.103.130.130", "RU", "AdGuard"),
+            /* AU DNS */
             new DNS("1.1.1.1*1.0.0.1", "AU", "CloudFlare"),
+            /* US DNS */
             new DNS("8.8.4.4*8.8.8.8", "US", "Google Public DNS"),
             new DNS("156.154.71.1*156.154.70.1", "US", "Neustar 1"),
             new DNS("208.67.220.222*208.67.222.220", "US", "OpenDNS - 2"),
