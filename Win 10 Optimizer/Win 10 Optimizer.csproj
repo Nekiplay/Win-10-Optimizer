@@ -70,7 +70,8 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Forms\Cleaner\CleanerSettings.cs" />
+    <Compile Include="Forms\Cleaner\CleanerFileSettings.cs" />
+    <Compile Include="Forms\Cleaner\CleanerRegeditSettings.cs" />
     <Compile Include="Forms\EnergyOptimize\EnergyClass.cs" />
     <Compile Include="Forms\EnergyOptimize\GybernateClass.cs" />
     <Compile Include="Forms\MainForm.cs">

@@ -8,7 +8,7 @@ using System.Threading.Tasks;
 
 namespace Win_10_Optimizer
 {
-    public class CleanerSettings
+    public class CleanerFileSettings
     {
         /* Логи */
         public List<ClearFiles> logsfiles = new List<ClearFiles> {
@@ -119,7 +119,7 @@ namespace Win_10_Optimizer
             new ClearFiles(Environment.GetFolderPath(Environment.SpecialFolder.ApplicationData) + "\\.minecraft\\LiquidBounce-1.8", "*.*", true),
             new ClearFiles("C:\\aoshax", "*.*", true),
         };
-        public CleanerSettings()
+        public CleanerFileSettings()
         {
             /* Steam Games */
             string steamdir = (string)Registry.GetValue(@"HKEY_LOCAL_MACHINE\SOFTWARE\Valve\Steam", "InstallPath", "Nothing");

@@ -10,12 +10,13 @@ using System.Runtime.InteropServices;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using Win_10_Optimizer.Forms.Cleaner;
 
 namespace Win_10_Optimizer.Forms
 {
-    public partial class Cleaner : Form
+    public partial class CleanerForm : Form
     {
-        public Cleaner()
+        public CleanerForm()
         {
             InitializeComponent();
         }
@@ -33,6 +34,7 @@ namespace Win_10_Optimizer.Forms
         // The signature of SHEmptyRecycleBin (located in Shell32.dll)
         static extern int SHEmptyRecycleBin(IntPtr hwnd, string pszRootPath, RecycleFlags dwFlags);
 
+        private Task regedittask;
         private Task cheatcfg;
         private Task windows;
         private Task screenshots;
@@ -45,6 +47,7 @@ namespace Win_10_Optimizer.Forms
         {
             if (e.Button == MouseButtons.Middle)
             {
+                RegeditCheckBox.Checked = true;
                 CheatConfigFilesCheckBox.Checked = true;
                 WindowsFilesCheckBox.Checked = true;
                 ScreenShotsFilesCheckBox.Checked = true;
@@ -55,13 +58,29 @@ namespace Win_10_Optimizer.Forms
                 BackUpFilesCheckBox.Checked = true;
             }
             ClearButton.Enabled = false;
-            CleanerSettings cleanermethod = new CleanerSettings();
+            CleanerFileSettings cleanermethod = new CleanerFileSettings();
+            CleanerRegeditSettings regeditmethod = new CleanerRegeditSettings();
             long deleted = 0;
+            if (RegeditCheckBox.Checked)
+            {
+                regedittask = Task.Factory.StartNew(() =>
+                {
+                    foreach (CleanerRegeditSettings.RegeditFiles clear in regeditmethod.lastactivity)
+                    {
+                        clear.Delete();
+                    }
+
+                    RegeditCheckBox.Invoke(new MethodInvoker(() =>
+                    {
+                        RegeditCheckBox.Checked = false;
+                    }));
+                });
+            }
             if (CheatConfigFilesCheckBox.Checked)
             {
                 cheatcfg = Task.Factory.StartNew(() =>
                 {
-                    foreach (CleanerSettings.ClearFiles clear in cleanermethod.cheatconfigfiles)
+                    foreach (CleanerFileSettings.ClearFiles clear in cleanermethod.cheatconfigfiles)
                     {
                         deleted += clear.Delete();
                     }
@@ -79,7 +98,7 @@ namespace Win_10_Optimizer.Forms
                         /* Settings and Worker */
                     SHEmptyRecycleBin(IntPtr.Zero, null, RecycleFlags.SHERB_NOSOUND | RecycleFlags.SHERB_NOCONFIRMATION | RecycleFlags.SHERB_NOPROGRESSUI);
 
-                    foreach (CleanerSettings.ClearFiles clear in cleanermethod.windowsfiles)
+                    foreach (CleanerFileSettings.ClearFiles clear in cleanermethod.windowsfiles)
                     {
                         deleted += clear.Delete();
                     }
@@ -94,7 +113,7 @@ namespace Win_10_Optimizer.Forms
             {
                 screenshots = Task.Factory.StartNew(() =>
                 {
-                    foreach (CleanerSettings.ClearFiles clear in cleanermethod.screenshotfiles)
+                    foreach (CleanerFileSettings.ClearFiles clear in cleanermethod.screenshotfiles)
                     {
                         deleted += clear.Delete();
                     }
@@ -109,7 +128,7 @@ namespace Win_10_Optimizer.Forms
             {
                 crashes = Task.Factory.StartNew(() =>
                 {
-                    foreach (CleanerSettings.ClearFiles clear in cleanermethod.crashfiles)
+                    foreach (CleanerFileSettings.ClearFiles clear in cleanermethod.crashfiles)
                     {
                         deleted += clear.Delete();
                     }
@@ -124,7 +143,7 @@ namespace Win_10_Optimizer.Forms
             {
                 backups = Task.Factory.StartNew(() =>
                 {
-                    foreach (CleanerSettings.ClearFiles clear in cleanermethod.backupfiles)
+                    foreach (CleanerFileSettings.ClearFiles clear in cleanermethod.backupfiles)
                     {
                         deleted += clear.Delete();
                     }
@@ -139,7 +158,7 @@ namespace Win_10_Optimizer.Forms
             {
                 mediafiles = Task.Factory.StartNew(() =>
                 {
-                    foreach (CleanerSettings.ClearFiles clear in cleanermethod.videofiles)
+                    foreach (CleanerFileSettings.ClearFiles clear in cleanermethod.videofiles)
                     {
                         deleted += clear.Delete();
                     }
@@ -154,7 +173,7 @@ namespace Win_10_Optimizer.Forms
             {
                 logsfiles = Task.Factory.StartNew(() =>
                 {
-                    foreach (CleanerSettings.ClearFiles clear in cleanermethod.logsfiles)
+                    foreach (CleanerFileSettings.ClearFiles clear in cleanermethod.logsfiles)
                     {
                         deleted += clear.Delete();
                     }
@@ -169,7 +188,7 @@ namespace Win_10_Optimizer.Forms
             {
                 cashfiles = Task.Factory.StartNew(() =>
                 {
-                    foreach (CleanerSettings.ClearFiles clear in cleanermethod.cachefiles)
+                    foreach (CleanerFileSettings.ClearFiles clear in cleanermethod.cachefiles)
                     {
                         deleted += clear.Delete();
                     }
@@ -179,6 +198,18 @@ namespace Win_10_Optimizer.Forms
                         CacheFilesCheckBox.Checked = false;
                     }));
                 });
+            }
+            if (regedittask != null)
+            {
+                await regedittask;
+            }
+            if (windows != null)
+            {
+                await windows;
+            }
+            if (cheatcfg != null)
+            {
+                await cheatcfg;
             }
             if (cashfiles != null)
             {
@@ -203,14 +234,6 @@ namespace Win_10_Optimizer.Forms
             if (screenshots != null)
             {
                 await screenshots;
-            }
-            if (windows != null)
-            {
-                await windows;
-            }
-            if (cheatcfg != null)
-            {
-                await cheatcfg;
             }
             NotificationManager.Manager notify = new NotificationManager.Manager();
             notify.MaxTextWidth = 150;

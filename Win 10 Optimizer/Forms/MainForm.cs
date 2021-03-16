@@ -91,7 +91,7 @@ namespace Win_10_Optimizer
         }
 
         readonly Forms.EnergyForm optimize = new Forms.EnergyForm();
-        readonly Forms.Cleaner cleaner = new Forms.Cleaner();
+        readonly Forms.CleanerForm cleaner = new Forms.CleanerForm();
         readonly Forms.ServicesForm services = new Forms.ServicesForm();
 
         private void ExitButton_Click(object sender, EventArgs e)
