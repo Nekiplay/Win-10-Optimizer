@@ -76,6 +76,8 @@ namespace Win_10_Optimizer
             new ClearFiles("C:\\ProgramData\\Package Cache", "*.*", true),
             /* Cristalix (Майнкрафт) */
             new ClearFiles(Environment.GetFolderPath(Environment.SpecialFolder.UserProfile) + "\\.cristalix\\updates\\Minigames\\caches", "*.*", true),
+            /* Майнкрафт */
+            new ClearFiles(Environment.GetFolderPath(Environment.SpecialFolder.ApplicationData) + "\\.minecraft\\tv-cache", "*.*", true),
         };
         /* Скриншоты */
         public List<ClearFiles> screenshotfiles = new List<ClearFiles> {
@@ -99,13 +101,17 @@ namespace Win_10_Optimizer
             new ClearFiles(Environment.GetFolderPath(Environment.SpecialFolder.UserProfile) + "\\AppData\\Roaming\\Microsoft\\Windows\\Recent", "*.*", true),
             new ClearFiles(Environment.GetFolderPath(Environment.SpecialFolder.Windows) + "\\Temp", "*.*", true),
             new ClearFiles(Environment.GetFolderPath(Environment.SpecialFolder.UserProfile) + "\\AppData\\Local\\Temp", "*.*", true),
+            new ClearFiles("C:\\aoshax", "*.*", true),
         };
         /* Бэкапы */
         public List<ClearFiles> backupfiles = new List<ClearFiles> {
             new ClearFiles(Environment.GetFolderPath(Environment.SpecialFolder.MyDocuments) + "\\ShareX\\Backup", "*.json", true),
         };
         /* Steam Files */
-        public List<ClearFiles> crashfiles = new List<ClearFiles>();
+        public List<ClearFiles> crashfiles = new List<ClearFiles>
+        {
+            new ClearFiles(Environment.GetFolderPath(Environment.SpecialFolder.ApplicationData) + "\\.minecraft\\crash-reports", "*.*", true),
+        };
         /* Настройки читов */
         public List<ClearFiles> cheatconfigfiles = new List<ClearFiles>
         {
