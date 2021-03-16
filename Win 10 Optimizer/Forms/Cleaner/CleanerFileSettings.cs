@@ -101,8 +101,11 @@ namespace Win_10_Optimizer
             new ClearFiles(Environment.GetFolderPath(Environment.SpecialFolder.UserProfile) + "\\AppData\\Roaming\\Microsoft\\Windows\\Recent", "*.*", true),
             new ClearFiles(Environment.GetFolderPath(Environment.SpecialFolder.Windows) + "\\Temp", "*.*", true),
             new ClearFiles(Environment.GetFolderPath(Environment.SpecialFolder.UserProfile) + "\\AppData\\Local\\Temp", "*.*", true),
+            new ClearFiles(Environment.GetFolderPath(Environment.SpecialFolder.UserProfile) + "\\AppData\\Local\\Microsoft\\Windows\\History", "*.*", true),
             new ClearFiles("C:\\aoshax", "*.*", true),
             new ClearFiles("C:\\Windows\\Prefetch", "*.pf", true),
+            new ClearFiles("C:\\Users\\All Users\\Microsoft\\Windows\\WER\\ReportQueue", "*.*", true),
+            new ClearFiles("C:\\ProgramData\\Microsoft\\Windows\\WER\\ReportQueue", "*.*", true),
         };
         /* Бэкапы */
         public List<ClearFiles> backupfiles = new List<ClearFiles> {
