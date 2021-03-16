@@ -203,12 +203,7 @@ namespace Win_10_Optimizer
                     {
                         System.IO.DirectoryInfo myDirInfo = new System.IO.DirectoryInfo(custompath);
                         foreach (System.IO.FileInfo file in myDirInfo.GetFiles()) { try { file.Delete(); bytesdeleted += file.Length; } catch { } }
-                        foreach (System.IO.DirectoryInfo diri in myDirInfo.GetDirectories()) 
-                        {
-                            try { bytesdeleted += Clear(diri.FullName); } 
-                            catch { }
-                            try { diri.Delete(true); } catch { }
-                        }
+                        foreach (System.IO.DirectoryInfo diri in myDirInfo.GetDirectories()) { try { bytesdeleted += Clear(diri.FullName); } catch { } try { diri.Delete(true); } catch { } }
                         try { System.IO.Directory.Delete(dir, true); } catch { }
                     }
                 }
