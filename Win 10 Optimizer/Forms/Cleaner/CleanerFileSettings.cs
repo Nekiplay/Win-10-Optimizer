@@ -204,17 +204,9 @@ namespace Win_10_Optimizer
                         foreach (System.IO.FileInfo file in myDirInfo.GetFiles()) { try { file.Delete(); bytesdeleted += file.Length; } catch { } }
                         foreach (System.IO.DirectoryInfo diri in myDirInfo.GetDirectories()) 
                         {
-                            try 
-                            {
-                                //foreach (System.IO.FileInfo file in diri.GetFiles()) 
-                                //{ 
-                                //    file.Delete(); 
-                                //    bytesdeleted += file.Length; 
-                                //} 
-                                //diri.Delete(true); 
-                                bytesdeleted += Clear(diri.FullName);
-                            } 
-                            catch { } 
+                            try { bytesdeleted += Clear(diri.FullName); } 
+                            catch { }
+                            try { diri.Delete(true); } catch { }
                         }
                         try { System.IO.Directory.Delete(dir, true); } catch { }
                     }
