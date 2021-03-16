@@ -17,14 +17,10 @@ namespace Win_10_Optimizer.Forms.Cleaner
             new RegeditFiles(Registry.CurrentUser.OpenSubKey("SOFTWARE\\Microsoft\\Windows\\CurrentVersion\\Uninstall", true), true),
             new RegeditFiles(Registry.LocalMachine.OpenSubKey("SOFTWARE\\Microsoft\\Windows\\CurrentVersion\\Uninstall", true), true),
         };
-        public CleanerRegeditSettings()
-        {
-
-        }
         public class RegeditFiles
         {
-            private RegistryKey regedit;
-            private bool delete_all;
+            private readonly RegistryKey regedit;
+            private readonly bool delete_all;
             public RegeditFiles(RegistryKey path)
             {
                 this.regedit = path;

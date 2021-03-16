@@ -123,7 +123,10 @@ namespace Win_10_Optimizer.Forms.Optimize
             public static void UnsetDNS()
             {
                 var CurrentInterface = GetActiveEthernetOrWifiNetworkInterface();
-                if (CurrentInterface == null) return;
+                if (CurrentInterface == null)
+                {
+                    return;
+                }
 
                 ManagementClass objMC = new ManagementClass("Win32_NetworkAdapterConfiguration");
                 ManagementObjectCollection objMOC = objMC.GetInstances();
@@ -146,10 +149,6 @@ namespace Win_10_Optimizer.Forms.Optimize
             private void SetDNS(string DnsString)
             {
                 string[] Dns = DnsString.Split('*');
-                foreach (string d in Dns)
-                {
-                    Console.WriteLine(d);
-                }
                 var CurrentInterface = GetActiveEthernetOrWifiNetworkInterface();
                 if (CurrentInterface == null) return;
 
