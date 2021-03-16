@@ -12,8 +12,35 @@ namespace Win_10_Optimizer.Forms.Optimize
     {
         public List<DNS> DNSList = new List<DNS>
         {
+            new DNS("195.98.79.117*8.8.8.8", "RU", "Unknow"),
+            new DNS("31.204.180.44*8.8.8.8", "RU", "Unknow"),
+            new DNS("195.191.183.60*8.8.8.8", "RU", "Unknow"),
+            new DNS("84.244.59.15*8.8.8.8", "RU", "Unknow"),
+            new DNS("62.122.101.59*8.8.8.8", "RU", "Unknow"),
+            new DNS("213.24.237.210*8.8.8.8", "RU", "Unknow"),
+            new DNS("195.112.96.34*8.8.8.8", "RU", "Unknow"),
+            new DNS("217.150.35.129*8.8.8.8", "RU", "Unknow"),
+            new DNS("195.69.65.98*8.8.8.8", "RU", "Unknow"),
+            new DNS("37.29.119.100*8.8.8.8", "RU", "Unknow"),
+            new DNS("195.208.5.1*8.8.8.8", "RU", "Unknow"),
+            new DNS("46.16.229.223*8.8.8.8", "RU", "Unknow"),
+            new DNS("77.95.89.99*8.8.8.8", "RU", "Unknow"),
+            new DNS("82.208.99.185*8.8.8.8", "RU", "Unknow"),
+            new DNS("94.100.86.238*8.8.8.8", "RU", "Unknow"),
+            new DNS("84.54.226.50*8.8.8.8", "RU", "Unknow"),
+            new DNS("95.104.194.3*8.8.8.8", "RU", "Unknow"),
+            new DNS("91.205.3.65*8.8.8.8", "RU", "Unknow"),
+            new DNS("213.234.9.198*8.8.8.8", "RU", "Unknow"),
+            new DNS("91.217.62.219*8.8.8.8", "RU", "Unknow"),
+            new DNS("95.129.58.55*8.8.8.8", "RU", "Unknow"),
+            new DNS("62.168.251.166*8.8.8.8", "RU", "Unknow"),
+            new DNS("195.208.4.1*8.8.8.8", "RU", "Unknow"),
+            new DNS("195.14.50.21*8.8.8.8", "RU", "Unknow"),
+            new DNS("77.88.8.81*8.8.8.8", "RU", "Yandex"),
+            new DNS("62.76.76.62*8.8.8.8", "RU", "Unknow"),
+            new DNS("92.223.109.31*8.8.8.8", "RU", "Unknow"),
+            new DNS("176.103.130.131*176.103.130.130", "RU", "AdGuard"),
             new DNS("1.1.1.1*1.0.0.1", "AU", "CloudFlare"),
-            new DNS("77.88.8.1*77.88.8.8", "RU", "Yandex"),
             new DNS("8.8.4.4*8.8.8.8", "US", "Google Public DNS"),
             new DNS("156.154.71.1*156.154.70.1", "US", "Neustar 1"),
             new DNS("208.67.220.222*208.67.222.220", "US", "OpenDNS - 2"),
@@ -28,7 +55,6 @@ namespace Win_10_Optimizer.Forms.Optimize
             new DNS("4.2.2.4*4.2.2.3", "US", "Level 3 - C"),
             new DNS("84.200.70.40*84.200.69.80", "US", "DNS Watch"),
             new DNS("209.244.0.3*209.244.0.4", "US", "Level 3 - A"),
-            new DNS("176.103.130.131*176.103.130.130", "RU", "AdGuard"),
         };
 
         public async Task<DNS> GetBestDNSAsync()
@@ -48,11 +74,11 @@ namespace Win_10_Optimizer.Forms.Optimize
                     }
                     else
                     {
-                        if (templat.Item1 >= lat.Item1 && templat.Item2 >= lat.Item2)
+                        if (templat.Item1 >= lat.Item1)
                         {
                             best = dns;
                         }
-                        else if (templat.Item1 >= lat.Item1)
+                        if (templat.Item1 >= lat.Item1 && templat.Item2 >= lat.Item2)
                         {
                             best = dns;
                         }
