@@ -13,7 +13,7 @@ namespace Win_10_Optimizer
         /* Логи */
         public List<ClearFiles> logsfiles = new List<ClearFiles> {
             /* NVIDIA */
-            new ClearFiles("C:\\ProgramData\\NVIDIA", @"*.log"),
+            new ClearFiles("C:\\ProgramData\\NVIDIA", "*.log"),
             new ClearFiles("C:\\ProgramData\\NVIDIA Corporation", "*.log"),
             new ClearFiles("C:\\ProgramData\\NVIDIA Corporation\\nvstapisvr", "*.log"),
             new ClearFiles("C:\\ProgramData\\NVIDIA Corporation\\nvStereoInstaller", "*.log"),
@@ -44,6 +44,8 @@ namespace Win_10_Optimizer
             new ClearFiles(Environment.GetFolderPath(Environment.SpecialFolder.UserProfile) + "\\.lunarclient\\offline\\files\\1.7\\logs", "*.*", true),
             new ClearFiles(Environment.GetFolderPath(Environment.SpecialFolder.UserProfile) + "\\.lunarclient\\offline\\1.7\\logs", "*.*", true),
             new ClearFiles(Environment.GetFolderPath(Environment.SpecialFolder.UserProfile) + "\\.lunarclient\\offline\\1.8\\logs", "*.*", true),
+            /* Badlion Client */
+            new ClearFiles("C:\\ProgramData\\BadlionClient\\jre", "*.txt", true),
             /* AnyDesk */
             new ClearFiles(Environment.GetFolderPath(Environment.SpecialFolder.ApplicationData) + "\\AnyDesk\\chat", "*.*", true),
             /* Discord */
@@ -110,11 +112,12 @@ namespace Win_10_Optimizer
         public List<ClearFiles> backupfiles = new List<ClearFiles> {
             new ClearFiles(Environment.GetFolderPath(Environment.SpecialFolder.MyDocuments) + "\\ShareX\\Backup", "*.json", true),
         };
-        /* Steam Files */
+        /* Краши */
         public List<ClearFiles> crashfiles = new List<ClearFiles>
         {
             new ClearFiles(Environment.GetFolderPath(Environment.SpecialFolder.ApplicationData) + "\\.minecraft\\crash-reports", "*.*", true),
             new ClearFiles("C:\\Windows\\Minidump", "*.dmp", true),
+            new ClearFiles("C:\\ProgramData\\Microsoft\\Windows\\WER\\ReportArchive", "*.*", true),
         };
         /* Настройки читов */
         public List<ClearFiles> cheatconfigfiles = new List<ClearFiles>
