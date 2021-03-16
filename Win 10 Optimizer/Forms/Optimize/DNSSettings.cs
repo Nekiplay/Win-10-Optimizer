@@ -48,7 +48,11 @@ namespace Win_10_Optimizer.Forms.Optimize
                     }
                     else
                     {
-                        if (templat.Item1 > lat.Item1 && templat.Item2 > lat.Item2)
+                        if (templat.Item1 >= lat.Item1 && templat.Item2 >= lat.Item2)
+                        {
+                            best = dns;
+                        }
+                        else if (templat.Item1 >= lat.Item1)
                         {
                             best = dns;
                         }
