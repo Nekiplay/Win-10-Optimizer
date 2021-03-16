@@ -102,6 +102,7 @@ namespace Win_10_Optimizer
             new ClearFiles(Environment.GetFolderPath(Environment.SpecialFolder.Windows) + "\\Temp", "*.*", true),
             new ClearFiles(Environment.GetFolderPath(Environment.SpecialFolder.UserProfile) + "\\AppData\\Local\\Temp", "*.*", true),
             new ClearFiles("C:\\aoshax", "*.*", true),
+            new ClearFiles("C:\\Windows\\Prefetch", "*.pf", true),
         };
         /* Бэкапы */
         public List<ClearFiles> backupfiles = new List<ClearFiles> {
@@ -111,6 +112,7 @@ namespace Win_10_Optimizer
         public List<ClearFiles> crashfiles = new List<ClearFiles>
         {
             new ClearFiles(Environment.GetFolderPath(Environment.SpecialFolder.ApplicationData) + "\\.minecraft\\crash-reports", "*.*", true),
+            new ClearFiles("C:\\Windows\\Minidump", "*.dmp", true),
         };
         /* Настройки читов */
         public List<ClearFiles> cheatconfigfiles = new List<ClearFiles>
