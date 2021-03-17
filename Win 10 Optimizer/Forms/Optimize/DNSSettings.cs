@@ -159,7 +159,7 @@ namespace Win_10_Optimizer.Forms.Optimize
                 try
                 {
                     Ping p1 = new Ping();
-                    PingReply r1 = p1.Send(dnss.Split('*')[0]);
+                    PingReply r1 = p1.Send(dnss.Split('*')[0], 50);
                     if (r1.Status == IPStatus.Success)
                     {
                         firsttime = r1.RoundtripTime;
@@ -170,7 +170,7 @@ namespace Win_10_Optimizer.Forms.Optimize
                 try
                 {
                     Ping p2 = new Ping();
-                    PingReply r2 = p2.Send(dnss.Split('*')[1]);
+                    PingReply r2 = p2.Send(dnss.Split('*')[1], 50);
                     if (r2.Status == IPStatus.Success)
                     {
                         doubletime = r2.RoundtripTime;
