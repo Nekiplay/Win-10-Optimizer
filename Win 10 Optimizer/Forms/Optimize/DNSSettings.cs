@@ -4,6 +4,7 @@ using System.Linq;
 using System.Management;
 using System.Net.NetworkInformation;
 using System.Text;
+using System.Threading;
 using System.Threading.Tasks;
 
 namespace Win_10_Optimizer.Forms.Optimize
@@ -13,16 +14,6 @@ namespace Win_10_Optimizer.Forms.Optimize
         public List<DNS> DNSList = new List<DNS>
         {
             /* Русские DNS */
-            /* Rostelecom */
-            new DNS("213.24.238.26*8.8.8.8", "RU", "Rostelecom"),
-            new DNS("213.24.237.210*8.8.8.8", "RU", "Rostelecom"),
-            new DNS("212.58.212.83*8.8.8.8", "RU", "Rostelecom"),
-            new DNS("195.46.112.170*8.8.8.8", "RU", "Rostelecom"),
-            new DNS("109.172.10.70*8.8.8.8", "RU", "Rostelecom"),
-            new DNS("91.122.77.189*8.8.8.8", "RU", "Rostelecom"),
-            new DNS("85.175.46.122*8.8.8.8", "RU", "Rostelecom"),
-            new DNS("84.54.226.50*8.8.8.8", "RU", "Rostelecom"),
-            new DNS("82.208.99.185*8.8.8.8", "RU", "Rostelecom"),
             /* PVimpelCom */
             new DNS("212.46.234.217*8.8.8.8", "RU", "PVimpelCom"),
             new DNS("195.239.36.27*8.8.8.8", "RU", "PVimpelCom"),
@@ -41,6 +32,16 @@ namespace Win_10_Optimizer.Forms.Optimize
             new DNS("95.104.194.3*8.8.8.8", "RU", "MTS PJSC"),
             new DNS("80.71.178.68*8.8.8.8", "RU", "MTS PJSC"),
             new DNS("62.168.251.166*8.8.8.8", "RU", "MTS PJSC"),
+            /* Rostelecom */
+            new DNS("213.24.238.26*8.8.8.8", "RU", "Rostelecom"),
+            new DNS("213.24.237.210*8.8.8.8", "RU", "Rostelecom"),
+            new DNS("212.58.212.83*8.8.8.8", "RU", "Rostelecom"),
+            new DNS("195.46.112.170*8.8.8.8", "RU", "Rostelecom"),
+            new DNS("109.172.10.70*8.8.8.8", "RU", "Rostelecom"),
+            new DNS("91.122.77.189*8.8.8.8", "RU", "Rostelecom"),
+            new DNS("85.175.46.122*8.8.8.8", "RU", "Rostelecom"),
+            new DNS("84.54.226.50*8.8.8.8", "RU", "Rostelecom"),
+            new DNS("82.208.99.185*8.8.8.8", "RU", "Rostelecom"),
             /* Other */
             new DNS("84.237.112.130*8.8.8.8", "RU", "Federal Research Center for Information and Computational Technologies"),
             new DNS("62.113.51.133*8.8.8.8", "RU", "SFT Company"),
@@ -130,7 +131,9 @@ namespace Win_10_Optimizer.Forms.Optimize
                 Task temp = Task.Factory.StartNew(() =>
                 {
                     Tuple<long, long> lat = dns.GetLatency(dns.dns);
-                    if (templat.Item1 == 99999999999 && templat.Item2 == 99999999999)
+                    Console.WriteLine(lat.Item1 + " & " + lat.Item2 + " & " + dns.dns);
+                    dns.latency = lat.Item1;
+                    if (templat.Item1 == -1 && templat.Item2 == -1)
                     {
                         templat = lat;
                         best = dns;
@@ -139,10 +142,12 @@ namespace Win_10_Optimizer.Forms.Optimize
                     {
                         if (templat.Item1 > lat.Item1 && templat.Item2 > lat.Item2)
                         {
+                            templat = lat;
                             best = dns;
                         }
                         else if (templat.Item1 > lat.Item1)
                         {
+                            templat = lat;
                             best = dns;
                         }
                     }
@@ -162,8 +167,7 @@ namespace Win_10_Optimizer.Forms.Optimize
             public string dns;
             public string countiry;
             public string company_or_name;
-            public long latency_res;
-            public long latency_sen;
+            public long latency;
 
             public DNS(string dns, string countury, string company_or_name)
             {
@@ -173,12 +177,13 @@ namespace Win_10_Optimizer.Forms.Optimize
             }
             public Tuple<long, long> GetLatency(string dnss)
             {
+                int timeout = 50;
                 long firsttime = 99999999999;
                 long doubletime = 99999999999;
                 try
                 {
                     Ping p1 = new Ping();
-                    PingReply r1 = p1.Send(dnss.Split('*')[0], 50);
+                    PingReply r1 = p1.Send(dnss.Split('*')[0], timeout);
                     if (r1.Status == IPStatus.Success)
                     {
                         firsttime = r1.RoundtripTime;
@@ -189,7 +194,7 @@ namespace Win_10_Optimizer.Forms.Optimize
                 try
                 {
                     Ping p2 = new Ping();
-                    PingReply r2 = p2.Send(dnss.Split('*')[1], 50);
+                    PingReply r2 = p2.Send(dnss.Split('*')[1], timeout);
                     if (r2.Status == IPStatus.Success)
                     {
                         doubletime = r2.RoundtripTime;

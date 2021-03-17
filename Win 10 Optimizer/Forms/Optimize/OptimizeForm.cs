@@ -181,7 +181,7 @@ namespace Win_10_Optimizer.Forms
                 NotificationManager.Manager notify = new NotificationManager.Manager();
                 notify.MaxTextWidth = 400;
                 notify.EnableOffset = false;
-                notify.Alert("Установлен DNS: " + bestdns.company_or_name, NotificationManager.NotificationType.Info);
+                notify.Alert("Установлен DNS: " + bestdns.company_or_name + " (" + bestdns.latency + "ms)", NotificationManager.NotificationType.Info);
                 notify.StopTimer(1000);
             }
             else
