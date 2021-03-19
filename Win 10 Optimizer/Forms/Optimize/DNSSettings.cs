@@ -256,7 +256,10 @@ namespace Win_10_Optimizer.Forms.Optimize
             {
                 string[] Dns = DnsString.Split('*');
                 var CurrentInterface = GetActiveEthernetOrWifiNetworkInterface();
-                if (CurrentInterface == null) return;
+                if (CurrentInterface == null)
+                {
+                    return;
+                }
 
                 ManagementClass objMC = new ManagementClass("Win32_NetworkAdapterConfiguration");
                 ManagementObjectCollection objMOC = objMC.GetInstances();

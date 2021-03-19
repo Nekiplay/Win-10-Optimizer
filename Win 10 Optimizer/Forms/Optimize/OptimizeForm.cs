@@ -15,7 +15,7 @@ namespace Win_10_Optimizer.Forms
         {
             InitializeComponent();
         }
-        Forms.Optimize.WinTimer.Functions WinTimer = new Forms.Optimize.WinTimer.Functions();
+        readonly Forms.Optimize.WinTimer.Functions WinTimer = new Forms.Optimize.WinTimer.Functions();
         private void EnergyOptimize_Load_1(object sender, EventArgs e)
         {
             Task.Factory.StartNew(async () =>
