@@ -164,7 +164,7 @@ namespace Win_10_Optimizer.Forms
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(246, 36);
             this.label5.TabIndex = 6;
-            this.label5.Text = "Отключить Высокоточный таймер событий\r\n(Отключить HPET)";
+            this.label5.Text = "Отключить высокоточный таймер событий\r\n(HPET)";
             this.label5.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
             // OptimizeForm
@@ -172,7 +172,7 @@ namespace Win_10_Optimizer.Forms
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(44)))), ((int)(((byte)(43)))), ((int)(((byte)(60)))));
-            this.ClientSize = new System.Drawing.Size(297, 214);
+            this.ClientSize = new System.Drawing.Size(290, 206);
             this.Controls.Add(this.bunifuCheckbox5);
             this.Controls.Add(this.label5);
             this.Controls.Add(this.bunifuCheckbox4);
