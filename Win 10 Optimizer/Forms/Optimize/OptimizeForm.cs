@@ -31,14 +31,12 @@ namespace Win_10_Optimizer.Forms
                     {
                         Thread.Sleep(25);
                         list.Add(WinTimer.WinTimers.Ratio);
-                        Console.WriteLine(WinTimer.WinTimers.Ratio);
                         i++;
                     }
                 }
                 WinTimer.WinTimers.Pause();
                 WinTimer.WinTimers.Reset();
                 double av = list.Average();
-                Console.WriteLine("Avg: " + av);
                 if (av > 1.0)
                 {
                     on = false;
