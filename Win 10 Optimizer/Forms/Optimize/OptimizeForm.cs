@@ -25,11 +25,12 @@ namespace Win_10_Optimizer.Forms
                 int i = 0;
                 bool on = true;
                 List<double> list = new List<double>();
-                while (i < 50)
+                while (i < 25)
                 {
                     if (WinTimer.RatioOk())
                     {
                         Thread.Sleep(25);
+                        Console.WriteLine(WinTimer.Ratio);
                         list.Add(WinTimer.Ratio);
                         i++;
                     }
@@ -37,6 +38,7 @@ namespace Win_10_Optimizer.Forms
                 WinTimer.Pause();
                 WinTimer.Reset();
                 double av = list.Average();
+                Console.WriteLine("Av: " + av);
                 if (av > 1.0)
                 {
                     on = false;
@@ -224,11 +226,11 @@ namespace Win_10_Optimizer.Forms
         {
             if (bunifuCheckbox5.Checked)
             {
-                new Utilites.ProcessUtils().StartCmd("chcp 1251 & bcdedit /deletevalue useplatformclock & bcdedit /set disabledynamictick yes");
+                new Utilites.ProcessUtils().StartCmd("chcp 1251 & bcdedit /deletevalue useplatformclock & bcdedit /set disabledynamictick yes"); /* Выключение (OFF) */
             }
             else
             {
-                new Utilites.ProcessUtils().StartCmd("chcp 1251 & bcdedit /set useplatformclock true & bcdedit /set disabledynamictick no");
+                new Utilites.ProcessUtils().StartCmd("chcp 1251 & bcdedit /set useplatformclock true & bcdedit /set disabledynamictick no"); /* Включение (ON) */
             }
         }
     }
