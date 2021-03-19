@@ -20,7 +20,7 @@ namespace Win_10_Optimizer.Forms
             Task.Factory.StartNew(async () =>
             {
                 Forms.Optimize.DNSSettings DNSSettings = new Optimize.DNSSettings();
-                Forms.Optimize.DNSSettings.DNS bestdns = DNSSettings.GetBestDNSAsync().Result;
+                Forms.Optimize.DNSSettings.DNS bestdns = DNSSettings.GetDNS().Result;
                 try
                 {
                     if (Forms.Optimize.DNSSettings.DNS.GetActiveEthernetOrWifiNetworkInterface().GetIPProperties().DnsAddresses.ToArray()[0].ToString() == bestdns.dns.Split('*')[0] && Forms.Optimize.DNSSettings.DNS.GetActiveEthernetOrWifiNetworkInterface().GetIPProperties().DnsAddresses.ToArray()[1].ToString() == bestdns.dns.Split('*')[1])
@@ -176,12 +176,12 @@ namespace Win_10_Optimizer.Forms
             if (bunifuCheckbox4.Checked)
             {
                 Forms.Optimize.DNSSettings DNSSettings = new Optimize.DNSSettings();
-                Forms.Optimize.DNSSettings.DNS bestdns = await DNSSettings.GetBestDNSAsync();
+                Forms.Optimize.DNSSettings.DNS bestdns = await DNSSettings.GetDNS();
                 bestdns.Set();
                 NotificationManager.Manager notify = new NotificationManager.Manager();
-                notify.MaxTextWidth = 400;
+                notify.MaxTextWidth = 700;
                 notify.EnableOffset = false;
-                notify.Alert("Установлен DNS: " + bestdns.company_or_name + " (" + bestdns.latency + "ms)", NotificationManager.NotificationType.Info);
+                notify.Alert("Установлен DNS: " + bestdns.company_or_name + " (" + bestdns.dns + ")", NotificationManager.NotificationType.Info);
                 notify.StopTimer(1000);
             }
             else
