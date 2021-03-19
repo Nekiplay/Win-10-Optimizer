@@ -147,31 +147,11 @@ namespace Win_10_Optimizer.Forms.Optimize.WinTimer
             CalculateRatio();
         }
 
-        public void Log()
-        {
-            double perfFrequency = PerfCounter.Frequency;
-            double perfDuration = PerfCounter.Duration;
-            double tickDuration = TickCounter.Duration;
-            double ratio = Ratio;
-            Trace.TraceInformation("*********" + DateTime.Now.ToString(CultureInfo.InvariantCulture) + "*********");
-            Trace.TraceInformation("QueryPerformanceFrequency: {0}", perfFrequency);
-            Trace.TraceInformation("QueryPerformanceCounter: {0}", perfDuration);
-            Trace.TraceInformation("GetTickCount: {0}", tickDuration);
-            Trace.TraceInformation("Ratio: {0}", ratio);
-            if (!RatioOk())
-            {
-                Trace.TraceError("Ratio outside of limits");
-            }
-            Trace.Flush();
-        }
-
         public PerformanceCounter PerfCounter { get; set; }
 
         public TickCounter TickCounter { get; set; }
 
         public Double Ratio { get; set; }
-
-        public bool AutoTestEnabled { get; set; }
 
         [NotifyPropertyChangedInvocator]
         protected virtual void OnPropertyChanged([CallerMemberName] string propertyName = null)
