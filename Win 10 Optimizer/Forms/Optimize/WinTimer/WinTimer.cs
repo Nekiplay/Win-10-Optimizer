@@ -16,7 +16,7 @@ namespace Win_10_Optimizer.Forms.Optimize.WinTimer
     {
         private long startCount;
         private long currentCount;
-        private DispatcherTimer timer;
+        private readonly DispatcherTimer timer;
 
         public event PropertyChangedEventHandler PropertyChanged;
 
