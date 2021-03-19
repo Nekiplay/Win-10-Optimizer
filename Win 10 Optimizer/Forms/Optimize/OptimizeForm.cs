@@ -3,6 +3,7 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Net.NetworkInformation;
+using System.Threading;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
@@ -14,8 +15,39 @@ namespace Win_10_Optimizer.Forms
         {
             InitializeComponent();
         }
+        Forms.Optimize.WinTimer.Functions WinTimer = new Forms.Optimize.WinTimer.Functions();
         private void EnergyOptimize_Load_1(object sender, EventArgs e)
         {
+            Task.Factory.StartNew(async () =>
+            {
+                WinTimer.WinTimers.Start();
+                Thread.Sleep(500);
+                int i = 0;
+                bool on = true;
+                List<double> list = new List<double>();
+                while (i < 50)
+                {
+                    if (WinTimer.WinTimers.RatioOk())
+                    {
+                        Thread.Sleep(25);
+                        list.Add(WinTimer.WinTimers.Ratio);
+                        Console.WriteLine(WinTimer.WinTimers.Ratio);
+                        i++;
+                    }
+                }
+                WinTimer.WinTimers.Pause();
+                WinTimer.WinTimers.Reset();
+                double av = list.Average();
+                Console.WriteLine("Avg: " + av);
+                if (av > 1.0)
+                {
+                    on = false;
+                }
+                bunifuCheckbox5.Invoke(new MethodInvoker(() =>
+                {
+                    bunifuCheckbox5.Checked = on;
+                }));
+            });
             /* Проверка отличного DNS */
             Task.Factory.StartNew(async () =>
             {
@@ -187,6 +219,18 @@ namespace Win_10_Optimizer.Forms
             else
             {
                 Forms.Optimize.DNSSettings.DNS.UnsetDNS();
+            }
+        }
+
+        private void bunifuCheckbox5_OnChange(object sender, EventArgs e)
+        {
+            if (bunifuCheckbox5.Checked)
+            {
+                new Utilites.ProcessUtils().StartCmd("chcp 1251 & bcdedit /deletevalue useplatformclock & bcdedit /set disabledynamictick yes");
+            }
+            else
+            {
+                new Utilites.ProcessUtils().StartCmd("chcp 1251 & bcdedit /set useplatformclock true & bcdedit /set disabledynamictick no");
             }
         }
     }
