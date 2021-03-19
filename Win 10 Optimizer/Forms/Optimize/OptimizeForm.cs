@@ -15,27 +15,27 @@ namespace Win_10_Optimizer.Forms
         {
             InitializeComponent();
         }
-        readonly Forms.Optimize.WinTimer.Functions WinTimer = new Forms.Optimize.WinTimer.Functions();
         private void EnergyOptimize_Load_1(object sender, EventArgs e)
         {
+            Forms.Optimize.WinTimer.WinTimers WinTimer = new Forms.Optimize.WinTimer.WinTimers();
             Task.Factory.StartNew(async () =>
             {
-                WinTimer.WinTimers.Start();
+                WinTimer.Start();
                 Thread.Sleep(500);
                 int i = 0;
                 bool on = true;
                 List<double> list = new List<double>();
                 while (i < 50)
                 {
-                    if (WinTimer.WinTimers.RatioOk())
+                    if (WinTimer.RatioOk())
                     {
                         Thread.Sleep(25);
-                        list.Add(WinTimer.WinTimers.Ratio);
+                        list.Add(WinTimer.Ratio);
                         i++;
                     }
                 }
-                WinTimer.WinTimers.Pause();
-                WinTimer.WinTimers.Reset();
+                WinTimer.Pause();
+                WinTimer.Reset();
                 double av = list.Average();
                 if (av > 1.0)
                 {
