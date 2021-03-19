@@ -30,7 +30,6 @@ namespace Win_10_Optimizer.Forms
                     if (WinTimer.RatioOk())
                     {
                         Thread.Sleep(25);
-                        Console.WriteLine(WinTimer.Ratio);
                         list.Add(WinTimer.Ratio);
                         i++;
                     }
@@ -38,7 +37,6 @@ namespace Win_10_Optimizer.Forms
                 WinTimer.Pause();
                 WinTimer.Reset();
                 double av = list.Average();
-                Console.WriteLine("Av: " + av);
                 if (av > 1.0)
                 {
                     on = false;
