@@ -96,7 +96,6 @@
     <Compile Include="Forms\Optimize\OptimizeForm.Designer.cs">
       <DependentUpon>OptimizeForm.cs</DependentUpon>
     </Compile>
-    <Compile Include="Forms\Optimize\WinTimer\Functions.cs" />
     <Compile Include="Forms\Optimize\WinTimer\PerformanceCounter.cs" />
     <Compile Include="Forms\Optimize\WinTimer\TickCounter.cs" />
     <Compile Include="Forms\Optimize\WinTimer\ValueConverters.cs" />
