@@ -124,6 +124,7 @@ namespace Win_10_Optimizer
         {
             new ClearFiles(Environment.GetFolderPath(Environment.SpecialFolder.ApplicationData) + "\\.minecraft\\Jigsaw", "*.*", true),
             new ClearFiles(Environment.GetFolderPath(Environment.SpecialFolder.ApplicationData) + "\\.minecraft\\LiquidBounce-1.8", "*.*", true),
+            new ClearFiles(Environment.GetFolderPath(Environment.SpecialFolder.ApplicationData) + "\\NOXIS", "*.*", true),
             new ClearFiles("C:\\aoshax", "*.*", true),
         };
         public CleanerFileSettings()
