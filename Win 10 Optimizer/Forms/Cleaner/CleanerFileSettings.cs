@@ -74,7 +74,6 @@ namespace Win_10_Optimizer
         {
             /* Discord */
             new ClearFiles(Environment.GetFolderPath(Environment.SpecialFolder.ApplicationData) + "\\discord\\Code Cache", "*.*", true),
-            /* Windows (Beta Test) */
             new ClearFiles("C:\\ProgramData\\Package Cache", "*.*", true),
             /* Cristalix (Майнкрафт) */
             new ClearFiles(Environment.GetFolderPath(Environment.SpecialFolder.UserProfile) + "\\.cristalix\\updates\\Minigames\\caches", "*.*", true),
@@ -122,10 +121,10 @@ namespace Win_10_Optimizer
         /* Настройки читов */
         public List<ClearFiles> cheatconfigfiles = new List<ClearFiles>
         {
-            new ClearFiles(Environment.GetFolderPath(Environment.SpecialFolder.ApplicationData) + "\\.minecraft\\Jigsaw", "*.*", true),
-            new ClearFiles(Environment.GetFolderPath(Environment.SpecialFolder.ApplicationData) + "\\.minecraft\\LiquidBounce-1.8", "*.*", true),
-            new ClearFiles(Environment.GetFolderPath(Environment.SpecialFolder.ApplicationData) + "\\NOXIS", "*.*", true),
-            new ClearFiles("C:\\aoshax", "*.*", true),
+            new ClearFiles(Environment.GetFolderPath(Environment.SpecialFolder.ApplicationData) + "\\.minecraft\\Jigsaw", "*.*", true), /* Minecraft Cheats */
+            new ClearFiles(Environment.GetFolderPath(Environment.SpecialFolder.ApplicationData) + "\\.minecraft\\LiquidBounce-1.8", "*.*", true), /* Minecraft Cheats */
+            new ClearFiles(Environment.GetFolderPath(Environment.SpecialFolder.ApplicationData) + "\\NOXIS", "*.*", true), /* Garry's mod Hack */
+            new ClearFiles("C:\\aoshax", "*.*", true), /* Garry's mod Hack */
         };
         public CleanerFileSettings()
         {
