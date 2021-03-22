@@ -46,7 +46,7 @@ namespace Win_10_Optimizer.Forms.GameOptimizer
 
         public class GameOptimizerFinderAndConfigurator
         {
-            private List<string> file_content;
+            private readonly List<string> file_content;
             public readonly string game_name;
             private readonly string game_file;
             public GameOptimizerFinderAndConfigurator(string game_name, string game_path_to_file, string file_content)
