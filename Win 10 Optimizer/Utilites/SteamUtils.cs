@@ -14,6 +14,7 @@ namespace Win_10_Optimizer.Utilites
 {
     public static class SteamUtils
     {
+        /* Путь до папки Steam */
         public static string SteamPath
         {
             get
@@ -26,13 +27,7 @@ namespace Win_10_Optimizer.Utilites
                 return steamdir;
             }
         }
-        public static string CurrentUserSteamID32
-        {
-            get
-            {
-                return (long.Parse(CurrentUserSteamID64.Substring(3)) - 61197960265728).ToString();
-            }
-        }
+        /* Steam ID текущего пользователя */
         public static string CurrentUserSteamID
         {
             get
@@ -42,6 +37,15 @@ namespace Win_10_Optimizer.Utilites
                 return $"STEAM_0:{authserver}:{authid}";
             }
         }
+        /* Steam ID32 текущего пользователя */
+        public static string CurrentUserSteamID32
+        {
+            get
+            {
+                return (long.Parse(CurrentUserSteamID64.Substring(3)) - 61197960265728).ToString();
+            }
+        }
+        /* Steam ID64 текущего пользователя */
         public static string CurrentUserSteamID64
         {
             get
@@ -67,6 +71,7 @@ namespace Win_10_Optimizer.Utilites
                 return "";
             }
         }
+        /* Steam логин текущего пользователя */
         public static string CurrentUserAccountLogin
         {
             get
@@ -93,6 +98,7 @@ namespace Win_10_Optimizer.Utilites
                 return "";
             }
         }
+        /* Steam ник текущего пользователя */
         public static string CurrentUserNickname
         {
             get

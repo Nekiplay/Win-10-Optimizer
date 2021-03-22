@@ -8,6 +8,7 @@ namespace Win_10_Optimizer.Forms.Optimize
 {
     public class DNSSettings
     {
+        /* Список DNS */
         public List<DNS> DNSList = new List<DNS>
         {
             /* Русские DNS */
@@ -131,15 +132,16 @@ namespace Win_10_Optimizer.Forms.Optimize
             new DNS("209.244.0.3", "US", "Level 3 - A"),
             new DNS("9.9.9.9", "US", "Quad9 Security"),
         };
-        private async Task<DNS> GetBestDNSAsync()
-        {
-            return await GetBestDNSAsync("");
-        }
+        /* Получаем наилучший DNS */
         public async Task<DNS> GetDNS()
         {
             DNS on1 = await GetBestDNSAsync();
             DNS on2 = await GetBestDNSAsync(on1.dns);
             return new DNS(on1.dns + "*" + on2.dns, on1.countiry, on1.company_or_name);
+        }
+        private async Task<DNS> GetBestDNSAsync()
+        {
+            return await GetBestDNSAsync("");
         }
         private async Task<DNS> GetBestDNSAsync(string ignore)
         {
@@ -192,6 +194,7 @@ namespace Win_10_Optimizer.Forms.Optimize
                 this.countiry = countiry;
                 this.company_or_name = company_or_name;
             }
+            /* Получаем Ping от DNS */
             public long GetLatency(string dnss)
             {
                 int timeout = 50;
@@ -208,12 +211,12 @@ namespace Win_10_Optimizer.Forms.Optimize
                 catch { }
                 return firsttime;
             }
-
+            /* Устанавливаем DNS на текущий */
             public void Set()
             {
                 SetDNS(this.dns);
             }
-
+            /* Получаем текущую сеть */
             public static NetworkInterface GetActiveEthernetOrWifiNetworkInterface()
             {
                 var Nic = NetworkInterface.GetAllNetworkInterfaces().FirstOrDefault(
@@ -223,6 +226,7 @@ namespace Win_10_Optimizer.Forms.Optimize
 
                 return Nic;
             }
+            /* Ставим DNS на автоматическое от Windows */
             public static void UnsetDNS()
             {
                 var CurrentInterface = GetActiveEthernetOrWifiNetworkInterface();
@@ -249,6 +253,7 @@ namespace Win_10_Optimizer.Forms.Optimize
                     }
                 }
             }
+            /* Устанавливаем DNS */
             private void SetDNS(string DnsString)
             {
                 string[] Dns = DnsString.Split('*');
