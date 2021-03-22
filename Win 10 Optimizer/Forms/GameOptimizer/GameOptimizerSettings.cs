@@ -49,6 +49,7 @@ namespace Win_10_Optimizer.Forms.GameOptimizer
             private readonly List<string> file_content;
             public readonly string game_name;
             private readonly string game_file;
+            /* Указание текста строкой */
             public GameOptimizerFinderAndConfigurator(string game_name, string game_path_to_file, string file_content)
             {
                 this.game_file = game_path_to_file;
@@ -57,6 +58,7 @@ namespace Win_10_Optimizer.Forms.GameOptimizer
                 temp_file_content.Add(file_content);
                 this.file_content = temp_file_content;
             }
+            /* Указание текста списком */
             public GameOptimizerFinderAndConfigurator(string game_name, string game_path_to_file, List<string> file_content)
             {
                 this.game_file = game_path_to_file;
@@ -74,9 +76,27 @@ namespace Win_10_Optimizer.Forms.GameOptimizer
                 {
                     try
                     {
+                        /* Чтение текста из файла */
+                        List<string> lines = new List<string>();
+                        using (StreamReader sr = new StreamReader(this.game_file, System.Text.Encoding.UTF8))
+                        {
+                            while (!sr.EndOfStream)
+                            {
+                                lines.Add(sr.ReadLine());
+                            }
+                        }
+                        /* Проверка есть ли такая строка */
+                        foreach (string content in this.file_content)
+                        {
+                            if (!lines.Contains(content))
+                            {
+                                lines.Add(content);
+                            }
+                        }
+                        /* Запись текста */
                         using (StreamWriter sw = new StreamWriter(this.game_file, false, System.Text.Encoding.UTF8))
                         {
-                            foreach (string content in this.file_content)
+                            foreach (string content in lines)
                             {
                                 sw.WriteLine(content);
                             }

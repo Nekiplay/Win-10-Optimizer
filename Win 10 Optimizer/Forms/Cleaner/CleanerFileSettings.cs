@@ -77,6 +77,8 @@ namespace Win_10_Optimizer
             new ClearFiles(Environment.GetFolderPath(Environment.SpecialFolder.UserProfile) + "\\.cristalix\\updates\\Minigames\\caches", "*.*", true),
             /* Майнкрафт */
             new ClearFiles(Environment.GetFolderPath(Environment.SpecialFolder.ApplicationData) + "\\.minecraft\\tv-cache", "*.*", true),
+            /* Lunar Client (Майнкрафт) */
+            new ClearFiles(Environment.GetFolderPath(Environment.SpecialFolder.UserProfile) + "\\.lunarclient\\game-cache\\blog-post-images", "*.log", true),
         };
         /* Скриншоты */
         public List<ClearFiles> screenshotfiles = new List<ClearFiles> {

@@ -190,8 +190,8 @@ namespace Win_10_Optimizer.Forms
                     foreach (string name in names)
                     {
                         RegistryKey keys = Interfaces.OpenSubKey(name, true);
-                        keys.DeleteValue("TcpNoDelay");
-                        keys.DeleteValue("TcpAckFrequency");
+                        try { keys.DeleteValue("TcpNoDelay"); } catch { }
+                        try { keys.DeleteValue("TcpAckFrequency"); } catch { }
                     }
                     /* Удаление по документаций Microsoft */
                     RegistryKey Software = reg.OpenSubKey(@"Software\Microsoft\MSMQ\Parameters", true);
