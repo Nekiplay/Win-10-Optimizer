@@ -7,6 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using Win_10_Optimizer.Utilites;
 
 namespace Win_10_Optimizer.Forms.GameOptimizer
 {
@@ -19,6 +20,7 @@ namespace Win_10_Optimizer.Forms.GameOptimizer
         GameOptimizerSettings settings = new GameOptimizerSettings();
         private void GameOptimizerForm_Load(object sender, EventArgs e)
         {
+            Console.WriteLine(SteamUtils.CurrentUserSteamID32);
             foreach (GameOptimizerSettings.GameOptimizerFinderAndConfigurator configurator in settings.games)
             {
                 if (configurator.FileDetect())
