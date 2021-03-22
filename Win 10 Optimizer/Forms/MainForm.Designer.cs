@@ -47,7 +47,7 @@ namespace Win_10_Optimizer
             Bunifu.UI.WinForms.BunifuButton.BunifuButton.StateProperties stateProperties9 = new Bunifu.UI.WinForms.BunifuButton.BunifuButton.StateProperties();
             Bunifu.UI.WinForms.BunifuButton.BunifuButton.StateProperties stateProperties10 = new Bunifu.UI.WinForms.BunifuButton.BunifuButton.StateProperties();
             this.panelMenu = new System.Windows.Forms.Panel();
-            this.bunifuButton2 = new Bunifu.UI.WinForms.BunifuButton.BunifuButton();
+            this.GameOptimizeButton = new Bunifu.UI.WinForms.BunifuButton.BunifuButton();
             this.bunifuButton1 = new Bunifu.UI.WinForms.BunifuButton.BunifuButton();
             this.CleanerButton = new Bunifu.UI.WinForms.BunifuButton.BunifuButton();
             this.bunifuPictureBox1 = new Bunifu.UI.WinForms.BunifuPictureBox();
@@ -63,7 +63,7 @@ namespace Win_10_Optimizer
             // panelMenu
             // 
             this.panelMenu.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(50)))), ((int)(((byte)(49)))), ((int)(((byte)(69)))));
-            this.panelMenu.Controls.Add(this.bunifuButton2);
+            this.panelMenu.Controls.Add(this.GameOptimizeButton);
             this.panelMenu.Controls.Add(this.bunifuButton1);
             this.panelMenu.Controls.Add(this.CleanerButton);
             this.panelMenu.Controls.Add(this.bunifuPictureBox1);
@@ -76,45 +76,45 @@ namespace Win_10_Optimizer
             this.panelMenu.Size = new System.Drawing.Size(114, 450);
             this.panelMenu.TabIndex = 1;
             // 
-            // bunifuButton2
+            // GameOptimizeButton
             // 
-            this.bunifuButton2.AllowToggling = true;
-            this.bunifuButton2.AnimationSpeed = 200;
-            this.bunifuButton2.AutoGenerateColors = false;
-            this.bunifuButton2.BackColor = System.Drawing.Color.Transparent;
-            this.bunifuButton2.BackColor1 = System.Drawing.Color.FromArgb(((int)(((byte)(50)))), ((int)(((byte)(49)))), ((int)(((byte)(69)))));
-            this.bunifuButton2.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("bunifuButton2.BackgroundImage")));
-            this.bunifuButton2.BorderStyle = Bunifu.UI.WinForms.BunifuButton.BunifuButton.BorderStyles.Solid;
-            this.bunifuButton2.ButtonText = "Game optimize";
-            this.bunifuButton2.ButtonTextMarginLeft = 0;
-            this.bunifuButton2.ColorContrastOnClick = 45;
-            this.bunifuButton2.ColorContrastOnHover = 45;
-            this.bunifuButton2.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.GameOptimizeButton.AllowToggling = false;
+            this.GameOptimizeButton.AnimationSpeed = 200;
+            this.GameOptimizeButton.AutoGenerateColors = false;
+            this.GameOptimizeButton.BackColor = System.Drawing.Color.Transparent;
+            this.GameOptimizeButton.BackColor1 = System.Drawing.Color.FromArgb(((int)(((byte)(50)))), ((int)(((byte)(49)))), ((int)(((byte)(69)))));
+            this.GameOptimizeButton.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("GameOptimizeButton.BackgroundImage")));
+            this.GameOptimizeButton.BorderStyle = Bunifu.UI.WinForms.BunifuButton.BunifuButton.BorderStyles.Solid;
+            this.GameOptimizeButton.ButtonText = "Game optimize";
+            this.GameOptimizeButton.ButtonTextMarginLeft = 0;
+            this.GameOptimizeButton.ColorContrastOnClick = 45;
+            this.GameOptimizeButton.ColorContrastOnHover = 45;
+            this.GameOptimizeButton.Cursor = System.Windows.Forms.Cursors.Hand;
             borderEdges1.BottomLeft = false;
             borderEdges1.BottomRight = false;
             borderEdges1.TopLeft = false;
             borderEdges1.TopRight = false;
-            this.bunifuButton2.CustomizableEdges = borderEdges1;
-            this.bunifuButton2.DialogResult = System.Windows.Forms.DialogResult.None;
-            this.bunifuButton2.DisabledBorderColor = System.Drawing.Color.Empty;
-            this.bunifuButton2.DisabledFillColor = System.Drawing.Color.FromArgb(((int)(((byte)(204)))), ((int)(((byte)(204)))), ((int)(((byte)(204)))));
-            this.bunifuButton2.DisabledForecolor = System.Drawing.Color.FromArgb(((int)(((byte)(168)))), ((int)(((byte)(160)))), ((int)(((byte)(168)))));
-            this.bunifuButton2.FocusState = Bunifu.UI.WinForms.BunifuButton.BunifuButton.ButtonStates.Pressed;
-            this.bunifuButton2.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.bunifuButton2.ForeColor = System.Drawing.Color.White;
-            this.bunifuButton2.IconLeftCursor = System.Windows.Forms.Cursors.Hand;
-            this.bunifuButton2.IconMarginLeft = 11;
-            this.bunifuButton2.IconPadding = 10;
-            this.bunifuButton2.IconRightCursor = System.Windows.Forms.Cursors.Hand;
-            this.bunifuButton2.IdleBorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(50)))), ((int)(((byte)(49)))), ((int)(((byte)(69)))));
-            this.bunifuButton2.IdleBorderRadius = 3;
-            this.bunifuButton2.IdleBorderThickness = 1;
-            this.bunifuButton2.IdleFillColor = System.Drawing.Color.FromArgb(((int)(((byte)(50)))), ((int)(((byte)(49)))), ((int)(((byte)(69)))));
-            this.bunifuButton2.IdleIconLeftImage = null;
-            this.bunifuButton2.IdleIconRightImage = null;
-            this.bunifuButton2.IndicateFocus = true;
-            this.bunifuButton2.Location = new System.Drawing.Point(0, 219);
-            this.bunifuButton2.Name = "bunifuButton2";
+            this.GameOptimizeButton.CustomizableEdges = borderEdges1;
+            this.GameOptimizeButton.DialogResult = System.Windows.Forms.DialogResult.None;
+            this.GameOptimizeButton.DisabledBorderColor = System.Drawing.Color.Empty;
+            this.GameOptimizeButton.DisabledFillColor = System.Drawing.Color.FromArgb(((int)(((byte)(204)))), ((int)(((byte)(204)))), ((int)(((byte)(204)))));
+            this.GameOptimizeButton.DisabledForecolor = System.Drawing.Color.FromArgb(((int)(((byte)(168)))), ((int)(((byte)(160)))), ((int)(((byte)(168)))));
+            this.GameOptimizeButton.FocusState = Bunifu.UI.WinForms.BunifuButton.BunifuButton.ButtonStates.Pressed;
+            this.GameOptimizeButton.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.GameOptimizeButton.ForeColor = System.Drawing.Color.White;
+            this.GameOptimizeButton.IconLeftCursor = System.Windows.Forms.Cursors.Hand;
+            this.GameOptimizeButton.IconMarginLeft = 11;
+            this.GameOptimizeButton.IconPadding = 10;
+            this.GameOptimizeButton.IconRightCursor = System.Windows.Forms.Cursors.Hand;
+            this.GameOptimizeButton.IdleBorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(50)))), ((int)(((byte)(49)))), ((int)(((byte)(69)))));
+            this.GameOptimizeButton.IdleBorderRadius = 3;
+            this.GameOptimizeButton.IdleBorderThickness = 1;
+            this.GameOptimizeButton.IdleFillColor = System.Drawing.Color.FromArgb(((int)(((byte)(50)))), ((int)(((byte)(49)))), ((int)(((byte)(69)))));
+            this.GameOptimizeButton.IdleIconLeftImage = null;
+            this.GameOptimizeButton.IdleIconRightImage = null;
+            this.GameOptimizeButton.IndicateFocus = true;
+            this.GameOptimizeButton.Location = new System.Drawing.Point(0, 141);
+            this.GameOptimizeButton.Name = "GameOptimizeButton";
             stateProperties1.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(105)))), ((int)(((byte)(181)))), ((int)(((byte)(255)))));
             stateProperties1.BorderRadius = 3;
             stateProperties1.BorderStyle = Bunifu.UI.WinForms.BunifuButton.BunifuButton.BorderStyles.Solid;
@@ -123,7 +123,7 @@ namespace Win_10_Optimizer
             stateProperties1.ForeColor = System.Drawing.Color.White;
             stateProperties1.IconLeftImage = null;
             stateProperties1.IconRightImage = null;
-            this.bunifuButton2.onHoverState = stateProperties1;
+            this.GameOptimizeButton.onHoverState = stateProperties1;
             stateProperties2.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(40)))), ((int)(((byte)(96)))), ((int)(((byte)(144)))));
             stateProperties2.BorderRadius = 3;
             stateProperties2.BorderStyle = Bunifu.UI.WinForms.BunifuButton.BunifuButton.BorderStyles.Solid;
@@ -132,17 +132,18 @@ namespace Win_10_Optimizer
             stateProperties2.ForeColor = System.Drawing.Color.White;
             stateProperties2.IconLeftImage = null;
             stateProperties2.IconRightImage = null;
-            this.bunifuButton2.OnPressedState = stateProperties2;
-            this.bunifuButton2.Size = new System.Drawing.Size(114, 20);
-            this.bunifuButton2.TabIndex = 12;
-            this.bunifuButton2.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            this.bunifuButton2.TextMarginLeft = 0;
-            this.bunifuButton2.UseDefaultRadiusAndThickness = true;
-            this.bunifuButton2.MouseClick += new System.Windows.Forms.MouseEventHandler(this.bunifuButton2_MouseClick);
+            this.GameOptimizeButton.OnPressedState = stateProperties2;
+            this.GameOptimizeButton.Size = new System.Drawing.Size(114, 20);
+            this.GameOptimizeButton.TabIndex = 12;
+            this.GameOptimizeButton.TabStop = false;
+            this.GameOptimizeButton.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.GameOptimizeButton.TextMarginLeft = 0;
+            this.GameOptimizeButton.UseDefaultRadiusAndThickness = true;
+            this.GameOptimizeButton.MouseClick += new System.Windows.Forms.MouseEventHandler(this.bunifuButton2_MouseClick);
             // 
             // bunifuButton1
             // 
-            this.bunifuButton1.AllowToggling = true;
+            this.bunifuButton1.AllowToggling = false;
             this.bunifuButton1.AnimationSpeed = 200;
             this.bunifuButton1.AutoGenerateColors = false;
             this.bunifuButton1.BackColor = System.Drawing.Color.Transparent;
@@ -199,6 +200,7 @@ namespace Win_10_Optimizer
             this.bunifuButton1.OnPressedState = stateProperties4;
             this.bunifuButton1.Size = new System.Drawing.Size(114, 20);
             this.bunifuButton1.TabIndex = 11;
+            this.bunifuButton1.TabStop = false;
             this.bunifuButton1.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             this.bunifuButton1.TextMarginLeft = 0;
             this.bunifuButton1.UseDefaultRadiusAndThickness = true;
@@ -206,7 +208,7 @@ namespace Win_10_Optimizer
             // 
             // CleanerButton
             // 
-            this.CleanerButton.AllowToggling = true;
+            this.CleanerButton.AllowToggling = false;
             this.CleanerButton.AnimationSpeed = 200;
             this.CleanerButton.AutoGenerateColors = false;
             this.CleanerButton.BackColor = System.Drawing.Color.Transparent;
@@ -241,7 +243,7 @@ namespace Win_10_Optimizer
             this.CleanerButton.IdleIconLeftImage = null;
             this.CleanerButton.IdleIconRightImage = null;
             this.CleanerButton.IndicateFocus = true;
-            this.CleanerButton.Location = new System.Drawing.Point(0, 167);
+            this.CleanerButton.Location = new System.Drawing.Point(0, 219);
             this.CleanerButton.Name = "CleanerButton";
             stateProperties5.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(105)))), ((int)(((byte)(181)))), ((int)(((byte)(255)))));
             stateProperties5.BorderRadius = 3;
@@ -263,6 +265,7 @@ namespace Win_10_Optimizer
             this.CleanerButton.OnPressedState = stateProperties6;
             this.CleanerButton.Size = new System.Drawing.Size(114, 20);
             this.CleanerButton.TabIndex = 8;
+            this.CleanerButton.TabStop = false;
             this.CleanerButton.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             this.CleanerButton.TextMarginLeft = 0;
             this.CleanerButton.UseDefaultRadiusAndThickness = true;
@@ -360,7 +363,7 @@ namespace Win_10_Optimizer
             // 
             // OptimizeButton
             // 
-            this.OptimizeButton.AllowToggling = true;
+            this.OptimizeButton.AllowToggling = false;
             this.OptimizeButton.AnimationSpeed = 200;
             this.OptimizeButton.AutoGenerateColors = false;
             this.OptimizeButton.BackColor = System.Drawing.Color.Transparent;
@@ -395,7 +398,7 @@ namespace Win_10_Optimizer
             this.OptimizeButton.IdleIconLeftImage = null;
             this.OptimizeButton.IdleIconRightImage = null;
             this.OptimizeButton.IndicateFocus = true;
-            this.OptimizeButton.Location = new System.Drawing.Point(0, 141);
+            this.OptimizeButton.Location = new System.Drawing.Point(0, 167);
             this.OptimizeButton.Name = "OptimizeButton";
             stateProperties9.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(105)))), ((int)(((byte)(181)))), ((int)(((byte)(255)))));
             stateProperties9.BorderRadius = 3;
@@ -417,6 +420,7 @@ namespace Win_10_Optimizer
             this.OptimizeButton.OnPressedState = stateProperties10;
             this.OptimizeButton.Size = new System.Drawing.Size(114, 20);
             this.OptimizeButton.TabIndex = 7;
+            this.OptimizeButton.TabStop = false;
             this.OptimizeButton.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             this.OptimizeButton.TextMarginLeft = 0;
             this.OptimizeButton.UseDefaultRadiusAndThickness = true;
@@ -470,7 +474,7 @@ namespace Win_10_Optimizer
         private Bunifu.UI.WinForms.BunifuButton.BunifuButton ExitButton;
         private System.Windows.Forms.Label label1;
         private Bunifu.UI.WinForms.BunifuButton.BunifuButton bunifuButton1;
-        private Bunifu.UI.WinForms.BunifuButton.BunifuButton bunifuButton2;
+        private Bunifu.UI.WinForms.BunifuButton.BunifuButton GameOptimizeButton;
     }
 }
 

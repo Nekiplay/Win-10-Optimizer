@@ -7,6 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using Win_10_Optimizer.Utilites;
 
 namespace Win_10_Optimizer.Forms.GameOptimizer
 {
@@ -16,11 +17,7 @@ namespace Win_10_Optimizer.Forms.GameOptimizer
 
         public GameOptimizerSettings()
         {
-            string steamdir = (string)Registry.GetValue(@"HKEY_LOCAL_MACHINE\SOFTWARE\Valve\Steam", "InstallPath", "Nothing");
-            if (string.IsNullOrEmpty(steamdir) || steamdir == "Nothing")
-            {
-                steamdir = (string)Registry.GetValue(@"HKEY_LOCAL_MACHINE\SOFTWARE\WOW6432Node\Valve\Steam", "InstallPath", "Nothing");
-            }
+            string steamdir = SteamUtils.SteamPath;
             List<string> gmodcontent = new List<string>
             {
                 "datacachesize 2048",

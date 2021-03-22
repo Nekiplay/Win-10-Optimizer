@@ -31,7 +31,9 @@ namespace Win_10_Optimizer
                 DisableButton();
                 //Button
                 currentBtn = (BunifuButton)senderBtn;
-                currentBtn.TextAlign = ContentAlignment.MiddleCenter;
+                //currentBtn.TextAlign = ContentAlignment.MiddleCenter;
+                //currentBtn.BackColor1 = Color.FromArgb(40, 96, 144);
+                //currentBtn.IdleFillColor = Color.FromArgb(40, 96, 144);
                 //Left border button
                 leftBorderBtn.BackColor = color;
                 leftBorderBtn.Location = new Point(0, currentBtn.Location.Y);
@@ -45,14 +47,16 @@ namespace Win_10_Optimizer
         {
             if (currentBtn != null)
             {
+                //currentBtn.IdleFillColor = Color.Transparent;
+
                 currentBtn.ForeColor = Color.Gainsboro;
-                currentBtn.TextAlign = ContentAlignment.MiddleLeft;
+                //currentBtn.TextAlign = ContentAlignment.MiddleLeft;
             }
         }
         private void Form1_Load(object sender, EventArgs e)
         {
-            ActivateButton(OptimizeButton, RGBColors.color1);
-            OpenChildForm(optimize, false);
+            ActivateButton(GameOptimizeButton, RGBColors.color1);
+            OpenChildForm(gameoptimize, false);
         }
         private readonly Panel leftBorderBtn;
         private Form currentChildForm;
@@ -114,10 +118,6 @@ namespace Win_10_Optimizer
             {
                 ActivateButton(sender, RGBColors.color2);
                 OpenChildForm(cleaner, false);
-            }
-            else if (e.Button == MouseButtons.Middle)
-            {
-
             }
         }
         private void bunifuButton1_MouseClick(object sender, MouseEventArgs e)

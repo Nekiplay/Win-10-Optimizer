@@ -2,6 +2,7 @@
 using System;
 using System.Collections.Generic;
 using System.Linq;
+using Win_10_Optimizer.Utilites;
 
 namespace Win_10_Optimizer
 {
@@ -126,11 +127,7 @@ namespace Win_10_Optimizer
         public CleanerFileSettings()
         {
             /* Steam Games */
-            string steamdir = (string)Registry.GetValue(@"HKEY_LOCAL_MACHINE\SOFTWARE\Valve\Steam", "InstallPath", "Nothing");
-            if (string.IsNullOrEmpty(steamdir) || steamdir == "Nothing")
-            {
-                steamdir = (string)Registry.GetValue(@"HKEY_LOCAL_MACHINE\SOFTWARE\WOW6432Node\Valve\Steam", "InstallPath", "Nothing");
-            }
+            string steamdir = SteamUtils.SteamPath;
             /* Steam Games Логи */
             logsfiles.Add(new ClearFiles(steamdir + "\\steamapps\\common\\GarrysMod", "*.log"));
             logsfiles.Add(new ClearFiles(steamdir + "\\steamapps\\common\\Warface\\0_1177\\LogBackups", "*.log"));
