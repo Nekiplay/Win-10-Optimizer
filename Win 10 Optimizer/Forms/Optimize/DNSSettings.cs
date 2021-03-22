@@ -1,10 +1,7 @@
-﻿using System;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
 using System.Linq;
 using System.Management;
 using System.Net.NetworkInformation;
-using System.Text;
-using System.Threading;
 using System.Threading.Tasks;
 
 namespace Win_10_Optimizer.Forms.Optimize

@@ -1,9 +1,5 @@
 ﻿using Microsoft.Win32;
-using System;
 using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace Win_10_Optimizer.Forms.Cleaner
 {
@@ -11,6 +7,8 @@ namespace Win_10_Optimizer.Forms.Cleaner
     {
         public List<RegeditFiles> lastactivity = new List<RegeditFiles>
         {
+            new RegeditFiles(Registry.CurrentUser.OpenSubKey("SOFTWARE\\Classes\\Local Settings\\Software\\Microsoft\\Windows\\Shell\\MuiCache", true), true),
+            new RegeditFiles(Registry.CurrentUser.OpenSubKey("SOFTWARE\\Classes\\Local Settings\\Software\\Microsoft\\Windows\\Shell\\Bags", true), true),
             new RegeditFiles(Registry.CurrentUser.OpenSubKey("SOFTWARE\\Classes\\Local Settings\\Software\\Microsoft\\Windows\\Shell\\BagMRU", true), true),
             new RegeditFiles(Registry.CurrentUser.OpenSubKey("SOFTWARE\\Microsoft\\Windows\\CurrentVersion\\Explorer\\ComDlg32\\OpenSavePidlMRU", true), true),
             /* Удаленные программы */

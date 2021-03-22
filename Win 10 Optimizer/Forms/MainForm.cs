@@ -93,12 +93,21 @@ namespace Win_10_Optimizer
         readonly Forms.OptimizeForm optimize = new Forms.OptimizeForm();
         readonly Forms.CleanerForm cleaner = new Forms.CleanerForm();
         readonly Forms.ServicesForm services = new Forms.ServicesForm();
+        readonly Forms.GameOptimizer.GameOptimizerForm gameoptimize = new Forms.GameOptimizer.GameOptimizerForm();
 
         private void ExitButton_Click(object sender, EventArgs e)
         {
             Application.Exit();
         }
 
+        private void OptimizeButton_MouseClick(object sender, MouseEventArgs e)
+        {
+            if (e.Button == MouseButtons.Left)
+            {
+                ActivateButton(sender, RGBColors.color1);
+                OpenChildForm(optimize, false);
+            }
+        }
         private void CleanerButton_MouseClick(object sender, MouseEventArgs e)
         {
             if (e.Button == MouseButtons.Left)
@@ -111,22 +120,21 @@ namespace Win_10_Optimizer
 
             }
         }
-
-        private void OptimizeButton_MouseClick(object sender, MouseEventArgs e)
-        {
-            if (e.Button == MouseButtons.Left)
-            {
-                ActivateButton(sender, RGBColors.color1);
-                OpenChildForm(optimize, false);
-            }
-        }
-
         private void bunifuButton1_MouseClick(object sender, MouseEventArgs e)
         {
             if (e.Button == MouseButtons.Left)
             {
-                ActivateButton(sender, RGBColors.color1);
+                ActivateButton(sender, RGBColors.color3);
                 OpenChildForm(services, false);
+            }
+        }
+
+        private void bunifuButton2_MouseClick(object sender, MouseEventArgs e)
+        {
+            if (e.Button == MouseButtons.Left)
+            {
+                ActivateButton(sender, RGBColors.color1);
+                OpenChildForm(gameoptimize, false);
             }
         }
     }
