@@ -17,7 +17,7 @@ namespace Win_10_Optimizer.Forms.GameOptimizer
         {
             InitializeComponent();
         }
-        GameOptimizerSettings settings = new GameOptimizerSettings();
+        readonly GameOptimizerSettings settings = new GameOptimizerSettings();
         private void GameOptimizerForm_Load(object sender, EventArgs e)
         {
             foreach (GameOptimizerSettings.GameOptimizerFinderAndConfigurator configurator in settings.games)
@@ -89,11 +89,6 @@ namespace Win_10_Optimizer.Forms.GameOptimizer
                     bunifuPages1.TabPages[0].Controls.Add(pagebutton);
                 }
             }
-        }
-
-        private void GamesLayouot_Paint(object sender, PaintEventArgs e)
-        {
-
         }
     }
 }
