@@ -20,7 +20,6 @@ namespace Win_10_Optimizer.Forms.GameOptimizer
         GameOptimizerSettings settings = new GameOptimizerSettings();
         private void GameOptimizerForm_Load(object sender, EventArgs e)
         {
-            Console.WriteLine(SteamUtils.CurrentUserSteamID);
             foreach (GameOptimizerSettings.GameOptimizerFinderAndConfigurator configurator in settings.games)
             {
                 if (configurator.FileDetect())
