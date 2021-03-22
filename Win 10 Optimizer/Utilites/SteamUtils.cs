@@ -33,6 +33,15 @@ namespace Win_10_Optimizer.Utilites
                 return (long.Parse(CurrentUserSteamID64.Substring(3)) - 61197960265728).ToString();
             }
         }
+        public static string CurrentUserSteamID
+        {
+            get
+            {
+                var authserver = (long.Parse(CurrentUserSteamID64) - 76561197960265728) & 1;
+                var authid = (long.Parse(CurrentUserSteamID64) - 76561197960265728 - authserver) / 2;
+                return $"STEAM_0:{authserver}:{authid}";
+            }
+        }
         public static string CurrentUserSteamID64
         {
             get
