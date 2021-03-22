@@ -42,6 +42,7 @@ namespace Win_10_Optimizer.Forms.GameOptimizer
                     button.Size = new Size(200, 30);
                     button.Click += (a, g) =>
                     {
+                        /* Вызываем очистку */
                         configurator.Optimize();
 
                         /* Уведомление */
@@ -58,6 +59,7 @@ namespace Win_10_Optimizer.Forms.GameOptimizer
                     backbutton.Size = new Size(200, 30);
                     backbutton.Click += (a, g) =>
                     {
+                        /* Устанавливаем стартовую страницу */
                         bunifuPages1.SetPage(0);
                     };
 
@@ -65,7 +67,7 @@ namespace Win_10_Optimizer.Forms.GameOptimizer
                     page.Controls.Add(backbutton);
                     page.Controls.Add(gamelabel);
                     page.Controls.Add(button);
-
+                    /* Добавляем страницу */
                     bunifuPages1.TabPages.Add(page);
                     /* Добавление кнопки перехода на страницу */
                     Bunifu.UI.WinForms.BunifuButton.BunifuButton pagebutton = new Bunifu.UI.WinForms.BunifuButton.BunifuButton();
@@ -83,6 +85,7 @@ namespace Win_10_Optimizer.Forms.GameOptimizer
                     {
                         bunifuPages1.Page = page;
                     };
+                    /* Добавляем кнопку на главную страницу */
                     bunifuPages1.TabPages[0].Controls.Add(pagebutton);
                 }
             }

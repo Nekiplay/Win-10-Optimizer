@@ -120,26 +120,26 @@
   <assembly alias="System.Drawing" name="System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
   <data name="GameOptimizeButton.BackgroundImage" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
-        iVBORw0KGgoAAAANSUhEUgAAAHIAAAAUCAYAAABRcGk6AAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8
-        YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAAB6SURBVGhD7dFBDYBQEMTQLwnQAP4FIAMBQEhPBAMlnaSn
-        3dsb7UdbpnVf5u0sYbcdjDfk10NpgjFIezAGaQ/GIO3BGKQ9GIO0B2OQ9mAM0h6MQdqDMUh7MAZpD8Yg
-        7cEYpD0Yg7QHY5D2YAzSHowP5PE+lqYDxubfGBe27wOAM8qaiwAAAABJRU5ErkJggg==
+        iVBORw0KGgoAAAANSUhEUgAAAIcAAAAUCAYAAACnFS7nAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8
+        YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAACBSURBVGhD7dJBDYRQEETBL4lFA/gXsDIQAIT0iSYYoDqp
+        08zxDbPXzdPyn3/rDpezh6RxxvH0wKclDXHQkoY4aElDHLSkIQ5a0hAHLWmIg5Y0xEFLGuKgJQ1x0JKG
+        OGhJQxy0pCEOWtIQBy1piIOWNMRBSxpXHNv9yKdtScPsaWMcGHB0NBZGxsUAAAAASUVORK5CYII=
 </value>
   </data>
   <data name="bunifuButton1.BackgroundImage" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
-        iVBORw0KGgoAAAANSUhEUgAAAHIAAAAUCAYAAABRcGk6AAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8
-        YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAAB6SURBVGhD7dFBDYBQEMTQLwnQAP4FIAMBQEhPBAMlnaSn
-        3dsb7UdbpnVf5u0sYbcdjDfk10NpgjFIezAGaQ/GIO3BGKQ9GIO0B2OQ9mAM0h6MQdqDMUh7MAZpD8Yg
-        7cEYpD0Yg7QHY5D2YAzSHowP5PE+lqYDxubfGBe27wOAM8qaiwAAAABJRU5ErkJggg==
+        iVBORw0KGgoAAAANSUhEUgAAAIcAAAAUCAYAAACnFS7nAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8
+        YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAACBSURBVGhD7dJBDYRQEETBL4lFA/gXsDIQAIT0iSYYoDqp
+        08zxDbPXzdPyn3/rDpezh6RxxvH0wKclDXHQkoY4aElDHLSkIQ5a0hAHLWmIg5Y0xEFLGuKgJQ1x0JKG
+        OGhJQxy0pCEOWtIQBy1piIOWNMRBSxpXHNv9yKdtScPsaWMcGHB0NBZGxsUAAAAASUVORK5CYII=
 </value>
   </data>
   <data name="CleanerButton.BackgroundImage" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
-        iVBORw0KGgoAAAANSUhEUgAAAHIAAAAUCAYAAABRcGk6AAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8
-        YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAAB6SURBVGhD7dFBDYBQEMTQLwnQAP4FIAMBQEhPBAMlnaSn
-        3dsb7UdbpnVf5u0sYbcdjDfk10NpgjFIezAGaQ/GIO3BGKQ9GIO0B2OQ9mAM0h6MQdqDMUh7MAZpD8Yg
-        7cEYpD0Yg7QHY5D2YAzSHowP5PE+lqYDxubfGBe27wOAM8qaiwAAAABJRU5ErkJggg==
+        iVBORw0KGgoAAAANSUhEUgAAAIcAAAAUCAYAAACnFS7nAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8
+        YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAACBSURBVGhD7dJBDYRQEETBL4lFA/gXsDIQAIT0iSYYoDqp
+        08zxDbPXzdPyn3/rDpezh6RxxvH0wKclDXHQkoY4aElDHLSkIQ5a0hAHLWmIg5Y0xEFLGuKgJQ1x0JKG
+        OGhJQxy0pCEOWtIQBy1piIOWNMRBSxpXHNv9yKdtScPsaWMcGHB0NBZGxsUAAAAASUVORK5CYII=
 </value>
   </data>
   <data name="bunifuPictureBox1.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
@@ -213,19 +213,19 @@
   </data>
   <data name="ExitButton.BackgroundImage" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
-        iVBORw0KGgoAAAANSUhEUgAAAHIAAAAeCAYAAADw60pcAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8
-        YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAACeSURBVGhD7dFBDYBQEMTQLwnQAP4FIAMBQEhPBAMlnaSn
-        3dsb7UdbpnVf5u0sYbcdjDfk10NpgjFIezAGaQ/GIO3BGKQ9GIO0B2OQ9mAM0h6MQdqDMUh7MAZpD8Yg
-        7cEYpD0Yg7QHY5D2YAzSHoxB2oMxSHswBmkPxiDtwRikPRiDtAdjkPZgDNIejEHagzFIezA+kMf7WJoO
-        GJt/Y1zsMj6Jh9gCowAAAABJRU5ErkJggg==
+        iVBORw0KGgoAAAANSUhEUgAAAIcAAAAeCAYAAAAGjg2BAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8
+        YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAACoSURBVHhe7dJBjUIBEETBL4lFA/gXsDIQAIS8E00wQHVS
+        p5njO8y+7ny6/J//rnd4efZQGs84Pj3w00pDHKzSEAerNMTBKg1xsEpDHKzSEAerNMTBKg1xsEpDHKzS
+        EAerNMTBKg1xsEpDHKzSEAerNMTBKg1xsEpDHKzSEAerNMTBKg1xsEpDHKzSEAerNMTBKg1xsEpDHKzS
+        eMVxez/y026lYfZpx/EAXyYKWSlKcsgAAAAASUVORK5CYII=
 </value>
   </data>
   <data name="OptimizeButton.BackgroundImage" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
-        iVBORw0KGgoAAAANSUhEUgAAAHIAAAAUCAYAAABRcGk6AAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8
-        YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAAB6SURBVGhD7dFBDYBQEMTQLwnQAP4FIAMBQEhPBAMlnaSn
-        3dsb7UdbpnVf5u0sYbcdjDfk10NpgjFIezAGaQ/GIO3BGKQ9GIO0B2OQ9mAM0h6MQdqDMUh7MAZpD8Yg
-        7cEYpD0Yg7QHY5D2YAzSHowP5PE+lqYDxubfGBe27wOAM8qaiwAAAABJRU5ErkJggg==
+        iVBORw0KGgoAAAANSUhEUgAAAIcAAAAUCAYAAACnFS7nAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8
+        YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAACBSURBVGhD7dJBDYRQEETBL4lFA/gXsDIQAIT0iSYYoDqp
+        08zxDbPXzdPyn3/rDpezh6RxxvH0wKclDXHQkoY4aElDHLSkIQ5a0hAHLWmIg5Y0xEFLGuKgJQ1x0JKG
+        OGhJQxy0pCEOWtIQBy1piIOWNMRBSxpXHNv9yKdtScPsaWMcGHB0NBZGxsUAAAAASUVORK5CYII=
 </value>
   </data>
   <metadata name="bunifuDragControl1.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">

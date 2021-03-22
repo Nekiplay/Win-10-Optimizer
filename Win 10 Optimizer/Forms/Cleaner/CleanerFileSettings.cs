@@ -161,7 +161,9 @@ namespace Win_10_Optimizer
                 this.pattern = pattern;
                 this.deleteall = deleteall;
             }
+            /* Проверка на существование папки */
             private bool Exist (string path){  try { return System.IO.Directory.Exists(path); } catch { return false; } }
+            /* Удаление */
             public long Delete()
             {
                 long deleted = 0;
