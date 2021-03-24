@@ -201,10 +201,8 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="clear_icon_155649.ico" />
-    <Content Include="Forms\UpdateChecker\Version.txt" />
+    <None Include="Resources\Version.txt" />
   </ItemGroup>
-  <ItemGroup>
-    <Folder Include="Resources\" />
-  </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
