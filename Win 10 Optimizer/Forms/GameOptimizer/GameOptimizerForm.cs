@@ -20,58 +20,16 @@ namespace Win_10_Optimizer.Forms.GameOptimizer
         readonly GameOptimizerSettings settings = new GameOptimizerSettings();
         private void GameOptimizerForm_Load(object sender, EventArgs e)
         {
-            foreach (GameOptimizerSettings.GameOptimizerFinderAndConfigurator configurator in settings.games)
+            foreach (GameOptimizerSettings.IOptimizer configurator in settings.games)
             {
                 if (configurator.FileDetect())
                 {
-                    TabPage page = new TabPage();
-                    page.BackColor = Color.FromArgb(44, 43, 60);
-                    page.Text = configurator.game_name;
-                    page.AccessibleName = configurator.game_name;
-
-                    /* Название игры */
-                    Label gamelabel = new Label();
-                    gamelabel.Text = configurator.game_name;
-                    gamelabel.AutoSize = true;
-                    gamelabel.ForeColor = Color.Gainsboro;
-                    gamelabel.Font = new Font("Arial", (float)8.25, FontStyle.Bold);
-                    /* Кнопка оптимизаций */
-                    Bunifu.UI.WinForms.BunifuButton.BunifuButton button = new Bunifu.UI.WinForms.BunifuButton.BunifuButton();
-                    button.Text = "Оптимизировать";
-                    button.Location = new Point(0, 15);
-                    button.Size = new Size(200, 30);
-                    button.Click += (a, g) =>
-                    {
-                        /* Вызываем очистку */
-                        configurator.Optimize();
-
-                        /* Уведомление */
-                        NotificationManager.Manager notify = new NotificationManager.Manager();
-                        notify.MaxTextWidth = 750;
-                        notify.EnableOffset = false;
-                        notify.Alert(configurator.game_name + " оптимизирован'а", NotificationManager.NotificationType.Info);
-                        notify.StopTimer(1000);
-                    };
-                    /* Кнопка возврата */
-                    Bunifu.UI.WinForms.BunifuButton.BunifuButton backbutton = new Bunifu.UI.WinForms.BunifuButton.BunifuButton();
-                    backbutton.Text = "Назад";
-                    backbutton.Location = new Point(0, 50);
-                    backbutton.Size = new Size(200, 30);
-                    backbutton.Click += (a, g) =>
-                    {
-                        /* Устанавливаем стартовую страницу */
-                        bunifuPages1.SetPage(0);
-                    };
-
-                    /* Добавление контролов на страницу */
-                    page.Controls.Add(backbutton);
-                    page.Controls.Add(gamelabel);
-                    page.Controls.Add(button);
-                    /* Добавляем страницу */
+                    TabPage page = configurator.GetTabPage(bunifuPages1);
                     bunifuPages1.TabPages.Add(page);
+
                     /* Добавление кнопки перехода на страницу */
                     Bunifu.UI.WinForms.BunifuButton.BunifuButton pagebutton = new Bunifu.UI.WinForms.BunifuButton.BunifuButton();
-                    pagebutton.Text = configurator.game_name;
+                    pagebutton.Text = configurator.GetName();
                     pagebutton.Size = new Size(200, 30);
                     if (bunifuPages1.TabPages.Count - 2 == 0)
                     {

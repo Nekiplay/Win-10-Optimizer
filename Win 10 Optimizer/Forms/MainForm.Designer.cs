@@ -321,7 +321,7 @@ namespace Win_10_Optimizer
             this.ExitButton.DisabledFillColor = System.Drawing.Color.FromArgb(((int)(((byte)(204)))), ((int)(((byte)(204)))), ((int)(((byte)(204)))));
             this.ExitButton.DisabledForecolor = System.Drawing.Color.FromArgb(((int)(((byte)(168)))), ((int)(((byte)(160)))), ((int)(((byte)(168)))));
             this.ExitButton.FocusState = Bunifu.UI.WinForms.BunifuButton.BunifuButton.ButtonStates.Pressed;
-            this.ExitButton.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.ExitButton.Font = new System.Drawing.Font("Arial", 8.25F, System.Drawing.FontStyle.Bold);
             this.ExitButton.ForeColor = System.Drawing.Color.White;
             this.ExitButton.IconLeftCursor = System.Windows.Forms.Cursors.Hand;
             this.ExitButton.IconMarginLeft = 40;
@@ -334,7 +334,7 @@ namespace Win_10_Optimizer
             this.ExitButton.IdleIconLeftImage = null;
             this.ExitButton.IdleIconRightImage = null;
             this.ExitButton.IndicateFocus = false;
-            this.ExitButton.Location = new System.Drawing.Point(0, 420);
+            this.ExitButton.Location = new System.Drawing.Point(0, 430);
             this.ExitButton.Name = "ExitButton";
             stateProperties7.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(105)))), ((int)(((byte)(181)))), ((int)(((byte)(255)))));
             stateProperties7.BorderRadius = 3;
@@ -354,7 +354,7 @@ namespace Win_10_Optimizer
             stateProperties8.IconLeftImage = null;
             stateProperties8.IconRightImage = null;
             this.ExitButton.OnPressedState = stateProperties8;
-            this.ExitButton.Size = new System.Drawing.Size(135, 30);
+            this.ExitButton.Size = new System.Drawing.Size(135, 20);
             this.ExitButton.TabIndex = 9;
             this.ExitButton.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             this.ExitButton.TextMarginLeft = 0;

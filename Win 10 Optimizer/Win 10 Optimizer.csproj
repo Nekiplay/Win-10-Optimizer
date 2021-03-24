@@ -108,6 +108,8 @@
       <DependentUpon>GameOptimizerForm.cs</DependentUpon>
     </Compile>
     <Compile Include="Forms\GameOptimizer\GameOptimizerSettings.cs" />
+    <Compile Include="Forms\GameOptimizer\Games\GarrysMod.cs" />
+    <Compile Include="Forms\GameOptimizer\Games\Minecraft.cs" />
     <Compile Include="Forms\Optimize\DNSSettings.cs" />
     <Compile Include="Forms\Optimize\EnergyClass.cs" />
     <Compile Include="Forms\Optimize\GybernateClass.cs" />

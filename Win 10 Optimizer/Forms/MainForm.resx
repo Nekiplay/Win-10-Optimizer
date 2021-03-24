@@ -213,11 +213,10 @@
   </data>
   <data name="ExitButton.BackgroundImage" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
-        iVBORw0KGgoAAAANSUhEUgAAAIcAAAAeCAYAAAAGjg2BAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8
-        YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAACoSURBVHhe7dJBjUIBEETBL4lFA/gXsDIQAIS8E00wQHVS
-        p5njO8y+7ny6/J//rnd4efZQGs84Pj3w00pDHKzSEAerNMTBKg1xsEpDHKzSEAerNMTBKg1xsEpDHKzS
-        EAerNMTBKg1xsEpDHKzSEAerNMTBKg1xsEpDHKzSEAerNMTBKg1xsEpDHKzSEAerNMTBKg1xsEpDHKzS
-        eMVxez/y026lYfZpx/EAXyYKWSlKcsgAAAAASUVORK5CYII=
+        iVBORw0KGgoAAAANSUhEUgAAAIcAAAAUCAYAAACnFS7nAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8
+        YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAACBSURBVGhD7dJBDYRQEETBL4lFA/gXsDIQAIT0iSYYoDqp
+        08zxDbPXzdPyn3/rDpezh6RxxvH0wKclDXHQkoY4aElDHLSkIQ5a0hAHLWmIg5Y0xEFLGuKgJQ1x0JKG
+        OGhJQxy0pCEOWtIQBy1piIOWNMRBSxpXHNv9yKdtScPsaWMcGHB0NBZGxsUAAAAASUVORK5CYII=
 </value>
   </data>
   <data name="OptimizeButton.BackgroundImage" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
