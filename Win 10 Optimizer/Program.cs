@@ -3,11 +3,16 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using Win_10_Optimizer.Forms.Settings;
 
 namespace Win_10_Optimizer
 {
     static class Program
     {
+        /// <summary>
+        /// Главная форма приложения.
+        /// </summary>
+        static MainForm mainform;
         /// <summary>
         /// Главная точка входа для приложения.
         /// </summary>
@@ -16,7 +21,8 @@ namespace Win_10_Optimizer
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new MainForm());
+            mainform = new MainForm();
+            Application.Run(mainform);
         }
     }
 }

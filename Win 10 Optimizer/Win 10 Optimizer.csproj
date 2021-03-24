@@ -142,6 +142,14 @@
     <Compile Include="Forms\Services\ServicesForm.Designer.cs">
       <DependentUpon>ServicesForm.cs</DependentUpon>
     </Compile>
+    <Compile Include="Forms\Settings\SettingsForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\Settings\SettingsForm.Designer.cs">
+      <DependentUpon>SettingsForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\Settings\UserSettings.cs" />
+    <Compile Include="Forms\UpdateChecker\UpdateChecker.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\Annotations.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -162,6 +170,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\Services\ServicesForm.resx">
       <DependentUpon>ServicesForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Settings\SettingsForm.resx">
+      <DependentUpon>SettingsForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
@@ -190,6 +201,7 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="clear_icon_155649.ico" />
+    <Content Include="Forms\UpdateChecker\Version.txt" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Resources\" />

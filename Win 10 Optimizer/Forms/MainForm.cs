@@ -9,6 +9,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using Win_10_Optimizer.Forms.Settings;
 
 namespace Win_10_Optimizer
 {
@@ -53,8 +54,10 @@ namespace Win_10_Optimizer
                 //currentBtn.TextAlign = ContentAlignment.MiddleLeft;
             }
         }
+        public static UserSettings userSettings;
         private void Form1_Load(object sender, EventArgs e)
         {
+            userSettings = UserSettings.Load();
             ActivateButton(GameOptimizeButton, RGBColors.color1);
             OpenChildForm(gameoptimize, false);
         }
@@ -94,48 +97,46 @@ namespace Win_10_Optimizer
             public static readonly Color color3 = Color.FromArgb(253, 138, 114);
         }
 
+        readonly Forms.SettingsForm settings = new Forms.SettingsForm();
         readonly Forms.OptimizeForm optimize = new Forms.OptimizeForm();
         readonly Forms.CleanerForm cleaner = new Forms.CleanerForm();
         readonly Forms.ServicesForm services = new Forms.ServicesForm();
         readonly Forms.GameOptimizer.GameOptimizerForm gameoptimize = new Forms.GameOptimizer.GameOptimizerForm();
+
+        private void GameOptimizeButton_Click(object sender, EventArgs e)
+        {
+            ActivateButton(sender, RGBColors.color1);
+            OpenChildForm(gameoptimize, false);
+        }
+
+        private void OptimizeButton_Click(object sender, EventArgs e)
+        {
+            ActivateButton(sender, RGBColors.color2);
+            OpenChildForm(optimize, false);
+        }
+
+        private void bunifuButton1_Click(object sender, EventArgs e)
+        {
+            ActivateButton(sender, RGBColors.color3);
+            OpenChildForm(services, false);
+        }
+
+        private void CleanerButton_Click(object sender, EventArgs e)
+        {
+            ActivateButton(sender, RGBColors.color1);
+            OpenChildForm(cleaner, false);
+        }
+
+        private void bunifuButton2_Click(object sender, EventArgs e)
+        {
+            ActivateButton(sender, RGBColors.color2);
+            OpenChildForm(settings, false);
+        }
 
         private void ExitButton_Click(object sender, EventArgs e)
         {
             Application.Exit();
         }
 
-        private void OptimizeButton_MouseClick(object sender, MouseEventArgs e)
-        {
-            if (e.Button == MouseButtons.Left)
-            {
-                ActivateButton(sender, RGBColors.color1);
-                OpenChildForm(optimize, false);
-            }
-        }
-        private void CleanerButton_MouseClick(object sender, MouseEventArgs e)
-        {
-            if (e.Button == MouseButtons.Left)
-            {
-                ActivateButton(sender, RGBColors.color2);
-                OpenChildForm(cleaner, false);
-            }
-        }
-        private void bunifuButton1_MouseClick(object sender, MouseEventArgs e)
-        {
-            if (e.Button == MouseButtons.Left)
-            {
-                ActivateButton(sender, RGBColors.color3);
-                OpenChildForm(services, false);
-            }
-        }
-
-        private void bunifuButton2_MouseClick(object sender, MouseEventArgs e)
-        {
-            if (e.Button == MouseButtons.Left)
-            {
-                ActivateButton(sender, RGBColors.color1);
-                OpenChildForm(gameoptimize, false);
-            }
-        }
     }
 }
