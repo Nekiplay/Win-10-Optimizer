@@ -50,7 +50,6 @@ namespace Win_10_Optimizer.Utilites
         {
             get
             {
-                //Console.WriteLine(SteamPath + "\\config\\loginusers.vdf");
                 try
                 {
                     VProperty volvo = VdfConvert.Deserialize(File.ReadAllText(SteamPath + "\\config\\loginusers.vdf"));
@@ -76,7 +75,6 @@ namespace Win_10_Optimizer.Utilites
         {
             get
             {
-                //Console.WriteLine(SteamPath + "\\config\\loginusers.vdf");
                 try
                 {
                     VProperty volvo = VdfConvert.Deserialize(File.ReadAllText(SteamPath + "\\config\\loginusers.vdf"));
@@ -103,7 +101,6 @@ namespace Win_10_Optimizer.Utilites
         {
             get
             {
-                //Console.WriteLine(SteamPath + "\\config\\loginusers.vdf");
                 try
                 {
                     VProperty volvo = VdfConvert.Deserialize(File.ReadAllText(SteamPath + "\\config\\loginusers.vdf"));

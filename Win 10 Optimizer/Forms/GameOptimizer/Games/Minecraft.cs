@@ -12,7 +12,7 @@ namespace Win_10_Optimizer.Forms.GameOptimizer.Games
 {
     public class Minecraft : IOptimizer
     {
-        string path = Environment.GetFolderPath(Environment.SpecialFolder.ApplicationData) + "\\.minecraft\\optionsof.txt";
+        readonly string path = Environment.GetFolderPath(Environment.SpecialFolder.ApplicationData) + "\\.minecraft\\optionsof.txt";
 
         public string GetName()
         {

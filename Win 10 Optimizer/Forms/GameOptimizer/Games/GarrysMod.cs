@@ -13,7 +13,7 @@ namespace Win_10_Optimizer.Forms.GameOptimizer.Games
 {
     public class GarrysMod : IOptimizer
     {
-        string path = SteamUtils.SteamPath + "\\steamapps\\common\\GarrysMod\\garrysmod\\cfg\\autoexec.cfg";
+        readonly string path = SteamUtils.SteamPath + "\\steamapps\\common\\GarrysMod\\garrysmod\\cfg\\autoexec.cfg";
 
         public string GetName()
         {
