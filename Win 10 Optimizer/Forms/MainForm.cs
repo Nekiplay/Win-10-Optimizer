@@ -8,6 +8,7 @@ using System.Diagnostics;
 using System.Drawing;
 using System.Linq;
 using System.Text;
+using System.Threading;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using Win_10_Optimizer.Forms.Settings;
@@ -65,7 +66,11 @@ namespace Win_10_Optimizer
                 notify.MaxTextWidth = 900;
                 notify.EnableOffset = false;
                 notify.Alert("Необходимо установить обновление", NotificationManager.NotificationType.Warning);
-                notify.StopTimer(1000 * 60);
+                notify.StopTimer(1000 * 10);
+                await Task.Factory.StartNew(() =>
+                {
+                    Process.GetCurrentProcess().Kill();
+                });
             }
             userSettings = UserSettings.Load();
             ActivateButton(GameOptimizeButton, RGBColors.color1);
