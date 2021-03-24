@@ -4,6 +4,7 @@ using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
+using System.Diagnostics;
 using System.Drawing;
 using System.Linq;
 using System.Text;
@@ -55,8 +56,17 @@ namespace Win_10_Optimizer
             }
         }
         public static UserSettings userSettings;
-        private void Form1_Load(object sender, EventArgs e)
+        private async void Form1_Load(object sender, EventArgs e)
         {
+            NotificationManager.Manager notify = null;
+            if (Forms.UpdateChecker.UpdateChecker.NeedUpdate)
+            {
+                notify = new NotificationManager.Manager();
+                notify.MaxTextWidth = 900;
+                notify.EnableOffset = false;
+                notify.Alert("Необходимо установить обновление", NotificationManager.NotificationType.Warning);
+                notify.StopTimer(1000 * 60);
+            }
             userSettings = UserSettings.Load();
             ActivateButton(GameOptimizeButton, RGBColors.color1);
             OpenChildForm(gameoptimize, false);

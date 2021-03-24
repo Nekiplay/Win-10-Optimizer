@@ -8,9 +8,9 @@ using System.Threading.Tasks;
 
 namespace Win_10_Optimizer.Forms.UpdateChecker
 {
-    public class UpdateChecker
+    public static class UpdateChecker
     {
-        public bool NeedUpdate
+        public static bool NeedUpdate
         {
             get
             {
@@ -19,17 +19,13 @@ namespace Win_10_Optimizer.Forms.UpdateChecker
                     using (WebClient wc = new WebClient())
                     {
                         string githubversion = wc.DownloadString(@"https://raw.githubusercontent.com/Nekiplay/Win-10-Optimizer/master/Win%2010%20Optimizer/Resources/Version.txt");
-                        using (StreamReader output = new StreamReader(Properties.Resources.Version))
+                        if (githubversion == Properties.Resources.Version)
                         {
-                            string currentversion = output.ReadToEnd();
-                            if (githubversion == currentversion)
-                            {
-                                return true;
-                            }
+                            return false;
                         }
                     }
-                } catch { }
-                return false;
+                } catch { return false; }
+                return true;
             }
         }
     }
