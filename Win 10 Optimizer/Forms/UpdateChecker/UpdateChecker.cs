@@ -14,7 +14,7 @@ namespace Win_10_Optimizer.Forms.UpdateChecker
         {
             get
             {
-                if (LastVersion == CurrentVersion) { return false; }
+                if (int.Parse(LastVersion.Replace(".", "").Replace("v", "")) < int.Parse(CurrentVersion.Replace(".", "").Replace("v", ""))) { return false; }
                 else { return true; }
             }
         }

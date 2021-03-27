@@ -156,8 +156,7 @@ namespace Win_10_Optimizer
 
         private void ExitButton_Click(object sender, EventArgs e)
         {
-            Application.Exit();
+            Process.GetCurrentProcess().Kill();
         }
-
     }
 }
