@@ -5,39 +5,41 @@ using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Windows.Forms;
 
 namespace Win_10_Optimizer.Forms.Settings
 {
     public class UserSettings
     {
-        public bool AutoCleaner = true;
-        public long AutoCleanerInterval = 1000 * 60 * 30;
+        public string VkToken = "";
+        public string VkGroupId = "";
 
         public static UserSettings Load()
         {
             try
             {
-
-                if (!File.Exists("Settings.json"))
+                if (!File.Exists(Application.StartupPath + "\\Settings.json"))
                 {
                     UserSettings settings = new UserSettings();
-                    //File.Create("Settings.json").Close();
+                    try
+                    {
+                        File.Create(Application.StartupPath + "\\Settings.json").Close();
+                    } catch { }
                     Save(settings);
                     return settings;
                 }
                 else
                 {
-                    using (FileStream fstream = File.OpenRead("Settings.json"))
+                    try
                     {
-                        byte[] array = new byte[fstream.Length];
-                        // асинхронное чтение файла
-                        fstream.ReadAsync(array, 0, array.Length);
-
-                        string textFromFile = System.Text.Encoding.UTF8.GetString(array);
-                        string output = JsonConvert.SerializeObject(textFromFile);
-                        UserSettings settings = JsonConvert.DeserializeObject<UserSettings>(output);
-                        return settings;
+                        using (StreamReader sr = new StreamReader(Application.StartupPath + "\\Settings.json"))
+                        {
+                            string textFromFile = sr.ReadToEnd();
+                            UserSettings settings = JsonConvert.DeserializeObject<UserSettings>(textFromFile);
+                            return settings;
+                        }
                     }
+                    catch { UserSettings settings = new UserSettings(); Save(settings); return settings; }
                 }
             }
             catch { return new UserSettings(); }
@@ -45,8 +47,7 @@ namespace Win_10_Optimizer.Forms.Settings
         public static void Save(UserSettings settings)
         {
             JsonSerializer serializer = new JsonSerializer();
-
-            using (StreamWriter sw = new StreamWriter("Settings.json"))
+            using (StreamWriter sw = new StreamWriter(Application.StartupPath + "\\Settings.json"))
             using (JsonWriter writer = new JsonTextWriter(sw))
             {
                 serializer.Serialize(writer, settings);

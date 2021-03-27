@@ -16,5 +16,20 @@ namespace Win_10_Optimizer.Forms
         {
             InitializeComponent();
         }
+
+        private void AutoClearCheckBox_OnChange(object sender, EventArgs e)
+        {
+            
+        }
+
+        private void bunifuCustomTextbox1_TextChanged(object sender, EventArgs e)
+        {
+            
+        }
+
+        private void SettingsForm_Load(object sender, EventArgs e)
+        {
+            
+        }
     }
 }

@@ -76,7 +76,8 @@
       <HintPath>..\packages\Newtonsoft.Json.13.0.1\lib\net45\Newtonsoft.Json.dll</HintPath>
     </Reference>
     <Reference Include="NotificationManager, Version=1.0.9.0, Culture=neutral, processorArchitecture=MSIL">
-      <HintPath>..\packages\NotificationManager.1.0.9\lib\net472\NotificationManager.dll</HintPath>
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\NotificationManager\NotificationLib\NotificationLib\bin\Release\NotificationManager.dll</HintPath>
     </Reference>
     <Reference Include="PresentationCore" />
     <Reference Include="PresentationFramework" />

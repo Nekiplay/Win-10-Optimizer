@@ -56,7 +56,7 @@ namespace Win_10_Optimizer
                 //currentBtn.TextAlign = ContentAlignment.MiddleLeft;
             }
         }
-        public static UserSettings userSettings;
+        public UserSettings userSettings;
         private async void Form1_Load(object sender, EventArgs e)
         {
             NotificationManager.Manager notify = null;
@@ -67,10 +67,6 @@ namespace Win_10_Optimizer
                 notify.EnableOffset = false;
                 notify.Alert("Необходимо установить обновление", NotificationManager.NotificationType.Warning);
                 notify.StopTimer(1000 * 10);
-                await Task.Factory.StartNew(() =>
-                {
-                    Process.GetCurrentProcess().Kill();
-                });
             }
             userSettings = UserSettings.Load();
             ActivateButton(GameOptimizeButton, RGBColors.color1);
@@ -112,7 +108,7 @@ namespace Win_10_Optimizer
             public static readonly Color color3 = Color.FromArgb(253, 138, 114);
         }
 
-        readonly Forms.SettingsForm settings = new Forms.SettingsForm();
+        public readonly Forms.SettingsForm settings = new Forms.SettingsForm();
         readonly Forms.OptimizeForm optimize = new Forms.OptimizeForm();
         readonly Forms.CleanerForm cleaner = new Forms.CleanerForm();
         readonly Forms.ServicesForm services = new Forms.ServicesForm();

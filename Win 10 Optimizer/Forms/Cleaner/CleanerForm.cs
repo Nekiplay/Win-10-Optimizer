@@ -22,7 +22,10 @@ namespace Win_10_Optimizer.Forms
         }
         public async Task Optimize()
         {
-            ClearButton.Enabled = false;
+            ClearButton.Invoke(new MethodInvoker(() =>
+            {
+                ClearButton.Enabled = false;
+            }));
             CleanerFileSettings cleanermethod = new CleanerFileSettings();
             CleanerRegeditSettings regeditmethod = new CleanerRegeditSettings();
             long deleted = 0;
@@ -179,12 +182,18 @@ namespace Win_10_Optimizer.Forms
             {
                 await task;
             }
-            NotificationManager.Manager notify = new NotificationManager.Manager();
-            notify.MaxTextWidth = 150;
-            notify.EnableOffset = false;
-            notify.Alert("Очищено: " + BytesToString(deleted), NotificationManager.NotificationType.Info);
-            notify.StopTimer(1000);
-            ClearButton.Enabled = true;
+            if (deleted != 0)
+            {
+                NotificationManager.Manager notify = new NotificationManager.Manager();
+                notify.MaxTextWidth = 150;
+                notify.EnableOffset = false;
+                notify.Alert("Очищено: " + BytesToString(deleted), NotificationManager.NotificationType.Info);
+                notify.StopTimer(1000);
+            }
+            ClearButton.Invoke(new MethodInvoker(() =>
+            {
+                ClearButton.Enabled = true;
+            }));
         }
         enum RecycleFlags : int
         {
@@ -205,15 +214,7 @@ namespace Win_10_Optimizer.Forms
         {
             if (e.Button == MouseButtons.Middle)
             {
-                RegeditCheckBox.Checked = true;
-                CheatConfigFilesCheckBox.Checked = true;
-                WindowsFilesCheckBox.Checked = true;
-                ScreenShotsFilesCheckBox.Checked = true;
-                CrashFilesCheckBox.Checked = true;
-                MediaFilesCheckBox.Checked = true;
-                LogsFilesCheckBox.Checked = true;
-                CacheFilesCheckBox.Checked = true;
-                BackUpFilesCheckBox.Checked = true;
+                CheckedAll();
             }
             await Optimize();
         }
@@ -229,5 +230,45 @@ namespace Win_10_Optimizer.Forms
             double num = Math.Round(bytes / Math.Pow(1024, place), 1);
             return (Math.Sign(byteCount) * num).ToString() + suf[place];
         }
+        public void CheckedAll()
+        {
+            RegeditCheckBox.Invoke(new MethodInvoker(() =>
+            {
+                RegeditCheckBox.Checked = true;
+            }));
+            CheatConfigFilesCheckBox.Invoke(new MethodInvoker(() =>
+            {
+                CheatConfigFilesCheckBox.Checked = true;
+            }));
+            WindowsFilesCheckBox.Invoke(new MethodInvoker(() =>
+            {
+                WindowsFilesCheckBox.Checked = true;
+            }));
+            ScreenShotsFilesCheckBox.Invoke(new MethodInvoker(() =>
+            {
+                ScreenShotsFilesCheckBox.Checked = true;
+            }));
+            CrashFilesCheckBox.Invoke(new MethodInvoker(() =>
+            {
+                CrashFilesCheckBox.Checked = true;
+            }));
+            MediaFilesCheckBox.Invoke(new MethodInvoker(() =>
+            {
+                MediaFilesCheckBox.Checked = true;
+            }));
+            LogsFilesCheckBox.Invoke(new MethodInvoker(() =>
+            {
+                LogsFilesCheckBox.Checked = true;
+            }));
+            CacheFilesCheckBox.Invoke(new MethodInvoker(() =>
+            {
+                CacheFilesCheckBox.Checked = true;
+            }));
+            BackUpFilesCheckBox.Invoke(new MethodInvoker(() =>
+            {
+                BackUpFilesCheckBox.Checked = true;
+            }));
+        }
     }
 }
+    

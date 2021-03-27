@@ -12,7 +12,7 @@ namespace Win_10_Optimizer
         /// <summary>
         /// Главная форма приложения.
         /// </summary>
-        static MainForm mainform;
+        public static MainForm mainform;
         /// <summary>
         /// Главная точка входа для приложения.
         /// </summary>
