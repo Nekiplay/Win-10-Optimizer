@@ -187,7 +187,7 @@ namespace Win_10_Optimizer.Forms
                 NotificationManager.Manager notify = new NotificationManager.Manager();
                 notify.MaxTextWidth = 150;
                 notify.EnableOffset = false;
-                notify.Alert("Очищено: " + BytesToString(deleted), NotificationManager.NotificationType.Info);
+                notify.Alert("Cleared: " + BytesToString(deleted), NotificationManager.NotificationType.Info);
                 notify.StopTimer(1000);
             }
             ClearButton.Invoke(new MethodInvoker(() =>
@@ -220,7 +220,7 @@ namespace Win_10_Optimizer.Forms
         }
         static String BytesToString(long byteCount)
         {
-            string[] suf = { "Байт", "KB", "MB", "GB", "TB", "PB", "EB" }; //
+            string[] suf = { "Byte", "KB", "MB", "GB", "TB", "PB", "EB" }; //
             if (byteCount == 0)
             {
                 return "0" + suf[0];

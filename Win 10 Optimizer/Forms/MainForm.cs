@@ -59,15 +59,18 @@ namespace Win_10_Optimizer
         public UserSettings userSettings;
         private async void Form1_Load(object sender, EventArgs e)
         {
-            NotificationManager.Manager notify = null;
-            if (Forms.UpdateChecker.UpdateChecker.NeedUpdate)
+            Task.Factory.StartNew(() =>
             {
-                notify = new NotificationManager.Manager();
-                notify.MaxTextWidth = 900;
-                notify.EnableOffset = false;
-                notify.Alert("Необходимо установить обновление", NotificationManager.NotificationType.Warning);
-                notify.StopTimer(1000 * 10);
-            }
+                NotificationManager.Manager notify = null;
+                if (Forms.UpdateChecker.UpdateChecker.NeedUpdate)
+                {
+                    notify = new NotificationManager.Manager();
+                    notify.MaxTextWidth = 900;
+                    notify.EnableOffset = false;
+                    notify.Alert("New update available", NotificationManager.NotificationType.Warning);
+                    notify.StopTimer(1000 * 10);
+                }
+            });
             userSettings = UserSettings.Load();
             ActivateButton(GameOptimizeButton, RGBColors.color1);
             OpenChildForm(gameoptimize, false);
@@ -113,6 +116,7 @@ namespace Win_10_Optimizer
         readonly Forms.CleanerForm cleaner = new Forms.CleanerForm();
         readonly Forms.ServicesForm services = new Forms.ServicesForm();
         readonly Forms.GameOptimizer.GameOptimizerForm gameoptimize = new Forms.GameOptimizer.GameOptimizerForm();
+        readonly Forms.InfoForm info = new Forms.InfoForm();
 
         private void GameOptimizeButton_Click(object sender, EventArgs e)
         {
@@ -138,9 +142,15 @@ namespace Win_10_Optimizer
             OpenChildForm(cleaner, false);
         }
 
-        private void bunifuButton2_Click(object sender, EventArgs e)
+        private void bunifuButton3_Click(object sender, EventArgs e)
         {
             ActivateButton(sender, RGBColors.color2);
+            OpenChildForm(info, false);
+        }
+
+        private void bunifuButton2_Click(object sender, EventArgs e)
+        {
+            ActivateButton(sender, RGBColors.color3);
             OpenChildForm(settings, false);
         }
 

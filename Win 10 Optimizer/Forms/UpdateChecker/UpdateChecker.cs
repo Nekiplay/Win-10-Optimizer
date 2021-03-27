@@ -14,18 +14,30 @@ namespace Win_10_Optimizer.Forms.UpdateChecker
         {
             get
             {
+                if (LastVersion == CurrentVersion) { return false; }
+                else { return true; }
+            }
+        }
+        public static string CurrentVersion
+        {
+            get
+            {
+                return Properties.Resources.Version;
+            }
+        }
+        public static string LastVersion
+        {
+            get
+            {
                 try
                 {
                     using (WebClient wc = new WebClient())
                     {
                         string githubversion = wc.DownloadString(@"https://raw.githubusercontent.com/Nekiplay/Win-10-Optimizer/master/Win%2010%20Optimizer/Resources/Version.txt");
-                        if (githubversion == Properties.Resources.Version)
-                        {
-                            return false;
-                        }
+                        return githubversion;
                     }
-                } catch { return false; }
-                return true;
+                }
+                catch { return Properties.Resources.Version; }
             }
         }
     }

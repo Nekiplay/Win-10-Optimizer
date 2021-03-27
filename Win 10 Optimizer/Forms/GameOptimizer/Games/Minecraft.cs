@@ -39,7 +39,7 @@ namespace Win_10_Optimizer.Forms.GameOptimizer.Games
             gamelabel.Font = new Font("Arial", (float)8.25, FontStyle.Bold);
             /* Кнопка оптимизаций */
             Bunifu.UI.WinForms.BunifuButton.BunifuButton button = new Bunifu.UI.WinForms.BunifuButton.BunifuButton();
-            button.Text = "Оптимизировать";
+            button.Text = "Optimize";
             button.Location = new Point(0, 15);
             button.Size = new Size(200, 30);
             button.Click += async (a, g) =>
@@ -56,7 +56,7 @@ namespace Win_10_Optimizer.Forms.GameOptimizer.Games
                     /* Уведомление об успешной оптимизаций */
                     notify.MaxTextWidth = 750;
                     notify.EnableOffset = false;
-                    notify.Alert(GetName() + " оптимизирован", NotificationManager.NotificationType.Info);
+                    notify.Alert(GetName() + " optimized", NotificationManager.NotificationType.Info);
                     notify.StopTimer(1000);
                 }
                 else
@@ -64,13 +64,13 @@ namespace Win_10_Optimizer.Forms.GameOptimizer.Games
                     /* Уведомление об не успешной оптимизаций */
                     notify.MaxTextWidth = 750;
                     notify.EnableOffset = false;
-                    notify.Alert(GetName() + " не был оптимизирован", NotificationManager.NotificationType.Error);
+                    notify.Alert(GetName() + " was not optimized", NotificationManager.NotificationType.Error);
                     notify.StopTimer(1000);
                 }
             };
             /* Кнопка возврата */
             Bunifu.UI.WinForms.BunifuButton.BunifuButton backbutton = new Bunifu.UI.WinForms.BunifuButton.BunifuButton();
-            backbutton.Text = "Назад";
+            backbutton.Text = "Back";
             backbutton.Location = new Point(0, 50);
             backbutton.Size = new Size(200, 30);
             backbutton.Click += (a, g) =>
