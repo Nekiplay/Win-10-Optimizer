@@ -7,4 +7,5 @@ Optimize you Windows
 ![image](https://user-images.githubusercontent.com/35975332/112737786-da891400-8f7e-11eb-9c58-aff6fd4e3de7.png)
 ![image](https://user-images.githubusercontent.com/35975332/112737788-dc52d780-8f7e-11eb-847e-b39aebda78e9.png)
 ![image](https://user-images.githubusercontent.com/35975332/112737792-deb53180-8f7e-11eb-9c66-e2faef2647a8.png)
-![image](https://user-images.githubusercontent.com/35975332/112737794-e1178b80-8f7e-11eb-982a-61a38b87f5a2.png)
+![image](https://user-images.githubusercontent.com/35975332/112737917-1ec8e400-8f80-11eb-94fc-a09fa3d09da5.png)
+
