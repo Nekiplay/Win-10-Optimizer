@@ -63,5 +63,10 @@ namespace Win_10_Optimizer.Forms
         {
             Process.Start("https://github.com/Nekiplay/Win-10-Optimizer/releases/tag/" + UpdateChecker.UpdateChecker.LastVersion);
         }
+
+        private void bunifuButton5_Click(object sender, EventArgs e)
+        {
+            Process.Start("https://www.youtube.com/channel/UCmBN0V9320Laqnjv-ZOCkKg");
+        }
     }
 }
