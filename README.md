@@ -3,9 +3,10 @@ Optimize you Windows
 
 [![Codacy Badge](https://app.codacy.com/project/badge/Grade/d45f8c8cb63b407b88489b04a4c7451e)](https://www.codacy.com/gh/Nekiplay/Win-10-Optimizer/dashboard?utm_source=github.com&amp;utm_medium=referral&amp;utm_content=Nekiplay/Win-10-Optimizer&amp;utm_campaign=Badge_Grade)
 
-![image](https://user-images.githubusercontent.com/35975332/112737817-1f14af80-8f7f-11eb-8754-ad616d6ddee4.png)
-![image](https://user-images.githubusercontent.com/35975332/112737786-da891400-8f7e-11eb-9c58-aff6fd4e3de7.png)
-![image](https://user-images.githubusercontent.com/35975332/112737788-dc52d780-8f7e-11eb-847e-b39aebda78e9.png)
-![image](https://user-images.githubusercontent.com/35975332/112737792-deb53180-8f7e-11eb-9c66-e2faef2647a8.png)
-![image](https://user-images.githubusercontent.com/35975332/112737917-1ec8e400-8f80-11eb-94fc-a09fa3d09da5.png)
+![image](https://user-images.githubusercontent.com/35975332/112739355-3f4b6b00-8f8d-11eb-83c9-39dc71678897.png)
+![image](https://user-images.githubusercontent.com/35975332/112739358-43778880-8f8d-11eb-9728-030d80c802dc.png)
+![image](https://user-images.githubusercontent.com/35975332/112739359-45414c00-8f8d-11eb-8c51-1274a620db5b.png)
+![image](https://user-images.githubusercontent.com/35975332/112739362-470b0f80-8f8d-11eb-87a0-a3bc5f7009a1.png)
+![image](https://user-images.githubusercontent.com/35975332/112739363-483c3c80-8f8d-11eb-917f-93b462ac15f7.png)
+
 
