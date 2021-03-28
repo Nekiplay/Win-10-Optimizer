@@ -52,6 +52,15 @@ namespace Win_10_Optimizer.Forms
             this.label8 = new System.Windows.Forms.Label();
             this.RegeditCheckBox = new Bunifu.Framework.UI.BunifuCheckbox();
             this.label9 = new System.Windows.Forms.Label();
+            this.LogsClears = new System.Windows.Forms.Label();
+            this.CacheClears = new System.Windows.Forms.Label();
+            this.MediaClears = new System.Windows.Forms.Label();
+            this.CrashesClears = new System.Windows.Forms.Label();
+            this.BackupsClears = new System.Windows.Forms.Label();
+            this.RegistryClears = new System.Windows.Forms.Label();
+            this.ScreenshotsClears = new System.Windows.Forms.Label();
+            this.CheatSettingsClears = new System.Windows.Forms.Label();
+            this.WindowsGarbageClears = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
             // WindowsFilesCheckBox
@@ -110,7 +119,7 @@ namespace Win_10_Optimizer.Forms
             this.label3.BackColor = System.Drawing.Color.Transparent;
             this.label3.Font = new System.Drawing.Font("Arial", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.label3.ForeColor = System.Drawing.Color.Gainsboro;
-            this.label3.Location = new System.Drawing.Point(12, 204);
+            this.label3.Location = new System.Drawing.Point(12, 201);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(35, 14);
             this.label3.TabIndex = 8;
@@ -174,7 +183,7 @@ namespace Win_10_Optimizer.Forms
             this.LogsFilesCheckBox.Checked = false;
             this.LogsFilesCheckBox.CheckedOnColor = System.Drawing.Color.FromArgb(((int)(((byte)(51)))), ((int)(((byte)(205)))), ((int)(((byte)(117)))));
             this.LogsFilesCheckBox.ForeColor = System.Drawing.Color.White;
-            this.LogsFilesCheckBox.Location = new System.Drawing.Point(51, 201);
+            this.LogsFilesCheckBox.Location = new System.Drawing.Point(50, 199);
             this.LogsFilesCheckBox.Name = "LogsFilesCheckBox";
             this.LogsFilesCheckBox.Size = new System.Drawing.Size(20, 20);
             this.LogsFilesCheckBox.TabIndex = 16;
@@ -214,7 +223,7 @@ namespace Win_10_Optimizer.Forms
             this.ClearButton.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("ClearButton.BackgroundImage")));
             this.ClearButton.BorderStyle = Bunifu.UI.WinForms.BunifuButton.BunifuButton.BorderStyles.Solid;
             this.ClearButton.ButtonText = "Clear";
-            this.ClearButton.ButtonTextMarginLeft = -40;
+            this.ClearButton.ButtonTextMarginLeft = 0;
             this.ClearButton.ColorContrastOnClick = 45;
             this.ClearButton.ColorContrastOnHover = 45;
             this.ClearButton.Cursor = System.Windows.Forms.Cursors.Hand;
@@ -261,10 +270,10 @@ namespace Win_10_Optimizer.Forms
             stateProperties4.IconLeftImage = null;
             stateProperties4.IconRightImage = null;
             this.ClearButton.OnPressedState = stateProperties4;
-            this.ClearButton.Size = new System.Drawing.Size(124, 20);
+            this.ClearButton.Size = new System.Drawing.Size(182, 20);
             this.ClearButton.TabIndex = 19;
             this.ClearButton.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            this.ClearButton.TextMarginLeft = -40;
+            this.ClearButton.TextMarginLeft = 0;
             this.ClearButton.UseDefaultRadiusAndThickness = true;
             this.ClearButton.MouseClick += new System.Windows.Forms.MouseEventHandler(this.ClearButton_MouseClick);
             // 
@@ -343,12 +352,147 @@ namespace Win_10_Optimizer.Forms
             this.label9.Text = "Registry";
             this.label9.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
+            // LogsClears
+            // 
+            this.LogsClears.AutoSize = true;
+            this.LogsClears.BackColor = System.Drawing.Color.Transparent;
+            this.LogsClears.Font = new System.Drawing.Font("Arial", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.LogsClears.ForeColor = System.Drawing.Color.Gainsboro;
+            this.LogsClears.Location = new System.Drawing.Point(75, 201);
+            this.LogsClears.Name = "LogsClears";
+            this.LogsClears.Size = new System.Drawing.Size(52, 14);
+            this.LogsClears.TabIndex = 26;
+            this.LogsClears.Text = "0 Clears";
+            this.LogsClears.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.LogsClears.Visible = false;
+            // 
+            // CacheClears
+            // 
+            this.CacheClears.AutoSize = true;
+            this.CacheClears.BackColor = System.Drawing.Color.Transparent;
+            this.CacheClears.Font = new System.Drawing.Font("Arial", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.CacheClears.ForeColor = System.Drawing.Color.Gainsboro;
+            this.CacheClears.Location = new System.Drawing.Point(80, 178);
+            this.CacheClears.Name = "CacheClears";
+            this.CacheClears.Size = new System.Drawing.Size(52, 14);
+            this.CacheClears.TabIndex = 27;
+            this.CacheClears.Text = "0 Clears";
+            this.CacheClears.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.CacheClears.Visible = false;
+            // 
+            // MediaClears
+            // 
+            this.MediaClears.AutoSize = true;
+            this.MediaClears.BackColor = System.Drawing.Color.Transparent;
+            this.MediaClears.Font = new System.Drawing.Font("Arial", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.MediaClears.ForeColor = System.Drawing.Color.Gainsboro;
+            this.MediaClears.Location = new System.Drawing.Point(80, 155);
+            this.MediaClears.Name = "MediaClears";
+            this.MediaClears.Size = new System.Drawing.Size(52, 14);
+            this.MediaClears.TabIndex = 28;
+            this.MediaClears.Text = "0 Clears";
+            this.MediaClears.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.MediaClears.Visible = false;
+            // 
+            // CrashesClears
+            // 
+            this.CrashesClears.AutoSize = true;
+            this.CrashesClears.BackColor = System.Drawing.Color.Transparent;
+            this.CrashesClears.Font = new System.Drawing.Font("Arial", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.CrashesClears.ForeColor = System.Drawing.Color.Gainsboro;
+            this.CrashesClears.Location = new System.Drawing.Point(93, 131);
+            this.CrashesClears.Name = "CrashesClears";
+            this.CrashesClears.Size = new System.Drawing.Size(52, 14);
+            this.CrashesClears.TabIndex = 29;
+            this.CrashesClears.Text = "0 Clears";
+            this.CrashesClears.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.CrashesClears.Visible = false;
+            // 
+            // BackupsClears
+            // 
+            this.BackupsClears.AutoSize = true;
+            this.BackupsClears.BackColor = System.Drawing.Color.Transparent;
+            this.BackupsClears.Font = new System.Drawing.Font("Arial", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.BackupsClears.ForeColor = System.Drawing.Color.Gainsboro;
+            this.BackupsClears.Location = new System.Drawing.Point(93, 106);
+            this.BackupsClears.Name = "BackupsClears";
+            this.BackupsClears.Size = new System.Drawing.Size(52, 14);
+            this.BackupsClears.TabIndex = 30;
+            this.BackupsClears.Text = "0 Clears";
+            this.BackupsClears.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.BackupsClears.Visible = false;
+            // 
+            // RegistryClears
+            // 
+            this.RegistryClears.AutoSize = true;
+            this.RegistryClears.BackColor = System.Drawing.Color.Transparent;
+            this.RegistryClears.Font = new System.Drawing.Font("Arial", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.RegistryClears.ForeColor = System.Drawing.Color.Gainsboro;
+            this.RegistryClears.Location = new System.Drawing.Point(93, 81);
+            this.RegistryClears.Name = "RegistryClears";
+            this.RegistryClears.Size = new System.Drawing.Size(52, 14);
+            this.RegistryClears.TabIndex = 31;
+            this.RegistryClears.Text = "0 Clears";
+            this.RegistryClears.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.RegistryClears.Visible = false;
+            // 
+            // ScreenshotsClears
+            // 
+            this.ScreenshotsClears.AutoSize = true;
+            this.ScreenshotsClears.BackColor = System.Drawing.Color.Transparent;
+            this.ScreenshotsClears.Font = new System.Drawing.Font("Arial", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.ScreenshotsClears.ForeColor = System.Drawing.Color.Gainsboro;
+            this.ScreenshotsClears.Location = new System.Drawing.Point(113, 57);
+            this.ScreenshotsClears.Name = "ScreenshotsClears";
+            this.ScreenshotsClears.Size = new System.Drawing.Size(52, 14);
+            this.ScreenshotsClears.TabIndex = 32;
+            this.ScreenshotsClears.Text = "0 Clears";
+            this.ScreenshotsClears.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.ScreenshotsClears.Visible = false;
+            // 
+            // CheatSettingsClears
+            // 
+            this.CheatSettingsClears.AutoSize = true;
+            this.CheatSettingsClears.BackColor = System.Drawing.Color.Transparent;
+            this.CheatSettingsClears.Font = new System.Drawing.Font("Arial", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.CheatSettingsClears.ForeColor = System.Drawing.Color.Gainsboro;
+            this.CheatSettingsClears.Location = new System.Drawing.Point(133, 33);
+            this.CheatSettingsClears.Name = "CheatSettingsClears";
+            this.CheatSettingsClears.Size = new System.Drawing.Size(52, 14);
+            this.CheatSettingsClears.TabIndex = 33;
+            this.CheatSettingsClears.Text = "0 Clears";
+            this.CheatSettingsClears.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.CheatSettingsClears.Visible = false;
+            // 
+            // WindowsGarbageClears
+            // 
+            this.WindowsGarbageClears.AutoSize = true;
+            this.WindowsGarbageClears.BackColor = System.Drawing.Color.Transparent;
+            this.WindowsGarbageClears.Font = new System.Drawing.Font("Arial", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.WindowsGarbageClears.ForeColor = System.Drawing.Color.Gainsboro;
+            this.WindowsGarbageClears.Location = new System.Drawing.Point(142, 9);
+            this.WindowsGarbageClears.Name = "WindowsGarbageClears";
+            this.WindowsGarbageClears.Size = new System.Drawing.Size(52, 14);
+            this.WindowsGarbageClears.TabIndex = 34;
+            this.WindowsGarbageClears.Text = "0 Clears";
+            this.WindowsGarbageClears.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.WindowsGarbageClears.Visible = false;
+            // 
             // CleanerForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(44)))), ((int)(((byte)(43)))), ((int)(((byte)(60)))));
-            this.ClientSize = new System.Drawing.Size(146, 256);
+            this.ClientSize = new System.Drawing.Size(206, 256);
+            this.Controls.Add(this.WindowsGarbageClears);
+            this.Controls.Add(this.CheatSettingsClears);
+            this.Controls.Add(this.ScreenshotsClears);
+            this.Controls.Add(this.RegistryClears);
+            this.Controls.Add(this.BackupsClears);
+            this.Controls.Add(this.CrashesClears);
+            this.Controls.Add(this.MediaClears);
+            this.Controls.Add(this.CacheClears);
+            this.Controls.Add(this.LogsClears);
             this.Controls.Add(this.ClearButton);
             this.Controls.Add(this.RegeditCheckBox);
             this.Controls.Add(this.label9);
@@ -372,6 +516,7 @@ namespace Win_10_Optimizer.Forms
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "CleanerForm";
             this.Text = "Cleaner";
+            this.Load += new System.EventHandler(this.CleanerForm_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -398,5 +543,14 @@ namespace Win_10_Optimizer.Forms
         private System.Windows.Forms.Label label8;
         private Bunifu.Framework.UI.BunifuCheckbox RegeditCheckBox;
         private System.Windows.Forms.Label label9;
+        private System.Windows.Forms.Label LogsClears;
+        private System.Windows.Forms.Label CacheClears;
+        private System.Windows.Forms.Label MediaClears;
+        private System.Windows.Forms.Label CrashesClears;
+        private System.Windows.Forms.Label BackupsClears;
+        private System.Windows.Forms.Label RegistryClears;
+        private System.Windows.Forms.Label ScreenshotsClears;
+        private System.Windows.Forms.Label CheatSettingsClears;
+        private System.Windows.Forms.Label WindowsGarbageClears;
     }
 }

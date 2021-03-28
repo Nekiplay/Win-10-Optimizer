@@ -120,10 +120,11 @@
   <assembly alias="System.Drawing" name="System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
   <data name="ClearButton.BackgroundImage" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
-        iVBORw0KGgoAAAANSUhEUgAAAHwAAAAUCAYAAABPuVmJAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8
-        YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAAB4SURBVGhD7dE7EYBAAMTQ8wMOwL8JZCCA36REwSU7k267
-        N5pw67IfT1dN3QH3B/53qMmCO3BLcAduCe7ALcEduCW4A7cEd+CW4A7cEtyBW4I7cEtwB24J7sAtwR24
-        JbgDtwR34JbgDtwS3C/4dv4daqa2E+7m2Rg3wzl4yqQbcgAAAAAASUVORK5CYII=
+        iVBORw0KGgoAAAANSUhEUgAAALYAAAAUCAYAAAAgJMfhAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8
+        YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAACGSURBVGhD7dJLDYBAAEPB9QMOFv8mkIEAfukRAzTTZG49
+        vmFWu3XZ9tsJBfZk/Yb9dYBfStbCpkuyFjZdkrWw6ZKshU2XZC1suiRrYdMlWQubLsla2HRJ1sKmS7IW
+        Nl2StbDpkqyFTZdkLWy6JGth0yVZC5suyfoJex5fB/ifeSRrs7aNcQF6leCM0KUEDQAAAABJRU5ErkJg
+        gg==
 </value>
   </data>
   <data name="$this.Icon" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
